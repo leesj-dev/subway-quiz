@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url('/Pretendard-Regular.subset.woff2') format('woff2');
+  }
+
+  * {
+    font-family: 'Pretendard';
+    font-size: 18px;
+    letter-spacing: -0.1px;
+    word-break: keep-all;
+    line-height: 160%;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  #wrong {
+    background-color: tomato;
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 27px;
+    height: 27px;
+    padding: 7px 14px;
+    margin: 0px 0px 6px 3px;
+    animation: appear;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;
+    -webkit-animation: appear;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: 2;
+    -webkit-animation-fill-mode: forwards;
+  }
+
+  @keyframes appear {
+    0% { transform: scale(0) }
+    40% { transform: scale(1) }
+  }
