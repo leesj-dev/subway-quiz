@@ -1,14 +1,17 @@
-let min, sec;
-let timer;
 let solved = 0
 let stations = new Array();
+let timer;
+let min, sec;
 
 document.getElementById("answer").addEventListener("submit", function (event) {
     event.preventDefault();
     let line = event.target["line"].value;
     let station = event.target["station"].value;
-    let svgElement = document.getElementById("map").contentDocument.getElementById(station);
+    if (station == "경성대부경대" || "경성대.부경대") {
+
+    }
     if (station != "") { // 빈 form이 아니라면
+        let svgElement = document.getElementById("map").contentDocument.getElementById(station);
         // 역명이 존재하고, [호선 옵션이 비활성화되어 있거나 svg에 해당 호선이 존재하는 경우]
         if (svgElement != null && (line === "disabled" || svgElement.classList.contains(line))) {
             let currentState = svgElement.getAttribute("visibility");
@@ -65,27 +68,31 @@ function switchButtons(param) {
 function startTimer() {
     min = 10;
     sec = 0;
-    timer = setInterval(countTimer, min * 60 + sec);
+    timer = setInterval(countTimer, 1000);
     switchButtons(false);
 }
 
 function countTimer() {
-    if (sec != 0) {
-        sec--;
-        document.getElementById("display").innerText = min + " : " + sec;
+    if (min === 0 && sec === 0) {
+        clearTimer(timer, "TIME OUT");
     } else {
-        if (min != 0) {
+        if (sec === 0) {
             min--;
             sec = 59;
         } else {
-            clearTimer(timer, "종료");
+            sec--;
         }
+        let minT = min < 10 ? "0" + min : min;
+        let secT = sec < 10 ? "0" + sec : sec;
+        document.getElementById("display").innerText = minT + " : " + secT;
     }
 }
+
 
 function resetTimer() {
     clearTimer(timer, "10 : 00");
     switchButtons(true);
+    document.getElementById("solved").innerHTML = 0;
 }
 
 function clearTimer(t, text) {
