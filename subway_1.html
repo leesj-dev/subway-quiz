@@ -3,39 +3,26 @@
 
 <head>
   <title>부산 지하철 퀴즈</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>
   <h1>부산 지하철 퀴즈</h1>
   <object id="subway" data="map.svg" type="image/svg+xml" width="100%"></object>
   <form style="display: inline;">
+    <select name="line" style="height: 42px; display: none;">
+      <option value="none">호선명</option>
+      <option value="1호선">1호선</option>
+      <option value="2호선">2호선</option>
+      <option value="3호선">3호선</option>
+      <option value="4호선">4호선</option>
+      <option value="부산김해경전철">부산김해경전철</option>
+      <option value="동해선">동해선</option>
+    </select>
     <input name="station" type="text" placeholder="역명을 입력하세요" style="height: 37px;" />
     <button name="submit" type="submit" style="height: 42px;">제출</button>
   </form>
   <div id="wrong">&#9888;WRONG!</div>
 </body>
-
-<script>
-  let submitForm = document.querySelector("form");
-  submitForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    let station = event.target["station"].value;
-    let svgDoc = document.getElementById("subway").contentDocument;
-    if (station != "") {
-      if (svgDoc.getElementById(station) != null) {
-        svgDoc.getElementById(station).setAttribute("visibility", "visible");
-      }
-      else {
-        let wrong = document.getElementById("wrong")
-        console.log(station)
-        wrong.setAttribute("style", "display: inline-block;");
-        setTimeout(function () { wrong.setAttribute("style", "display: none;"); }, 2000);
-      }
-    }
-
-    submitForm.reset();
-  })
-</script>
-
+<script type="text/javascript" src="script.js"></script>
 </html>
