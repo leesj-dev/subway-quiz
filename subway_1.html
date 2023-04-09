@@ -19,8 +19,9 @@
       line-height: 160%;
     }
 
-    h1 { font-size: 30px; }
-
+    h1 {
+      font-size: 30px;
+    }
 
     #wrong {
       background-color: tomato;
@@ -42,6 +43,7 @@
       -webkit-animation-iteration-count: 2;
       -webkit-animation-fill-mode: forwards;
     }
+
     @keyframes appear {
       0% { transform: scale(0) }
       40% { transform: scale(1) }
@@ -61,7 +63,7 @@
 
 <script>
   let submitForm = document.querySelector("form");
-  submitForm.addEventListener("submit", function(event) {
+  submitForm.addEventListener("submit", function (event) {
     event.preventDefault();
     let station = event.target["station"].value;
     let svgDoc = document.getElementById("subway").contentDocument;
@@ -69,11 +71,12 @@
       svgDoc.getElementById(station).setAttribute("visibility", "visible");
     }
     else {
-      let wrong =  document.getElementById("wrong")
+      let wrong = document.getElementById("wrong")
       wrong.setAttribute("style", "display: inline-block;");
-      setTimeout(function(){ wrong.setAttribute("style", "display: none;"); }, 2000);
+      setTimeout(function () { wrong.setAttribute("style", "display: none;"); }, 2000);
     }
     submitForm.reset();
   })
 </script>
+
 </html>
