@@ -76,7 +76,8 @@ input {
   letter-spacing: .2rem;
 }
 
-#time #questions {
+#main,
+#questions {
   display: flex;
   justify-content: center;
 }
@@ -130,7 +131,7 @@ input {
 }
 
 @media screen and (min-width: 1952px) {
-  #time {
+  #main {
     flex-direction: row;
     justify-content: center;
   }
@@ -141,16 +142,16 @@ input {
   }
 
   object {
-    max-height: calc(100vh - 250px);
+    max-height: calc(100vh - 320px);
   }
 }
 
 @media screen and (max-width: 1951px) {
-  #time {
+  #main {
     flex-direction: column;
   }
 
   object {
-    max-height: calc(100vh - 400px);
+    max-height: calc(100vh - 450px);
   }
 }
