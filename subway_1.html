@@ -8,21 +8,17 @@
 
 <body>
   <h1>부산 지하철 퀴즈</h1>
-  <object id="subway" data="map.svg" type="image/svg+xml" width="100%"></object>
+  <object id="map" data="map.svg" type="image/svg+xml" width="100%"></object>
   <form style="display: inline;">
-    <select name="line" style="height: 42px; display: none;">
-      <option value="none">호선명</option>
-      <option value="1호선">1호선</option>
-      <option value="2호선">2호선</option>
-      <option value="3호선">3호선</option>
-      <option value="4호선">4호선</option>
-      <option value="부산김해경전철">부산김해경전철</option>
-      <option value="동해선">동해선</option>
+    <select id="line" name="line" style="display: none;">
+      <option value="disabled" selected>호선명</option>
     </select>
-    <input name="station" type="text" placeholder="역명을 입력하세요" style="height: 37px;" />
-    <button name="submit" type="submit" style="height: 42px;">제출</button>
+    <input id="station" name="station" type="text" placeholder="역명을 입력하세요" />
+    <button id="submit" name="submit" type="submit">제출</button>
   </form>
-  <div id="wrong">&#9888;WRONG!</div>
+  <div id="wrong">&#9989; 정답</div>
+  <div id="wrong">&#10060; 오답</div>
+  <div id="duplicate">&#9888; 이미 제출함</div>
 </body>
 <script type="text/javascript" src="script.js"></script>
 </html>

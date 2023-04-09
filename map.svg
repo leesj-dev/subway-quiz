@@ -261,488 +261,490 @@
             </g>
         </g>
     </g>
-    <g id="라벨_동해선" name="동해선" shape-rendering="geometricPrecision">
+    <g id="라벨_동해선" shape-rendering="geometricPrecision">
         <g shape-rendering="geometricPrecision">
-            <text id="거제해맞이" visibility="hidden" font-size="26" font-weight="bold" letter-spacing="-1" transform="matrix(1 0 0 1 1846.6309 1636.7926)">거제해맞이</text>
-        </g>
-        <g id="부전_00000042735481027544454960000010680040762957539205_" shape-rendering="geometricPrecision">
-            <text id="부전" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1911.011 1799.3103)">부전</text>
-        </g>
-        <g id="동래_00000160176998266384896960000006473393678967647166_" shape-rendering="geometricPrecision">
-            <text id="동래_동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2184.1226 1379.145)">동래</text>
+            <text id="거제해맞이" class="동해선" visibility="hidden" font-size="26" font-weight="bold" letter-spacing="-1" transform="matrix(1 0 0 1 1846.6309 1636.7926)">거제해맞이</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="안락_동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2333.1179 1379.145)">안락</text>
+            <text id="부전" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1911.011 1799.3103)">부전</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부산원동" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2461.1782 1379.145)">부산원동</text>
+            <text id="동래_동해선" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2184.1226 1379.145)">동래</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="재송" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2634.7825 1379.1453)">재송</text>
+            <text id="안락_동해선" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2333.1179 1379.145)">안락</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="센텀" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2784.1719 1379.1456)">센텀</text>
+            <text id="부산원동" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2461.1782 1379.145)">부산원동</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="신해운대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3103.9995 1316.3948)">신해운대</text>
+            <text id="재송" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2634.7825 1379.1453)">재송</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="송정" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3148.832 1241.7467)">송정</text>
+            <text id="센텀" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2784.1719 1379.1456)">센텀</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="오시리아" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3767 1170.8726)">오시리아</text>
+            <text id="신해운대" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3103.9995 1316.3948)">신해운대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="기장" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3767 1103.1108)">기장</text>
+            <text id="송정" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3148.832 1241.7467)">송정</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="일광" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 1035.3489)">일광</text>
+            <text id="오시리아" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3767 1170.8726)">오시리아</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="좌천_동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3762 967.5864)">좌천</text>
+            <text id="기장" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3767 1103.1108)">기장</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="월내" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3767 899.8243)">월내</text>
+            <text id="일광" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 1035.3489)">일광</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="서생" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 832.063)">서생</text>
+            <text id="좌천_동해선" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3762 967.5864)">좌천</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="남창" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3762 764.3005)">남창</text>
+            <text id="월내" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3767 899.8243)">월내</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="망양" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3762 696.5385)">망양</text>
+            <text id="서생" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 832.063)">서생</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="덕하" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 628.7768)">덕하</text>
+            <text id="남창" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3762 764.3005)">남창</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="개운포" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 561.0147)">개운포</text>
+            <text id="망양" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3762 696.5385)">망양</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="태화강" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 496.3005)">태화강</text>
+            <text id="덕하" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 628.7768)">덕하</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="개운포" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 561.0147)">개운포</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="태화강" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3158.3765 496.3005)">태화강</text>
         </g>
     </g>
-    <g id="라벨_부산김해경전철" name="부산김해경전철" shape-rendering="geometricPrecision">
+    <g id="라벨_부산김해경전철" shape-rendering="geometricPrecision">
         <g shape-rendering="geometricPrecision">
-            <text id="등구" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 884.0045 1566.5557)">등구</text>
+            <text id="등구" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 884.0045 1566.5557)">등구</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="평강" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 870.3834 1355.0625)">평강</text>
+            <text id="평강" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 870.3834 1355.0625)">평강</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="대사" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 884.5563 1263.8037)">대사</text>
+            <text id="대사" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 884.5563 1263.8037)">대사</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="불암" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 771.8737 1218.2772)">불암</text>
+            <text id="불암" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 771.8737 1218.2772)">불암</text>
         </g>
         <g shape-rendering="geometricPrecision" visibility="hidden">
-            <text id="지내" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 698.7365 1209.6307)">지내</text>
+            <text id="지내" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 698.7365 1209.6307)">지내</text>
         </g>
         <g shape-rendering="geometricPrecision" visibility="hidden">
-            <text id="김해대학" visibility="hidden" transform="matrix(1 0 0 1 586.2049 1217.7755)">
+            <text id="김해대학" class="부산김해경전철" visibility="hidden" transform="matrix(1 0 0 1 586.2049 1217.7755)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">김해</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="0" y="31.2">대학</tspan>
             </text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="김해시청" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 1064.1807)">김해시청</text>
+            <text id="김해시청" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 1064.1807)">김해시청</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부원" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 998.5654)">부원</text>
+            <text id="부원" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 998.5654)">부원</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="봉황" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 930.7001)">봉황</text>
+            <text id="봉황" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 930.7001)">봉황</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="수로왕릉" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 864.3349)">수로왕릉</text>
+            <text id="수로왕릉" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 864.3349)">수로왕릉</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="박물관" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 797.9687)">박물관</text>
+            <text id="박물관" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 797.9687)">박물관</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="연지공원" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 731.6035)">연지공원</text>
+            <text id="연지공원" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 731.6035)">연지공원</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="장신대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 662.9882)">장신대</text>
+            <text id="장신대" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 662.9882)">장신대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="가야대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 605.2297)">가야대</text>
+            <text id="가야대" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 609.7175 605.2297)">가야대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="덕두" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 884.0045 1698.0771)">덕두</text>
+            <text id="덕두" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 884.0045 1698.0771)">덕두</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="공항" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 912.06 1849.8616)">공항</text>
+            <text id="공항" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 912.06 1849.8616)">공항</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="서부산유통지구" visibility="hidden" transform="matrix(1 0 0 1 1009.292 1943.1748)">
+            <text id="서부산유통지구" class="부산김해경전철" visibility="hidden" transform="matrix(1 0 0 1 1009.292 1943.1748)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">서부산</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="-22.62" y="31.2">유통지구</tspan>
             </text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="괘법르네시떼" visibility="hidden" transform="matrix(1 0 0 1 1225.7321 1918.7568)">
+            <text id="괘법르네시떼" class="부산김해경전철" visibility="hidden" transform="matrix(1 0 0 1 1225.7321 1918.7568)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">괘법</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="0" y="31.2">르네시떼</tspan>
             </text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="인제대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 620.9602 1128.8552)">인제대</text>
+            <text id="인제대" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 620.9602 1128.8552)">인제대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="지내" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 698.7365 1209.6307)">지내</text>
+            <text id="지내" class="부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 698.7365 1209.6307)">지내</text>
         </g>
         <g shape-rendering="geometricPrecision" >
-            <text id="김해대학" visibility="hidden" transform="matrix(1 0 0 1 586.2049 1217.7755)">
+            <text id="김해대학" class="부산김해경전철" visibility="hidden" transform="matrix(1 0 0 1 586.2049 1217.7755)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">김해</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="0" y="31.2">대학</tspan>
             </text>
         </g>
     </g>
-    <g id="라벨_4호선" name="4호선" shape-rendering="geometricPrecision">
+    <g id="라벨_4호선" shape-rendering="geometricPrecision">
         <g shape-rendering="geometricPrecision">
-            <text id="수안" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2146.8408 1276)">수안</text>
+            <text id="수안" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2146.8408 1276)">수안</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="낙민" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2261.1951 1276)">낙민</text>
+            <text id="낙민" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2261.1951 1276)">낙민</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="충렬사" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2361.6306 1276)">충렬사</text>
+            <text id="충렬사" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2361.6306 1276)">충렬사</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="명장" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2486.9348 1275.5214)">명장</text>
+            <text id="명장" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2486.9348 1275.5214)">명장</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="서동" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2602.9956 1276)">서동</text>
+            <text id="서동" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2602.9956 1276)">서동</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="금사" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2736.1909 1226.5127)">금사</text>
+            <text id="금사" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2736.1909 1226.5127)">금사</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="반여농산물시장" visibility="hidden" transform="matrix(1 0 0 1 2804.6887 1110.3643)">
+            <text id="반여농산물시장" class="4호선" visibility="hidden" transform="matrix(1 0 0 1 2804.6887 1110.3643)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">반여</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="0" y="31.2">농산물시장</tspan>
             </text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="석대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 1010.3583)">석대</text>
+            <text id="석대" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 1010.3583)">석대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="영산대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 905.3242)">영산대</text>
+            <text id="영산대" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 905.3242)">영산대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="윗반송" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 801.9208)">윗반송</text>
+            <text id="윗반송" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 801.9208)">윗반송</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="고촌" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 699.8124)">고촌</text>
+            <text id="고촌" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 699.8124)">고촌</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="안평" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 605.2297)">안평</text>
+            <text id="안평" class="4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2804.6887 605.2297)">안평</text>
         </g>
 
     </g>
-    <g id="라벨_3호선" name="3호선" shape-rendering="geometricPrecision">
+    <g id="라벨_3호선" shape-rendering="geometricPrecision">
         <g shape-rendering="geometricPrecision">
-            <text id="사직" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1816.6184 1415.2551)">사직</text>
+            <text id="사직" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1816.6184 1415.2551)">사직</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="물만골" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2209.9272 1488.4746)">물만골</text>
+            <text id="물만골" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2209.9272 1488.4746)">물만골</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="배산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2418.6519 1488.4746)">배산</text>
+            <text id="배산" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2418.6519 1488.4746)">배산</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="망미" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2602.1929 1488.4736)">망미</text>
+            <text id="망미" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2602.1929 1488.4736)">망미</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="만덕" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1715.1232 1274.876)">만덕</text>
+            <text id="만덕" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1715.1232 1274.876)">만덕</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="남산정" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1556.4191 1274.876)">남산정</text>
+            <text id="남산정" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1556.4191 1274.876)">남산정</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="숙등" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1422.0553 1274.876)">숙등</text>
+            <text id="숙등" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1422.0553 1274.876)">숙등</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="종합운동장" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1785.2902 1465.7245)">종합운동장</text>
+            <text id="종합운동장" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1785.2902 1465.7245)">종합운동장</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="거제" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1906.0105 1494.076)">거제</text>
+            <text id="체육공원" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 999.0162 1327.8555)">체육공원</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="덕천" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1276.376)">덕천</text>
+            <text id="강서구청" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 994.8888 1227.0811)">강서구청</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="대저" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 873.3232 1431.7061)">대저</text>
-        </g>
-        <g shape-rendering="geometricPrecision">
-            <text id="수영" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2810.4722 1646.0557)">수영</text>
-        </g>
-        <g shape-rendering="geometricPrecision">
-            <text id="미남" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1791.0389 1342.2578)">미남</text>
-        </g>
-        <g shape-rendering="geometricPrecision">
-            <text id="체육공원" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 999.0162 1327.8555)">체육공원</text>
-        </g>
-        <g shape-rendering="geometricPrecision">
-            <text id="강서구청" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 994.8888 1227.0811)">강서구청</text>
-        </g>
-        <g shape-rendering="geometricPrecision">
-            <text id="구포" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1162.7789 1274.458)">구포</text>
+            <text id="구포" class="3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1162.7789 1274.458)">구포</text>
         </g>
     </g>
-    <g id="라벨_2호선" name="2호선"  shape-rendering="geometricPrecision">
+    <g id="라벨_2호선" shape-rendering="geometricPrecision">
         <g shape-rendering="geometricPrecision">
-            <text id="구명" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1338.3232)">구명</text>
+            <text id="구명" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1338.3232)">구명</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="수정" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1177.123)">수정</text>
+            <text id="수정" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1177.123)">수정</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="화명" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1113.2041)">화명</text>
+            <text id="화명" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1113.2041)">화명</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="율리" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1048.2139)">율리</text>
+            <text id="율리" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1048.2139)">율리</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="동원" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 984.1142)">동원</text>
+            <text id="동원" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 984.1142)">동원</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="금곡" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 919.0908)">금곡</text>
+            <text id="금곡" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 919.0908)">금곡</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="호포" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 855.6074)">호포</text>
+            <text id="호포" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 855.6074)">호포</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="증산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 792.248)">증산</text>
+            <text id="증산" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 792.248)">증산</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부산대양산캠퍼스" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 727.7079)">부산대양산캠퍼스</text>
+            <text id="부산대양산캠퍼스" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 727.7079)">부산대양산캠퍼스</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="남양산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 663.9365)">남양산</text>
+            <text id="남양산" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 663.9365)">남양산</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="양산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 605.2297)">양산</text>
+            <text id="양산" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 605.2297)">양산</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="구남" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1413.9229)">구남</text>
+            <text id="구남" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1413.9229)">구남</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="모라" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1494.1123)">모라</text>
+            <text id="모라" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1494.1123)">모라</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="모덕" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1575.8037)">모덕</text>
+            <text id="모덕" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1575.8037)">모덕</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="덕포" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1657.1201)">덕포</text>
+            <text id="덕포" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1657.1201)">덕포</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="감전" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1349.9381 1835.709)">감전</text>
+            <text id="감전" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1349.9381 1835.709)">감전</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="주례" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1419.6583 1885.0282)">주례</text>
+            <text id="주례" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1419.6583 1885.0282)">주례</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="냉정" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1504.777 1891.5145)">냉정</text>
+            <text id="냉정" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1504.777 1891.5145)">냉정</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="개금" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1609.8077 1891.5145)">개금</text>
+            <text id="개금" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1609.8077 1891.5145)">개금</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="동의대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1699.234 1891.5145)">동의대</text>
+            <text id="동의대" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1699.234 1891.5145)">동의대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="가야" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1812.6686 1891.5145)">가야</text>
+            <text id="가야" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1812.6686 1891.5145)">가야</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부암" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1921.2135 1891.5145)">부암</text>
+            <text id="부암" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1921.2135 1891.5145)">부암</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="전포" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2178.25 1949.8896)">전포</text>
+            <text id="전포" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2178.25 1949.8896)">전포</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="문현" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2282.7329 2212.2725)">문현</text>
+            <text id="문현" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2282.7329 2212.2725)">문현</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="지게골" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2385.6055 2279.5886)">지게골</text>
+            <text id="지게골" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2385.6055 2279.5886)">지게골</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="못골" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2520.5532 2280.5886)">못골</text>
+            <text id="못골" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2520.5532 2280.5886)">못골</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="대연" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2629.2227 2258.8386)">대연</text>
+            <text id="대연" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2629.2227 2258.8386)">대연</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="경성대·부경대" visibility="hidden" transform="matrix(1 0 0 1 2682.885 2146.9968)">
+            <text id="경성대·부경대" class="2호선" visibility="hidden" transform="matrix(1 0 0 1 2682.885 2146.9968)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">경성대·</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="0" y="31.2">부경대</tspan>
             </text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="국제금융센터·부산은행" visibility="hidden" transform="matrix(1 0 0 1 2240.6992 2097.0068)">
+            <text id="국제금융센터·부산은행" class="2호선" visibility="hidden" transform="matrix(1 0 0 1 2240.6992 2097.0068)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">국제금융센터·</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="0" y="31.2">부산은행</tspan>
             </text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="남천" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2726.218 2042.873)">남천</text>
+            <text id="남천" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2726.218 2042.873)">남천</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="금련산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2704.6663 1914.5518)">금련산</text>
+            <text id="금련산" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2704.6663 1914.5518)">금련산</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="광안" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2725.0461 1783.5996)">광안</text>
+            <text id="광안" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2725.0461 1783.5996)">광안</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="민락" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2810.7793 1520.0234)">민락</text>
+            <text id="민락" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2810.7793 1520.0234)">민락</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="벡스코" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2943.7913 1319.9537)">벡스코</text>
+            <text id="동백" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3101.0081 1403.2147)">동백</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="동백" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3101.0081 1403.2147)">동백</text>
-        </g>
-        <g shape-rendering="geometricPrecision">
-            <text id="센텀시티" visibility="hidden" transform="matrix(1 0 0 1 2867.5183 1433.5077)">
+            <text id="센텀시티" class="2호선" visibility="hidden" transform="matrix(1 0 0 1 2867.5183 1433.5077)">
                 <tspan font-size="26" letter-spacing="-1" x="0" y="0">센텀</tspan>
                 <tspan font-size="26" letter-spacing="-1" x="0" y="31.2">시티</tspan>
             </text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="해운대" visibility="hidden" font-size="26" letter-spacing="-1.019" transform="matrix(0.9809 0 0 1 3228.4578 1403.2156)">해운대</text>
+            <text id="해운대" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1.019" transform="matrix(0.9809 0 0 1 3228.4578 1403.2156)">해운대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="중동" visibility="hidden" font-size="26" letter-spacing="-1.019" transform="matrix(0.9808 0.0195 -0.0191 0.9998 3381.3389 1337.8365)">중동</text>
+            <text id="중동" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1.019" transform="matrix(0.9808 0.0195 -0.0191 0.9998 3381.3389 1337.8365)">중동</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="장산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3429.885 1270.5121)">장산</text>
-        </g>
-        <g shape-rendering="geometricPrecision">
-            <text id="사상" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1322.6881 1743.0146)">사상</text>
+            <text id="장산" class="2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 3429.885 1270.5121)">장산</text>
         </g>
     </g>
-    <g id="라벨_1호선" name="1호선" shape-rendering="geometricPrecision">
+    <g id="라벨_1호선" shape-rendering="geometricPrecision">
         <g shape-rendering="geometricPrecision">
-            <text id="자갈치" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1960.0916 2516.6409)">자갈치</text>
+            <text id="자갈치" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1960.0916 2516.6409)">자갈치</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="동대신" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1814.1913 2559.9353)">동대신</text>
+            <text id="동대신" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1814.1913 2559.9353)">동대신</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="시청" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2061.9038 1579.9229)">시청</text>
+            <text id="시청" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2061.9038 1579.9229)">시청</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="온천장" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1958.8916 1101.6377)">온천장</text>
+            <text id="온천장" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1958.8916 1101.6377)">온천장</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="명륜" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.0317 1175.2295)">명륜</text>
+            <text id="명륜" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.0317 1175.2295)">명륜</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부산대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1959.8794 1030.0205)">부산대</text>
+            <text id="부산대" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1959.8794 1030.0205)">부산대</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="장전" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.4995 956.1181)">장전</text>
+            <text id="장전" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.4995 956.1181)">장전</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="구서" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.4995 885.9716)">구서</text>
+            <text id="구서" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.4995 885.9716)">구서</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="두실" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.4995 816.3232)">두실</text>
+            <text id="두실" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1982.4995 816.3232)">두실</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="남산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1981.4854 741.1679)">남산</text>
+            <text id="남산" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1981.4854 741.1679)">남산</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="범어사" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1958.8657 669.2626)">범어사</text>
+            <text id="범어사" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1958.8657 669.2626)">범어사</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="노포" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1978.5156 605.2297)">노포</text>
+            <text id="노포" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1978.5156 605.2297)">노포</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="범내골" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1954.0804 1994.0684)">범내골</text>
+            <text id="범내골" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1954.0804 1994.0684)">범내골</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="범일" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1977.1678 2059.1753)">범일</text>
+            <text id="범일" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1977.1678 2059.1753)">범일</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="좌천" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1977.1678 2121.7847)">좌천</text>
+            <text id="좌천" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1977.1678 2121.7847)">좌천</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부산진" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1954.5477 2187.3635)">부산진</text>
+            <text id="부산진" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1954.5477 2187.3635)">부산진</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="초량" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1976.5179 2250.7529)">초량</text>
+            <text id="초량" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1976.5179 2250.7529)">초량</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부산역" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1954.5481 2316.9792)">부산역</text>
+            <text id="부산역" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1954.5481 2316.9792)">부산역</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="중앙" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1966.7877 2372.8311)">중앙</text>
+            <text id="중앙" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1966.7877 2372.8311)">중앙</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="남포" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1937.5944 2422.8931)">남포</text>
+            <text id="남포" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1937.5944 2422.8931)">남포</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="토성" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1849.204 2483.4351)">토성</text>
+            <text id="토성" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1849.204 2483.4351)">토성</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="서대신" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1734.9275 2489.9695)">서대신</text>
+            <text id="서대신" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1734.9275 2489.9695)">서대신</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="대티" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1666.1969 2489.9695)">대티</text>
+            <text id="대티" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1666.1969 2489.9695)">대티</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="괴정" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1598.105 2489.9695)">괴정</text>
+            <text id="괴정" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1598.105 2489.9695)">괴정</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="사하" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1530.4059 2489.9697)">사하</text>
+            <text id="사하" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1530.4059 2489.9697)">사하</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="하단" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1368.9844 2514.0913)">하단</text>
+            <text id="하단" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1368.9844 2514.0913)">하단</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="동매" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1265.3173 2608.4253)">동매</text>
+            <text id="동매" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1265.3173 2608.4253)">동매</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="장림" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1238.6503 2674.0916)">장림</text>
+            <text id="장림" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1238.6503 2674.0916)">장림</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="신장림" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1208.995 2745.2583)">신장림</text>
+            <text id="신장림" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1208.995 2745.2583)">신장림</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="낫개" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1231.6155 2811.7581)">낫개</text>
+            <text id="낫개" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1231.6155 2811.7581)">낫개</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="다대포항" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1185.6477 2874.0913)">다대포항</text>
+            <text id="다대포항" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1185.6477 2874.0913)">다대포항</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="다대포해수욕장" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1105.2715 2941.4243)">다대포해수욕장</text>
+            <text id="다대포해수욕장" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1105.2715 2941.4243)">다대포해수욕장</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="당리" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1449.5076 2489.9702)">당리</text>
+            <text id="당리" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1449.5076 2489.9702)">당리</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="신평" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1310.9729 2555.0916)">신평</text>
+            <text id="신평" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1310.9729 2555.0916)">신평</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="교대" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2067.4043 1380.7463)">교대</text>
+            <text id="양정" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2061.9038 1690.1572)">양정</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="양정" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2061.9038 1690.1572)">양정</text>
+            <text id="부전" class="1호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2061.9038 1799.71)">부전</text>
+        </g>
+    </g>
+    <g id="라벨_환승역" shape-rendering="gemoetricPrecision">
+        <g shape-rendering="geometricPrecision">
+            <text id="덕천" class="2호선 3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1319.1874 1276.376)">덕천</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부전" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2061.9038 1799.71)">부전</text>
+            <text id="대저" class="3호선 부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 873.3232 1431.7061)">대저</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="동래" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2064.4038 1276)">동래</text>
+            <text id="수영" class="2호선 3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2810.4722 1646.0557)">수영</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="서면" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2064.4041 1895.0146)">서면</text>
+            <text id="미남" class="3호선 4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1791.0389 1342.2578)">미남</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="연산" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2067.4041 1494.0765)">연산</text>
+            <text id="벡스코"  class="2호선 동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2943.7913 1319.9537)">벡스코</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="사상" class="2호선 부산김해경전철" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1322.6881 1743.0146)">사상</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="교대" class="1호선 동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2067.4043 1380.7463)">교대</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="동래" class="1호선 4호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2064.4038 1276)">동래</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="서면" class="1호선 2호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2064.4041 1895.0146)">서면</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="연산" class="1호선 3호선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2067.4041 1494.0765)">연산</text>
+        </g>
+        <g shape-rendering="geometricPrecision">
+            <text id="거제" class="3호선 동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1906.0105 1494.076)">거제</text>
         </g>
     </g>
     <g id="환승역" shape-rendering="geometricPrecision">
