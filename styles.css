@@ -11,21 +11,41 @@
     letter-spacing: -0.1px;
     word-break: keep-all;
     line-height: 160%;
+    border-radius: 5px;
+    border-width: 1px;
   }
 
   h1 {
-    font-size: 30px;
+    text-align: center;
+    letter-spacing: .2rem;
+    word-spacing: .1rem;
+    font-size: 50px;
+    margin-bottom: 0px;
   }
 
-  #wrong {
-    background-color: tomato;
+  object {
+    max-width: 100%;
+  }
+
+  select, button, input {
+    height: 42px;
+    padding: 0px 10px;
+    margin: 3px;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .popup {
     display: none;
     text-align: center;
     vertical-align: middle;
-    line-height: 27px;
-    height: 27px;
+    position: absolute;
+    line-height: 29px;
+    height: 29px;
     padding: 7px 14px;
-    margin: 0px 0px 6px 3px;
+    margin: 3px 0px 3px 6px;
     animation: appear;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -38,7 +58,42 @@
     -webkit-animation-fill-mode: forwards;
   }
 
+  #wrong {
+    background-color: tomato;
+  }
+
+  #duplicate {
+    background-color: yellow;
+  }
+
+  #correct {
+    background-color: greenyellow;
+  }
+
   @keyframes appear {
     0% { transform: scale(0) }
     40% { transform: scale(1) }
+  }
+
+  @media screen and (min-width: 1952px) {
+    .container {
+      flex-direction: row;
+      justify-content: center;
+    }
+    #typeArea {
+      margin-top: 40vh;
+      margin-left: 2vh;
+    }
+    object {
+      max-height: calc(100vh - 130px);
+    }
+  }
+
+  @media screen and (max-width: 1951px) {
+    .container {
+      flex-direction: column;
+    }
+    object {
+      max-height: calc(100vh - 200px);
+    }
   }
