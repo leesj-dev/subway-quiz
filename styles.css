@@ -99,6 +99,10 @@ input {
   text-align: center;
 }
 
+#answer {
+  display: inline-block;
+}
+
 #submit {
   background-color: #bbbbbb;
 }
