@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Pretendard';
-  font-weight: regular;
+  font-weight: 400;
   font-display: swap;
   src: local('Pretendard Regular'), url('/fonts/Pretendard-Regular.subset.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Pretendard';
-  font-weight: bold;
+  font-weight: 700;
   font-display: swap;
   src: local('Pretendard Bold'), url('/fonts/Pretendard-Bold.subset.woff2') format('woff2');
 }
@@ -25,10 +25,12 @@
 
 h1 {
   text-align: center;
-  letter-spacing: .2rem;
-  word-spacing: .1rem;
-  font-size: 50px;
-  margin-bottom: 0px;
+  font-weight: 400;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 45px;
+  line-height: 120%;
 }
 
 object {
@@ -64,6 +66,11 @@ input {
   -webkit-animation-fill-mode: forwards;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 #complete {
   display: none;
   background-color: darkblue;
@@ -71,19 +78,21 @@ input {
   border-width: 0px;
   text-align: center;
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 700;
   color: aquamarine;
   letter-spacing: .2rem;
 }
 
-#main,
 #questions {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 #questions span {
   font-size: 30px;
+}
+
+#score {
+  line-height: 100%;
 }
 
 #display {
@@ -94,6 +103,10 @@ input {
 #timer {
   text-align: center;
   margin: 0px 3px 10px 5px;
+}
+
+#main {
+  margin-left: 30px;
 }
 
 #type-area {
@@ -122,36 +135,106 @@ input {
 
 @keyframes appear {
   0% {
-    transform: scale(0)
+    transform: scale(0);
   }
 
   40% {
-    transform: scale(1)
+    transform: scale(1);
   }
 }
 
-@media screen and (min-width: 1952px) {
+@media (max-width: 1300px) {
+  #wrapper {
+    flex-direction: column;
+    margin: 0px 2vw;
+  }
+
+  #main {
+    flex-direction: column;
+  }
+
+  #time {
+    flex-direction: row;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+
+  #questions {
+    margin-top: 20px;
+    margin-left: 7vw;
+  }
+
+  #display {
+    line-height: 120%;
+  }
+
+  object {
+    max-height: calc(100vh - 100px);
+  }
+}
+
+@media (min-width: 1301px) and (max-width: 2681px) {
+  #left-panel {
+    width: 220px;
+    max-width: 220px;
+  }
+
+  #wrapper {
+    flex-direction: row;
+    margin: 0px 30px;
+  }
+
+  #main {
+    flex-direction: column;
+  }
+
+  #time {
+    flex-direction: column;
+    margin-top: 23vh;
+    margin-bottom: 3vh;
+  }
+
+  #questions {
+    margin-top: 30px;
+  }
+
+  object {
+    max-height: calc(100vh - 150px);
+  }
+}
+
+@media (min-width: 2682px) {
+  #left-panel {
+    width: 220px;
+    max-width: 220px;
+  }
+
+  #wrapper {
+    flex-direction: row;
+    margin: 0px 30px;
+  }
+
   #main {
     flex-direction: row;
     justify-content: center;
   }
 
+  #time {
+    flex-direction: column;
+    margin-top: 23vh;
+    margin-bottom: 3vh;
+  }
+
+  #questions {
+    margin-top: 30px;
+  }
+
   #type-area {
-    margin-top: 40vh;
+    margin-top: 45vh;
     margin-left: 2vh;
   }
 
   object {
-    max-height: calc(100vh - 320px);
-  }
-}
-
-@media screen and (max-width: 1951px) {
-  #main {
-    flex-direction: column;
-  }
-
-  object {
-    max-height: calc(100vh - 450px);
+    max-height: 100vh;
   }
 }
