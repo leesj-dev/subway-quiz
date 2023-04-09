@@ -7,46 +7,51 @@
 </head>
 
 <body>
-  <h1>부산 도시철도 QUIZ</h1>
-  <div class="container" id="time">
-    <div class="item">
-      <div id="display">10 : 00</div>
-      <form id="timer">
-        <input type="button" value="START" id="start" onclick="startTimer(600)" />
-        <input type="button" value="RESET" id="reset" onclick="resetTimer()" />
-      </form>
+  <div class="container" id="wrapper">
+    <div id="left-panel">
+      <h1>부산 도시철도 QUIZ</h1>
+      <div class="container" id="time">
+        <div class="item">
+          <div id="display">10 : 00</div>
+          <form id="timer">
+            <input type="button" value="START" id="start" onclick="startTimer(600)" />
+            <input type="button" value="RESET" id="reset" onclick="resetTimer()" />
+          </form>
+        </div>
+        <div class="item" id="questions">
+          <div id="score">SCORE</div>
+          <span id="solved" style="font-weight: bold;">0</span>
+          <span id="slash">&nbsp;/&nbsp;</span>
+          <span id="total">148</span>
+        </div>
+      </div>
+      <div id="complete">&nbsp;COMPLETE</div>
     </div>
-    <div class="item" id="questions">
-      <span id="solved" style="font-weight: bold;">0</span>
-      <span id="slash">&nbsp;/&nbsp;</span>
-      <span id="total">148</span>
+    <div class="container" id="main">
+      <div class="item">
+        <object id="map" data="map.svg" type="image/svg+xml" width="100%"></object>
+      </div>
+      <div class="item" id="type-area">
+        <form id="answer">
+          <select id="line" name="line" onchange="optionCheck(this.value);" disabled>
+            <option id="default-option" value="">호선명</option>
+            <option value="1호선">1호선</option>
+            <option value="2호선">2호선</option>
+            <option value="3호선">3호선</option>
+            <option value="4호선">4호선</option>
+            <option value="부산김해경전철">부산김해경전철</option>
+            <option value="동해선">동해선</option>
+          </select>
+          <input id="station" name="station" type="text" placeholder="역명을 입력하세요" disabled />
+          <button id="submit" name="submit" type="submit" disabled>제출</button>
+        </form>
+        <div class="popup" id="correct">&#9989; 정답</div>
+        <div class="popup" id="wrong">&#10060; 오답</div>
+        <div class="popup" id="duplicate">&#9888; 이미 제출함</div>
+      </div>
     </div>
-    <div id="complete">&nbsp;COMPLETE</div>
   </div>
-  <hr>
-  <div class="container" id="main">
-    <div class="item">
-      <object id="map" data="map.svg" type="image/svg+xml" width="100%"></object>
-    </div>
-    <div class="item" id="type-area">
-      <form id="answer">
-        <select id="line" name="line" onchange="optionCheck(this.value);" disabled>
-          <option id="default-option" value="">호선명</option>
-          <option value="1호선">1호선</option>
-          <option value="2호선">2호선</option>
-          <option value="3호선">3호선</option>
-          <option value="4호선">4호선</option>
-          <option value="부산김해경전철">부산김해경전철</option>
-          <option value="동해선">동해선</option>
-        </select>
-        <input id="station" name="station" type="text" placeholder="역명을 입력하세요" disabled />
-        <button id="submit" name="submit" type="submit" disabled>제출</button>
-      </form>
-      <div class="popup" id="correct">&#9989; 정답</div>
-      <div class="popup" id="wrong">&#10060; 오답</div>
-      <div class="popup" id="duplicate">&#9888; 이미 제출함</div>
-    </div>
-  </div>
+
 </body>
 
 <script type="text/javascript" src="script.js"></script>
