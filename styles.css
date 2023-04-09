@@ -43,23 +43,6 @@ input {
   margin: 3px;
 }
 
-#complete {
-  display: none;
-  background-color:darkblue;
-  border-radius: 10px;
-  border-width: 0px;
-  text-align: center;
-  font-size: 50px;
-  font-weight: bold;
-  color: aquamarine;
-  letter-spacing: .2rem;
-}
-
-#time #questions {
-  display: flex;
-  justify-content: center;
-}
-
 .popup {
   display: none;
   text-align: center;
@@ -79,6 +62,23 @@ input {
   -webkit-animation-direction: alternate;
   -webkit-animation-iteration-count: 2;
   -webkit-animation-fill-mode: forwards;
+}
+
+#complete {
+  display: none;
+  background-color: darkblue;
+  border-radius: 10px;
+  border-width: 0px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: aquamarine;
+  letter-spacing: .2rem;
+}
+
+#time #questions {
+  display: flex;
+  justify-content: center;
 }
 
 #questions span {
