@@ -266,13 +266,13 @@
             <text id="거제해맞이" class="동해선" visibility="hidden" font-size="26" font-weight="bold" letter-spacing="-1" transform="matrix(1 0 0 1 1846.6309 1636.7926)">거제해맞이</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="부전" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1911.011 1799.3103)">부전</text>
+            <text id="부전_동해선" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 1911.011 1799.3103)">부전</text>
         </g>
         <g shape-rendering="geometricPrecision">
             <text id="동래_동해선" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2184.1226 1379.145)">동래</text>
         </g>
         <g shape-rendering="geometricPrecision">
-            <text id="안락_동해선" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2333.1179 1379.145)">안락</text>
+            <text id="안락" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2333.1179 1379.145)">안락</text>
         </g>
         <g shape-rendering="geometricPrecision">
             <text id="부산원동" class="동해선" visibility="hidden" font-size="26" letter-spacing="-1" transform="matrix(1 0 0 1 2461.1782 1379.145)">부산원동</text>

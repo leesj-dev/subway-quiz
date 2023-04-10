@@ -2,17 +2,21 @@ let solved = 0
 let stations = new Array();
 let timer;
 let min, sec;
+const twoStations = ["동래", "부전", "좌천"];
 
 document.getElementById("answer").addEventListener("submit", function (event) {
     event.preventDefault();
     let line = event.target["line"].value;
     let station = event.target["station"].value;
-    if (station === "경성대부경대" || station === "경성대.부경대") {
-        station = "경성대·부경대";
-    } else if (station === "국제금융센터부산은행" || station === "국제금융센터.부산은행") {
-        station = "국제금융센터·부산은행";
-    }
     if (station != "") { // 빈 form이 아니라면
+        if (station === "경성대부경대" || station === "경성대.부경대") {
+            station = "경성대·부경대";
+        } else if (station === "국제금융센터부산은행" || station === "국제금융센터.부산은행") {
+            station = "국제금융센터·부산은행";
+        }
+        if (line === "동해선" && twoStations.includes(station)) {
+            station = station + "_동해선";
+        }
         let svgElement = document.getElementById("map").contentDocument.getElementById(station);
         // 역명이 존재하고, [호선 옵션이 비활성화되어 있거나 svg에 해당 호선이 존재하는 경우]
         if (svgElement != null && (line === "disabled" || svgElement.classList.contains(line))) {
