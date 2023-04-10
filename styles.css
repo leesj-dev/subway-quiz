@@ -23,26 +23,6 @@
   border-width: 1px;
 }
 
-h1 {
-  text-align: center;
-  font-weight: 400;
-  background-color: aliceblue;
-  padding: 20px;
-  border-radius: 20px;
-  font-size: 45px;
-  line-height: 120%;
-
-  border: 0;
-  outline: 0;
-  border-radius: 16px*20;
-  color: #7889c7;
-  font-weight: bold;
-  box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #a2acd1;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  font-weight: 600;
-}
-
 object {
   max-width: 100%;
 }
@@ -59,6 +39,8 @@ input {
   display: none;
   text-align: center;
   vertical-align: middle;
+  font-weight: bold;
+  color: #61677C;
   position: absolute;
   line-height: 29px;
   height: 29px;
@@ -99,6 +81,12 @@ input {
 
 #questions span {
   font-size: 30px;
+  color: #42454f;
+}
+
+#questions div {
+  font-size: 20px;
+  color: #42454f;
 }
 
 #score {
@@ -107,6 +95,7 @@ input {
 
 #display {
   font-size: 40px;
+  color: #42454f;
   text-align: center;
 }
 
@@ -114,43 +103,6 @@ input {
   text-align: center;
   margin: 0px 3px 10px 5px;
 }
-
-input {
-  border: 0;
-  outline: 0;
-  border-radius: 16px*20;
-  background-color: #EBECF0;
-  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
-  box-sizing: border-box;
-  transition: all 0.2s ease-in-out;
-  appearance: none;
-  -webkit-appearance: none;
-}
-input:focus {
-  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
-}
-
-.button {
-  border: 0;
-  outline: 0;
-  border-radius: 16px*20;
-  background-color: #EBECF0;
-  color: #61677C;
-  font-weight: bold;
-  box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #BABECC;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.button:hover {
-    box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px #BABECC;
-  }
-
-.button:active {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
-  }
-
 
 #main {
   margin-left: 30px;
@@ -194,6 +146,7 @@ input:focus {
   }
 }
 
+/* 미디어 쿼리 */
 @media (max-width: 880px) {
   #wrapper {
     flex-direction: column;
@@ -291,4 +244,69 @@ input:focus {
   object {
     max-height: calc(100vh - 50px);
   }
+}
+
+/* 타이핑 치는 input */
+input {
+  border: 0;
+  outline: 0;
+  background-color: #EBECF0;
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  font-weight: bold;
+  color: #61677C;
+  -webkit-appearance: none;
+}
+
+input:focus {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+}
+
+select {
+  border: 0;
+  outline: 0;
+  color: #61677C;
+  background-color: #EBECF0;
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+/* 버튼 */
+.button, .popup {
+  border: 0;
+  outline: 0;
+  background-color: #EBECF0;
+  color: #61677C;
+  box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #BABECC;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px #BABECC;
+}
+
+.button:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+}
+
+
+/* h1 */
+h1 {
+  text-align: center;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 45px;
+  line-height: 120%;
+  border: 0;
+  outline: 0;
+  color: #7889c7;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #a2acd1;
+  transition: all 0.2s ease-in-out;
 }
