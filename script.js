@@ -57,11 +57,13 @@ function switchButtons(param) {
         document.getElementById("line").disabled = true;
         document.getElementById("station").disabled = true;
         document.getElementById("submit").disabled = true;
+        document.getElementById("start").style.color = "#61677C"
     } else if (param === false) {
         document.getElementById("start").disabled = true;
         document.getElementById("line").disabled = false;
         document.getElementById("station").disabled = false;
         document.getElementById("submit").disabled = false;
+        document.getElementById("start").style.color = "#B1B4C0"
     }
 }
 

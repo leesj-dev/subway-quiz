@@ -31,6 +31,16 @@ h1 {
   border-radius: 20px;
   font-size: 45px;
   line-height: 120%;
+
+  border: 0;
+  outline: 0;
+  border-radius: 16px*20;
+  color: #7889c7;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #a2acd1;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 object {
@@ -105,6 +115,43 @@ input {
   margin: 0px 3px 10px 5px;
 }
 
+input {
+  border: 0;
+  outline: 0;
+  border-radius: 16px*20;
+  background-color: #EBECF0;
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+input:focus {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+}
+
+.button {
+  border: 0;
+  outline: 0;
+  border-radius: 16px*20;
+  background-color: #EBECF0;
+  color: #61677C;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #BABECC;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button:hover {
+    box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px #BABECC;
+  }
+
+.button:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+  }
+
+
 #main {
   margin-left: 30px;
 }
@@ -117,8 +164,12 @@ input {
   display: inline-block;
 }
 
-#submit {
-  background-color: #bbbbbb;
+#line {
+  width: 100px;
+}
+
+#station {
+  width: 170px;
 }
 
 #wrong {
@@ -173,7 +224,7 @@ input {
   }
 }
 
-@media (min-width: 881px) and (max-width: 2681px) {
+@media (min-width: 881px) and (max-width: 2000px) {
   #left-panel {
     width: 220px;
     max-width: 220px;
@@ -203,7 +254,7 @@ input {
   }
 }
 
-@media (min-width: 2682px) {
+@media (min-width: 2001px) {
   #left-panel {
     width: 220px;
     max-width: 220px;
@@ -231,10 +282,13 @@ input {
 
   #type-area {
     margin-top: 45vh;
-    margin-left: 2vh;
+  }
+
+  #map {
+    margin-right: 0px;
   }
 
   object {
-    max-height: 100vh;
+    max-height: calc(100vh - 50px);
   }
 }
