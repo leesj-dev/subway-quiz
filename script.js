@@ -1,6 +1,6 @@
 let timeout;
 let timer;
-let solved;
+let solved = 0;
 let minSetting = 10;
 const twoStations = ["동래", "부전", "좌천"];
 
