@@ -14,8 +14,8 @@
         <div class="item">
           <div id="display">10 : 00</div>
           <form id="timer">
-            <input type="button" value="START" id="start" onclick="startTimer(600)" />
-            <input type="button" value="RESET" id="reset" onclick="resetTimer()" />
+            <input class="button" type="button" value="START" id="start" onclick="startTimer(600)" />
+            <input class="button" type="button" value="RESET" id="reset" onclick="resetTimer()" />
           </form>
         </div>
         <div class="item" id="questions">
@@ -43,11 +43,11 @@
             <option value="동해선">동해선</option>
           </select>
           <input id="station" name="station" type="text" placeholder="역명을 입력하세요" disabled />
-          <button id="submit" name="submit" type="submit" disabled>제출</button>
+          <button class="button" id="submit" name="submit" type="submit" disabled>제출</button>
         </form>
         <div class="popup" id="correct">&#9989; 정답</div>
         <div class="popup" id="wrong">&#10060; 오답</div>
-        <div class="popup" id="duplicate">&#9888; 이미 제출함</div>
+        <div class="popup" id="duplicate">&#9888; 이미 제출</div>
       </div>
     </div>
   </div>
