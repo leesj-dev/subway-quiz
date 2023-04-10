@@ -7,8 +7,10 @@ document.getElementById("answer").addEventListener("submit", function (event) {
     event.preventDefault();
     let line = event.target["line"].value;
     let station = event.target["station"].value;
-    if (station == "경성대부경대" || "경성대.부경대") {
-
+    if (station === "경성대부경대" || station === "경성대.부경대") {
+        station = "경성대·부경대";
+    } else if (station === "국제금융센터부산은행" || station === "국제금융센터.부산은행") {
+        station = "국제금융센터·부산은행";
     }
     if (station != "") { // 빈 form이 아니라면
         let svgElement = document.getElementById("map").contentDocument.getElementById(station);
