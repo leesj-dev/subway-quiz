@@ -58,6 +58,16 @@ input {
   -webkit-animation-fill-mode: forwards;
 }
 
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -136,18 +146,12 @@ input {
   background-color: greenyellow;
 }
 
-@keyframes appear {
-  0% {
-    transform: scale(0);
-  }
-
-  40% {
-    transform: scale(1);
-  }
+#give-up {
+  color: "#B1B4C0";
 }
 
 /* 미디어 쿼리 */
-@media (max-width: 880px) {
+@media (max-width: 1100px) {
   #wrapper {
     flex-direction: column;
     margin: 0px 2vw;
@@ -172,12 +176,16 @@ input {
     line-height: 120%;
   }
 
+  #type-area {
+    margin-bottom: 30px;
+  }
+
   object {
-    max-height: calc(100vh - 100px);
+    max-height: calc(90vh - 150px);
   }
 }
 
-@media (min-width: 881px) and (max-width: 2000px) {
+@media (min-width: 1101px) and (max-width: 2000px) {
   #left-panel {
     width: 220px;
     max-width: 220px;
@@ -194,7 +202,7 @@ input {
 
   #time {
     flex-direction: column;
-    margin-top: 23vh;
+    margin-top: 20vh;
     margin-bottom: 3vh;
   }
 
@@ -225,7 +233,7 @@ input {
 
   #time {
     flex-direction: column;
-    margin-top: 23vh;
+    margin-top: 20vh;
     margin-bottom: 3vh;
   }
 
@@ -234,7 +242,7 @@ input {
   }
 
   #type-area {
-    margin-top: 45vh;
+    margin-top: 42vh;
   }
 
   #map {
@@ -247,7 +255,7 @@ input {
 }
 
 /* 타이핑 치는 input */
-input {
+.type-input {
   border: 0;
   outline: 0;
   background-color: #EBECF0;
@@ -255,12 +263,13 @@ input {
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
   appearance: none;
+  -webkit-appearance: none;
   font-weight: bold;
   color: #61677C;
-  -webkit-appearance: none;
+  padding: 0px 15px;
 }
 
-input:focus {
+.type-input:focus {
   box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
 }
 
@@ -275,7 +284,7 @@ select {
 }
 
 /* 버튼 */
-.button, .popup {
+.button-on, .button-off, .popup {
   border: 0;
   outline: 0;
   background-color: #EBECF0;
@@ -286,14 +295,18 @@ select {
   font-weight: bold;
 }
 
-.button:hover {
+.button-on:hover {
   box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px #BABECC;
 }
 
-.button:active {
+.button-on:active {
   box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
 }
 
+.button-off {
+  color: #B1B4C0;
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+}
 
 /* h1 */
 h1 {

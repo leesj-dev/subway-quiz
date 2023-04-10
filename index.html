@@ -12,10 +12,25 @@
       <h1>부산 도시철도 QUIZ</h1>
       <div class="container" id="time">
         <div class="item">
-          <div id="display">10 : 00</div>
+          <table id="time-control">
+            <tbody>
+              <td>
+                <input class="round-button" type="button" value="−" id="minus" onclick="add(-1);" />
+              </td>
+              <td id="display">
+                <span id="min">10</span>
+                <span>:</span>
+                <span id="sec">00</span>
+              </td>
+              <td>
+                <input class="round-button" type="button" value="+" id="plus" onclick="add(1);" />
+              </td>
+            </tbody>
+          </table>
           <form id="timer">
-            <input class="button" type="button" value="START" id="start" onclick="startTimer()" />
-            <input class="button" type="button" value="RESET" id="reset" onclick="resetTimer()" />
+            <input class="button-on" type="button" value="시작" id="start" onclick="startTimer();" />
+            <input class="button-off" type="button" value="포기" id="give-up" onclick="giveUp();" disabled />
+            <input class="button-off" type="button" value="리셋" id="reset" onclick="resetTimer();" disabled />
           </form>
         </div>
         <div class="item" id="questions">
@@ -23,9 +38,9 @@
           <span id="solved" style="font-weight: bold;">0</span>
           <span id="slash">&nbsp;/&nbsp;</span>
           <span id="total">147</span>
+          <div id="complete">&nbsp;COMPLETE</div>
         </div>
       </div>
-      <div id="complete">&nbsp;COMPLETE</div>
     </div>
     <div class="container" id="main">
       <div class="item">
@@ -42,8 +57,8 @@
             <option value="부산김해경전철">부산김해경전철</option>
             <option value="동해선">동해선</option>
           </select>
-          <input id="station" name="station" type="text" placeholder="역명을 입력하세요" disabled />
-          <button class="button" id="submit" name="submit" type="submit" disabled>제출</button>
+          <input class="type-input" id="station" name="station" type="text" placeholder="역명을 입력하세요" disabled />
+          <button class="button-on" id="submit" name="submit" type="submit" disabled>제출</button>
         </form>
         <div class="popup" id="correct">&#9989; 정답</div>
         <div class="popup" id="wrong">&#10060; 오답</div>
