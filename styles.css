@@ -85,6 +85,8 @@ h1 {
   color: #7889c7;
   font-weight: bold;
   box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #a2acd1;
+  appearance: none;
+  -webkit-appearance: none;
   transition: all 0.2s ease-in-out;
 }
 
@@ -177,6 +179,37 @@ h1 {
   color: "#B1B4C0";
 }
 
+@media (max-width: 540px) {
+  h1 {
+    font-size: 8.2vw;
+    padding: 3.6vw 1.8vw;
+  }
+  input, select, button {
+    height: 7vw;
+    padding: 0vw 2vw;
+    margin: 0.5vw;
+    font-size: 3vw;
+  }
+  #display span {
+    font-size: 7.5vw;
+  }
+  #questions div {
+    font-size: 3.7vw;
+  }
+  #questions span {
+    font-size: 5.5vw;
+  }
+  #display {
+    width: 28vw;
+  }
+  #line {
+    width: 18vw;
+  }
+  #station {
+    width: 30vw;
+  }
+}
+
 /* 미디어 쿼리 */
 @media (max-width: 1340px) {
   #left-panel {
@@ -200,7 +233,7 @@ h1 {
 
   #questions {
     margin-top: 18px;
-    margin-left: 70px;
+    margin-left: 8vw;
   }
 
   #complete {
@@ -312,10 +345,10 @@ h1 {
   outline: 0;
   background-color: #EBECF0;
   box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
-  box-sizing: border-box;
-  transition: all 0.2s ease-in-out;
   appearance: none;
   -webkit-appearance: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
   font-weight: bold;
   color: #61677C;
   padding: 0px 15px;
@@ -331,6 +364,8 @@ select {
   color: #61677C;
   background-color: #EBECF0;
   box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
+  appearance: none;
+  -webkit-appearance: none;
   box-sizing: border-box;
   font-weight: bold;
 }
@@ -345,6 +380,8 @@ select {
   background-color: #EBECF0;
   color: #61677C;
   box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #BABECC;
+  appearance: none;
+  -webkit-appearance: none;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   font-weight: bold;
