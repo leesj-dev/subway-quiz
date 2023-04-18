@@ -198,6 +198,9 @@ h1 {
   #display span {
     font-size: 7.5vw;
   }
+  #questions {
+    margin-top: 7vw !important;
+  }
   #questions div {
     font-size: 3.7vw;
   }
@@ -237,7 +240,7 @@ h1 {
   }
 
   #questions {
-    margin-top: 18px;
+    margin-top: 35px;
     margin-left: 8vw;
   }
 
