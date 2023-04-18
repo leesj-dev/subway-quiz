@@ -184,11 +184,16 @@ h1 {
     font-size: 8.2vw;
     padding: 3.6vw 1.8vw;
   }
-  input, select, button {
+  input, select, button, .popup {
     height: 7vw;
     padding: 0vw 2vw;
     margin: 0.5vw;
     font-size: 3vw;
+  }
+  .popup {
+    position: relative;
+    height: 7vw;
+    margin-left: 1vw;
   }
   #display span {
     font-size: 7.5vw;
@@ -211,7 +216,7 @@ h1 {
 }
 
 /* 미디어 쿼리 */
-@media (max-width: 1340px) {
+@media (max-width: 1240px) {
   #left-panel {
     margin-bottom: 10px;
   }
@@ -254,7 +259,7 @@ h1 {
   }
 }
 
-@media (min-width: 1341px) and (max-width: 2000px) {
+@media (min-width: 1241px) and (max-width: 2000px) {
   #left-panel {
     width: 280px;
     max-width: 280px;
