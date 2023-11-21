@@ -1,7 +1,7 @@
 let timeout;
 let timer;
 let solved = 0;
-let minSetting = 10;
+let minSetting = parseInt(document.getElementById("min").innerText);
 
 document.getElementById("answer").addEventListener("submit", function (event) {
     event.preventDefault();
