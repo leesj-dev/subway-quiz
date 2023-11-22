@@ -184,35 +184,47 @@ h1 {
     font-size: 8.2vw;
     padding: 3.6vw 1.8vw;
   }
-  input, select, button, .popup {
+
+  input,
+  select,
+  button,
+  .popup {
     height: 7vw;
     padding: 0vw 2vw;
     margin: 0.5vw;
     font-size: 3vw;
   }
+
   .popup {
     position: relative;
     height: 7vw;
     margin-left: 1vw;
   }
+
   #display span {
     font-size: 7.5vw;
   }
+
   #questions {
     margin-top: 7vw !important;
   }
+
   #questions div {
     font-size: 3.7vw;
   }
+
   #questions span {
     font-size: 5.5vw;
   }
+
   #display {
     width: 28vw;
   }
+
   #line {
     width: 18vw;
   }
+
   #station {
     width: 30vw;
   }
@@ -220,17 +232,22 @@ h1 {
 
 /* 미디어 쿼리 */
 @media (max-width: 1240px) {
+  h1 {
+    margin: 0px 2vw;
+  }
+
   #left-panel {
     margin-bottom: 10px;
   }
 
   #wrapper {
     flex-direction: column;
-    margin: 0px 2vw;
+    margin: 0px;
   }
 
   #main {
     flex-direction: column;
+    margin-left: 0px;
   }
 
   #time {
@@ -270,7 +287,7 @@ h1 {
 
   #wrapper {
     flex-direction: row;
-    margin: 0px 30px;
+    margin: 0px 0px;
   }
 
   #main {
@@ -292,11 +309,15 @@ h1 {
   }
 
   object {
-    max-height: calc(100vh - 150px);
+    max-height: calc(200vh - 150px);
   }
 
   h1 {
     padding: 40px 20px;
+  }
+
+  #type-area {
+    margin: 0px calc(10vw + 100px);
   }
 }
 
@@ -339,11 +360,15 @@ h1 {
   }
 
   object {
-    max-height: calc(100vh - 50px);
+    max-height: calc(200vh - 150px);
   }
 
   h1 {
     padding: 40px 20px;
+  }
+
+  #type-area {
+    margin: 0px calc(10vw + 100px);
   }
 }
 
