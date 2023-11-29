@@ -6,7 +6,7 @@ let minSettingInitial = minSetting;
 const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.3";
-let inactive;
+let inactive = ((document.getElementById("slider").value) ** 1.5 / 1000).toString();
 
 // 역 표시 체크박스 변경 시
 document.getElementById("check").addEventListener("change", function () {
@@ -22,7 +22,7 @@ document.getElementById("check").addEventListener("change", function () {
 // 투명도 변경 시
 document.getElementById("slider").addEventListener("input", function (event) {
     event.preventDefault();
-    inactive = (event.target.value / 100).toString();
+    inactive = ((event.target.value) ** 1.5 / 1000).toString();
     const lines = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의·중앙선", "경춘선", "공항철도", "김포골드라인", "서해선", "수인·분당선", "신림선", "신분당선", "에버라인", "우이신설선", "의정부경전철", "인천1호선", "인천2호선"]
     let subwayMap = document.getElementById("map").contentDocument;
     try {
@@ -133,7 +133,7 @@ function selectLine(id) {
         // toggle off
         if (opacity === active) {
             // 선택한 동그라미 비활성화
-            document.getElementById(id).style.opacity = inactive;
+            document.getElementById(id).style.opacity = inactiveCircle;
 
             // 모든 호선이 비활성화되면 투명도 active로 초기화
             if ([...circles].every(data => data.style.opacity === inactiveCircle)) {
@@ -222,6 +222,10 @@ function giveUp() {
     let subwayMap = document.getElementById("map").contentDocument;
     let totalLines = lines.map(x => subwayMap.getElementsByClassName(x))
     totalLines.forEach(line => setOpacity(line, active));
+
+    // 환승역들의 opacity를 active로 변경
+    let transfer = subwayMap.getElementsByClassName("transfer");
+    setOpacity(transfer, active);
 
     [...document.getElementsByClassName("clickable-on")].forEach(data => data.classList = ["clickable-off"]);
     document.getElementById("check").disabled = false;
