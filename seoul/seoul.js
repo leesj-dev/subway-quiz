@@ -5,7 +5,7 @@ let minSetting = parseInt(document.getElementById("min").innerText);
 let minSettingInitial = minSetting;
 const twoStations = ["신촌", "양평"];
 const active = "1";
-const inactiveCircle = "0.3";
+const inactiveCircle = "0.4";
 let inactive = ((document.getElementById("slider").value) ** 1.5 / 1000).toString();
 
 // 역 표시 체크박스 변경 시
@@ -50,17 +50,16 @@ document.getElementById("answer").addEventListener("submit", function (event) {
     let station = event.target["station"].value;
     let line;
     if (station != "") { // 빈 form이 아니라면
-        if (station === "이수" || station === "총신대입구") {
-            station = "이수";
-        }
-        if (twoStations.includes(station)) {
-            station = station + "_" + line;
-        }
-        let svgElement = subwayMap.getElementById(station);
-
         try {
             // 호선을 선택한 경우 (선택 안 할 시 catch로 넘어감)
             line = [...document.getElementsByClassName("clickable-on")].filter((e) => e.style.opacity === active)[0].getAttribute("id").slice(7);
+            if (station === "이수" || station === "총신대입구") { // 역 이름이 두 개인 경우
+                station = "이수";
+            }
+            if (twoStations.includes(station)) { // 역명이 겹치는 경우
+                station = station + "_" + line;
+            }
+            let svgElement = subwayMap.getElementById(station);
 
             // 역명이 존재하고, svg에 해당 호선이 존재하는 경우
             if (svgElement != null && svgElement.classList.contains(line)) {
@@ -199,6 +198,7 @@ function startTimer() {
     document.getElementById("plus").style.display = "none";
     document.getElementById("minus").style.display = "none";
     document.getElementById("station").disabled = false;
+    document.getElementById("markSelect").style.display = "none";
 }
 
 // 타이머 종료
@@ -236,6 +236,7 @@ function giveUp() {
     document.getElementById("submit").disabled = true;
     document.getElementById("submit").classList = ["button-off"];
     document.getElementById("station").disabled = true;
+    document.getElementById("markSelect").style.display = "flex";
 }
 
 // 타이머 리셋

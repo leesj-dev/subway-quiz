@@ -176,14 +176,14 @@ select {
 .clickable-off {
   display: inline-block;
   overflow: hidden;
-  opacity: 30%;
+  opacity: 40%;
   cursor: not-allowed;
 }
 
 .clickable-on {
   display: inline-block;
   overflow: hidden;
-  opacity: 30%;
+  opacity: 40%;
   cursor: pointer;
   transition: opacity .1s ease-out;
   -moz-transition: opacity .1s ease-out;
