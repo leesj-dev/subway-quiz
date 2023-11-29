@@ -287,6 +287,12 @@ h1 {
   width: 150px;
 }
 
+#options {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 #timer {
   text-align: center;
 }
