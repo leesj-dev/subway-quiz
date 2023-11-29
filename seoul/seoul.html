@@ -19,7 +19,7 @@
                                 <input class="round-button" type="button" value="−" id="minus" onclick="add(-1);" />
                             </td>
                             <td id="display">
-                                <span id="min">60</span>
+                                <span id="min">90</span>
                                 <span>:</span>
                                 <span id="sec">00</span>
                             </td>
@@ -41,6 +41,14 @@
                     <span id="slash">&nbsp;/&nbsp;</span>
                     <span id="total">642</span>
                     <div id="complete">&nbsp;COMPLETE</div>
+                </div>
+                <div class="container" id="transparency">
+                    <input type="range" min="0" max="100" value="30" id="slider" />
+                    <div id="transparencyText">투명도</div>
+                </div>
+                <div class="container" id="markSelect">
+                    <input type="checkbox" id="check" checked />
+                    <div id="markSelectText">역 눈금 표시</div>
                 </div>
             </div>
         </div>
