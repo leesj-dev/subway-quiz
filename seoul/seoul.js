@@ -236,7 +236,6 @@ function giveUp() {
     document.getElementById("submit").disabled = true;
     document.getElementById("submit").classList = ["button-off"];
     document.getElementById("station").disabled = true;
-    document.getElementById("markSelect").style.display = "flex";
 }
 
 // 타이머 리셋
@@ -259,4 +258,5 @@ function resetTimer() {
     document.getElementById("reset").classList = ["button-off"];
     document.getElementById("plus").style.display = "inline";
     document.getElementById("minus").style.display = "inline";
+    document.getElementById("markSelect").style.display = "flex";
 }
