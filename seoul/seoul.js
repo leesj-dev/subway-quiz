@@ -2,6 +2,7 @@ let timeout;
 let timer;
 let solved = 0;
 let minSetting = parseInt(document.getElementById("min").innerText);
+let minSettingInitial = minSetting;
 const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.3";
@@ -91,7 +92,7 @@ document.getElementById("answer").addEventListener("submit", function (event) {
 // 제한 시간 가감
 function add(i) {
     let m = minSetting;
-    if ((i === 1 && m < 60) || (i === -1 && m > 1)) {
+    if ((i === 1 && m < minSettingInitial) || (i === -1 && m > 1)) {
         m += i
     }
     document.getElementById("min").innerText = m < 10 ? "0" + m : m;
