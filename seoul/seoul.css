@@ -518,3 +518,10 @@ h1 {
   flex-direction: row;
   justify-content: center;
 }
+
+#progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4.25vh;
+}
