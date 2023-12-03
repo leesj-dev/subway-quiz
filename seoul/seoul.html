@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>수도권 도시철도 QUIZ</title>
     <link rel="stylesheet" type="text/css" href="seoul.css">
 </head>
@@ -41,15 +41,23 @@
                     <span id="slash">&nbsp;/&nbsp;</span>
                     <span id="total">642</span>
                     <div id="complete">&nbsp;COMPLETE</div>
+                    <div>
+                        <span id="highScoreText" style="font-size: 16px; ">HIGH SCORE</span>
+                        <span id="highScore" style="font-size: 16px; font-weight: bold;">0</span>
+                    </div>
                 </div>
                 <div class="container" id="options">
                     <div class="container" id="transparency">
                         <input type="range" min="0" max="100" value="30" id="slider" />
                         <div id="transparencyText">투명도</div>
                     </div>
-                    <div class="container" id="markSelect">
-                        <input type="checkbox" id="check" checked />
-                        <div id="markSelectText">역 눈금 표시</div>
+                    <div class="container markSelect" id="markSelect1">
+                        <input type="checkbox" class="check" id="check1" checked />
+                        <div class="markSelectText">역 눈금 표시</div>
+                    </div>
+                    <div class="container markSelect" id="markSelect2">
+                        <input type="checkbox" class="check" id="check2" checked />
+                        <div class="markSelectText">환승역 타 노선 색 표시</div>
                     </div>
                 </div>
             </div>
@@ -229,7 +237,9 @@
 
 </body>
 
+<!-- script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script -->
 <script type="text/javascript" src="seoul.js"></script>
+<script type="text/javascript" src="svg-pan-zoom.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9510756183985431"
     crossorigin="anonymous"></script>
 

@@ -7,16 +7,33 @@ const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.4";
 let inactive = (document.getElementById("slider").value ** 1.5 / 1000).toString();
+let subwayMap;
+let lineName;
+
+localStorage.getItem("highScore") === null ? localStorage.setItem("highScore", 0) : document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
+
+window.onload = function () {
+    svgPanZoom('#map', {
+        zoomEnabled: true,
+        controlIconsEnabled: true
+    });
+};
 
 // 역 표시 체크박스 변경 시
-document.getElementById("check").addEventListener("change", function () {
+document.getElementById("check1").addEventListener("change", function () {
     let subwayMap = document.getElementById("map").contentDocument;
     if (this.checked) {
         subwayMap.getElementById("marks").style.display = "block";
     } else {
         subwayMap.getElementById("marks").style.display = "none";
     }
+})
 
+// 환승역 타 노선 색 표시 버튼 변경 시
+let check2 = true;
+document.getElementById("check2").addEventListener("change", function () {
+    check2 === true ? check2 = false : check2 = true;
+    changeTransferOpacity();
 })
 
 // 투명도 변경 시
@@ -32,13 +49,10 @@ document.getElementById("slider").addEventListener("input", function (event) {
         // active하지 않은 호선의 투명도를 새로운 inactive로 변경
         lines.splice(lines.indexOf(lineName), 1);
         let notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
-        notSelectedLines.forEach(line => setOpacity(line, inactive));
+        notSelectedLines.forEach(line => batchSetOpacity(line, inactive));
 
         // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 새로운 inactive로 변경
-        let transfer = subwayMap.getElementsByClassName("transfer");
-        [...transfer].forEach(station => {
-            station.style.opacity = station.getElementsByClassName(lineName).length > 0 ? active : inactive;
-        });
+        changeTransferOpacity();
     }
     catch (error) { }
 })
@@ -115,15 +129,40 @@ function showPopup(e) {
 }
 
 // HTMLCollection 내의 element에 대해 opacity를 value로 변경
-function setOpacity(elements, value) {
+function batchSetOpacity(elements, value) {
     [...elements].forEach(element => element.style.opacity = value);
 }
+
+// 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 inactive로 변경
+function changeTransferOpacity() {
+    let transfer = subwayMap.getElementsByClassName("transfer");
+    [...transfer].forEach(station => {
+        // 호선을 선택한 경우
+        if (lineName != null) {
+            // 해당 호선을 포함한다면
+            if (station.getElementsByClassName(lineName).length > 0) {
+                if (check2 === true) {
+                    batchSetOpacity(station.children, active);
+                } else {
+                    let filtered = [...station.children].filter((e) => (e.classList.contains("fill")) && !(e.classList.contains(lineName))); // 해당 호선을 제외한 나머지 호선들
+                    batchSetOpacity(filtered, inactive);
+                }
+            } else { // 해당 호선을 포함하지 않는다면
+                batchSetOpacity(station.children, inactive);
+            }
+        } else { // 호선을 선택하지 않은 경우
+            batchSetOpacity(station.children, active);
+        }
+    })
+};
+
+
 
 // 호선 선택 시
 function selectLine(id) {
     const lines = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의·중앙선", "경춘선", "공항철도", "김포골드라인", "서해선", "수인·분당선", "신림선", "신분당선", "에버라인", "우이신설선", "의정부경전철", "인천1호선", "인천2호선"]
-    let subwayMap = document.getElementById("map").contentDocument;
-    let lineName = id.slice(7);
+    subwayMap = document.getElementById("map").contentDocument;
+    lineName = id.slice(7);
     let opacity = document.getElementById(id).style.opacity;
     let circles = document.getElementsByClassName("clickable-on");
 
@@ -136,32 +175,30 @@ function selectLine(id) {
 
             // 모든 호선이 비활성화되면 투명도 active로 초기화
             if ([...circles].every(data => data.style.opacity === inactiveCircle)) {
-                lines.forEach(line => setOpacity(subwayMap.getElementsByClassName(line), active));
-                setOpacity(subwayMap.getElementsByClassName("transfer"), active);
+                lines.forEach(line => batchSetOpacity(subwayMap.getElementsByClassName(line), active));
+                batchSetOpacity(subwayMap.getElementsByClassName("transfer"), active);
+                lineName = null;
             }
         }
         // toggle on
         else {
             // 선택한 동그라미 외 나머지 비활성화
-            setOpacity(circles, inactiveCircle);
+            batchSetOpacity(circles, inactiveCircle);
 
             // 선택한 동그라미 활성화
             document.getElementById(id).style.opacity = active;
 
             // 선택한 호선의 투명도를 active로 변경
             let selectedLine = subwayMap.getElementsByClassName(lineName);
-            setOpacity(selectedLine, active);
+            batchSetOpacity(selectedLine, active);
 
             // 선택하지 않은 호선의 투명도를 inactive로 변경
             lines.splice(lines.indexOf(lineName), 1);
             let notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
-            notSelectedLines.forEach(line => setOpacity(line, inactive));
+            notSelectedLines.forEach(line => batchSetOpacity(line, inactive));
 
             // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 inactive로 변경
-            let transfer = subwayMap.getElementsByClassName("transfer");
-            [...transfer].forEach(station => {
-                station.style.opacity = station.getElementsByClassName(lineName).length > 0 ? active : inactive;
-            });
+            changeTransferOpacity();
         }
     }
 }
@@ -186,7 +223,7 @@ function startTimer() {
     }, 1000);
 
     [...document.getElementsByClassName("clickable-off")].forEach(data => data.classList = ["clickable-on"]);
-    document.getElementById("check").disabled = true;
+    document.getElementById("check1").disabled = true;
     document.getElementById("start").disabled = true;
     document.getElementById("start").classList = ["button-off"];
     document.getElementById("give-up").disabled = false;
@@ -198,7 +235,7 @@ function startTimer() {
     document.getElementById("plus").style.display = "none";
     document.getElementById("minus").style.display = "none";
     document.getElementById("station").disabled = false;
-    document.getElementById("markSelect").style.display = "none";
+    document.getElementById("markSelect1").style.display = "none";
 }
 
 // 타이머 종료
@@ -215,20 +252,20 @@ function giveUp() {
 
     // 모든 동그라미의 opacity를 inactiveCircle로 변경
     let circles = document.getElementsByClassName("clickable-on");
-    setOpacity(circles, inactiveCircle);
+    batchSetOpacity(circles, inactiveCircle);
 
     // 모든 노선의 opacity를 active로 변경
     const lines = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의·중앙선", "경춘선", "공항철도", "김포골드라인", "서해선", "수인·분당선", "신림선", "신분당선", "에버라인", "우이신설선", "의정부경전철", "인천1호선", "인천2호선"]
     let subwayMap = document.getElementById("map").contentDocument;
     let totalLines = lines.map(x => subwayMap.getElementsByClassName(x))
-    totalLines.forEach(line => setOpacity(line, active));
+    totalLines.forEach(line => batchSetOpacity(line, active));
 
     // 환승역들의 opacity를 active로 변경
-    let transfer = subwayMap.getElementsByClassName("transfer");
-    setOpacity(transfer, active);
+    lineName = null; // lineName 변수 초기화
+    changeTransferOpacity();
 
     [...document.getElementsByClassName("clickable-on")].forEach(data => data.classList = ["clickable-off"]);
-    document.getElementById("check").disabled = false;
+    document.getElementById("check1").disabled = false;
     document.getElementById("give-up").disabled = true;
     document.getElementById("give-up").classList = ["button-off"];
     document.getElementById("reset").disabled = false;
@@ -236,6 +273,11 @@ function giveUp() {
     document.getElementById("submit").disabled = true;
     document.getElementById("submit").classList = ["button-off"];
     document.getElementById("station").disabled = true;
+
+    // 최고기록 갱신
+    highScore = Math.max(localStorage.getItem("highScore"), solved);
+    document.getElementById("highScore").innerHTML = highScore
+    localStorage.setItem("highScore", highScore);
 }
 
 // 타이머 리셋
@@ -258,5 +300,5 @@ function resetTimer() {
     document.getElementById("reset").classList = ["button-off"];
     document.getElementById("plus").style.display = "inline";
     document.getElementById("minus").style.display = "inline";
-    document.getElementById("markSelect").style.display = "flex";
+    document.getElementById("markSelect1").style.display = "flex";
 }
