@@ -12,13 +12,6 @@ let lineName;
 
 localStorage.getItem("highScore") === null ? localStorage.setItem("highScore", 0) : document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
 
-window.onload = function () {
-    svgPanZoom('#map', {
-        zoomEnabled: true,
-        controlIconsEnabled: true
-    });
-};
-
 // 역 표시 체크박스 변경 시
 document.getElementById("check1").addEventListener("change", function () {
     let subwayMap = document.getElementById("map").contentDocument;
@@ -103,7 +96,7 @@ document.getElementById("answer").addEventListener("submit", function (event) {
 })
 
 // 제한 시간 가감
-function add(i) {
+function addTime(i) {
     let m = minSetting;
     if ((i === 1 && m < minSettingInitial) || (i === -1 && m > 1)) {
         m += i
