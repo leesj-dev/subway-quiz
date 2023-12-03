@@ -1,29 +1,75 @@
 let timeout;
 let timer;
+let subwayMap;
+let lineName;
+let panZoom;
 let solved = 0;
 let minSetting = parseInt(document.getElementById("min").innerText);
 let minSettingInitial = minSetting;
+let inactive = (document.getElementById("slider").value ** 1.5 / 1000).toString();
+let viewportWidth;
+let viewportHeight;
 const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.4";
-let inactive = (document.getElementById("slider").value ** 1.5 / 1000).toString();
-let subwayMap;
-let lineName;
 
-localStorage.getItem("highScore") === null ? localStorage.setItem("highScore", 0) : document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
-
+// add svg pan zoom module
 window.onload = function () {
-    svgPanZoom('#map', {
+    // get viewport width and height
+    viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    // set svg width
+    document.getElementById("map").setAttribute("width", viewportWidth * 0.95 - 300)
+
+    // stop panning over the borders
+    let beforePan;
+    beforePan = function (oldPan, newPan) {
+        let sizes = this.getSizes(),
+            gutterWidth = (viewportWidth * 0.95 - 300),  // as defined in the css
+            gutterHeight = (viewportHeight * 0.95 - 130), // as defined in the css
+            // gutterWidth = sizes.viewBox.width,
+            // gutterHeight = sizes.viewBox.height,
+            leftLimit = gutterWidth - (sizes.viewBox.x + sizes.viewBox.width) * sizes.realZoom,
+            rightLimit = sizes.width - gutterWidth - (sizes.viewBox.x * sizes.realZoom),
+            topLimit = gutterHeight - (sizes.viewBox.y + sizes.viewBox.height) * sizes.realZoom,
+            bottomLimit = sizes.height - gutterHeight - (sizes.viewBox.y * sizes.realZoom)
+        customPan = {};
+        customPan.x = Math.max(leftLimit, Math.min(rightLimit, newPan.x));
+        customPan.y = Math.max(topLimit, Math.min(bottomLimit, newPan.y));
+
+        return customPan
+    }
+    // initialize svg pan zoom
+    panZoom = svgPanZoom("#map", {
         panEnabled: true,
         zoomEnabled: true,
         dblClickZoomEnabled: true,
         mouseWheelZoomEnabled: true,
         controlIconsEnabled: true,
         fit: true,
+        center: true,
         minZoom: 1,
-        maxZoom: 5
+        maxZoom: 5,
+        zoomScaleSensitivity: 0.2,
+        // beforePan: beforePan, // under development
     });
 };
+
+
+// 창 크기 바뀔 때
+window.addEventListener("resize", function () {
+    viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    document.getElementById("map").setAttribute("width", viewportWidth * 0.95 - 300)
+    panZoom.updateBBox();
+    panZoom.resize();
+    panZoom.center();
+});
+
+
+// local storage로부터 
+localStorage.getItem("highScore") === null ? localStorage.setItem("highScore", 0) : document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
+
 
 // 역 표시 체크박스 변경 시
 document.getElementById("check1").addEventListener("change", function () {

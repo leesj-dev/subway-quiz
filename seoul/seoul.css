@@ -273,8 +273,7 @@ h1 {
   line-height: 100%;
 }
 
-#transparencyText,
-.markSelectText {
+.settingsText {
   font-size: 16px;
   color: #42454f;
 }
@@ -298,7 +297,7 @@ h1 {
 }
 
 #main {
-  margin-left: 30px;
+  margin-left: calc(1vw + 15px);
 }
 
 #type-area {
@@ -381,7 +380,7 @@ h1 {
   }
 
   #map {
-    max-height: calc(90vh - 180px);
+    max-height: calc(90vh - 130px);
   }
 
   .circle {
@@ -402,8 +401,8 @@ h1 {
 
   #main {
     flex-direction: column;
-    width: calc(95vh - 150px);
-    margin: 2vw 0px;
+    width: calc(95vw - 300px);
+    margin-top: 1vw;
   }
 
   #time {
@@ -422,7 +421,7 @@ h1 {
   }
 
   #map {
-    height: calc(95vh - 180px);
+    height: calc(95vh - 130px);
   }
 
   h1 {
@@ -442,7 +441,6 @@ h1 {
 #slider {
   /* To remove default styles appplied by webkit browsers */
   appearance: none;
-
   width: 190px;
   background: transparent;
   position: relative;
