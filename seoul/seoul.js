@@ -12,6 +12,19 @@ let lineName;
 
 localStorage.getItem("highScore") === null ? localStorage.setItem("highScore", 0) : document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
 
+window.onload = function () {
+    svgPanZoom('#map', {
+        panEnabled: true,
+        zoomEnabled: true,
+        dblClickZoomEnabled: true,
+        mouseWheelZoomEnabled: true,
+        controlIconsEnabled: true,
+        fit: true,
+        minZoom: 1,
+        maxZoom: 5
+    });
+};
+
 // 역 표시 체크박스 변경 시
 document.getElementById("check1").addEventListener("change", function () {
     let subwayMap = document.getElementById("map").contentDocument;
