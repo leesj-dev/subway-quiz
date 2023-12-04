@@ -40,70 +40,116 @@
         <rect x="0" y="0" class="white" width="1474.02" height="1568.16" />
     </g>
     <g id="lines">
-        <path class="line 경의·중앙선" style="fill:none;stroke:#72C6A7;stroke-width:2.4;stroke-miterlimit:10;" d="M643.5,649.54V512.6c0-15.03-12.18-27.21-27.21-27.21H489.76" />
-        <line class="line 경의·중앙선" style="fill:none;stroke:#72C6A7;stroke-width:2.4;stroke-miterlimit:10;" x1="384.86" y1="53.42" x2="501.89" y2="53.42" />
-        <line class="line 경의·중앙선" style="fill:none;stroke:#72C6A7;stroke-width:2.4;stroke-miterlimit:10;" x1="502.08" y1="49.1" x2="502.08" y2="57.74" />
-        <path class="line 경의·중앙선" style="fill:none;stroke:#72C6A7;stroke-width:4.8;stroke-miterlimit:10;" d="M1408.6,554.83v165.65c0,15.03-12.18,27.21-27.21,27.21H1265.4c-15.03,0-27.21-12.18-27.21-27.21V551.15c0-15.03-12.18-27.21-27.21-27.21H958.9c-16.53,0-29.93,13.4-29.93,29.93v110.58c0,7.22-2.87,14.14-7.97,19.24l-62.08,62.08c-5.1,5.1-12.02,7.97-19.24,7.97H669.35c-15.02,0-27.2-12.17-27.21-27.19l-0.04-31.18c-0.01-15.02-12.19-27.19-27.21-27.19l-96.2,0.01c-15.03,0-27.21-12.18-27.21-27.21V494.05c0-16.53-13.4-29.93-29.93-29.93l-91.03,0.01c-15.03,0-27.21-12.18-27.21-27.21V136.75c0-15.03-12.18-27.21-27.21-27.21H135.76c-15.03,0-27.21-12.18-27.21-27.21v-1.69c0-15.03,12.18-27.21,27.21-27.21h242.16" />
-        <line class="line 경의·중앙선" style="fill:none;stroke:#72C6A7;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="554.9" x2="1401.61" y2="554.9" />
-        <path class="line 2호선" style="fill:none;stroke:#00B259;stroke-width:4.8;stroke-miterlimit:10;" d="M965.48,987.56H502.81c-15.03,0-27.21-12.18-27.21-27.21V594.27c0-15.03,12.18-27.21,27.21-27.21h462.67c15.03,0,27.21,12.18,27.21,27.21v366.07C992.69,975.38,980.51,987.56,965.48,987.56z" />
-        <path class="line 공항철도" style="fill:none;stroke:#0095D4;stroke-width:2.4;stroke-miterlimit:10;" d="M651.37,645.77v3.13c0,15.03-12.18,27.21-27.21,27.21H513.44c-16.53,0-29.93-13.4-29.93-29.93V499.22c0-15.03-12.18-27.21-27.21-27.21H240.04c-15.03,0-27.21-12.18-27.21-27.21V301.78c0-15.03-12.18-27.21-27.21-27.21H131.3c-15.03,0-27.21,12.18-27.21,27.21V794c0,15.03-12.18,27.21-27.21,27.21h-4.99" />
-        <line class="line 공항철도" style="fill:none;stroke:#0095D4;stroke-width:2.4;stroke-miterlimit:10;" x1="72.22" y1="816.9" x2="72.22" y2="825.54" />
-        <path class="line 공항철도" style="fill:none;stroke:#DCD252;stroke-width:0.379;stroke-miterlimit:10;" d="M651.37,645.77v3.13c0,15.03-12.18,27.21-27.21,27.21H513.44c-16.53,0-29.93-13.4-29.93-29.93V499.22c0-15.03-12.18-27.21-27.21-27.21H240.04c-15.03,0-27.21-12.18-27.21-27.21V301.78c0-15.03-12.18-27.21-27.21-27.21H131.3c-15.03,0-27.21,12.18-27.21,27.21V794c0,15.03-12.18,27.21-27.21,27.21h-4.99" />
-        <path class="line 에버라인" style="fill:none;stroke:#59AD40;stroke-width:2.4;stroke-miterlimit:10;" d="M835.12,1295.47V1311c0,15.03,12.18,27.21,27.21,27.21h438.41c15.03,0,27.21,12.18,27.21,27.21v121.52" />
-        <line class="line 에버라인" style="fill:none;stroke:#59AD40;stroke-width:2.4;stroke-miterlimit:10;" x1="1323.64" y1="1486.95" x2="1332.28" y2="1486.95" />
-        <path class="line 3호선" style="fill:none;stroke:#F47D30;stroke-width:4.8;stroke-miterlimit:10;" d="M98.46,176.05h254.78c15.03,0,27.21,12.18,27.21,27.21v109.11c0,15.03,12.18,27.21,27.21,27.21h314.75c15.03,0,27.21,12.18,27.21,27.21v232.45c0,15.03,12.18,27.21,27.21,27.21h73.02c15.03,0,27.21,12.18,27.21,27.21v36.67c0,15.03-12.18,27.21-27.21,27.21h-11.4c-15.03,0-27.21,12.18-27.21,27.21v258.92c0,15.03,12.18,27.21,27.21,27.21h183.41c15.03,0,27.21,12.18,27.21,27.21v0.84c0,15.03,12.18,27.21,27.21,27.21h1.9c15.03,0,27.21-12.18,27.21-27.21v-33.4c0-15.03,12.18-27.21,27.21-27.21h80.33" />
-        <line class="line 3호선" style="fill:none;stroke:#F47D30;stroke-width:4.8;stroke-miterlimit:10;" x1="98.46" y1="183.02" x2="98.46" y2="169.05" />
-        <path class="line 경춘선" style="fill:none;stroke:#178C72;stroke-width:2.4;stroke-miterlimit:10;" d="M1166.83,515.03h-2.02c-15.03,0-27.21-12.18-27.21-27.21v-71.65c0-15.03-12.18-27.21-27.21-27.21h-2.98" />
-        <path class="line 2호선" style="fill:none;stroke:#00B259;stroke-width:2.4;stroke-miterlimit:10;" d="M1000.68,658.25V566c0-15.03-12.18-27.21-27.21-27.21h-35.9c-15.03,0-27.21-12.18-27.21-27.21v-4.89" />
-        <path class="line 2호선" style="fill:none;stroke:#00B259;stroke-width:2.4;stroke-miterlimit:10;" d="M347.88,667.04v106.92c0,15.03,12.18,27.21,27.21,27.21h65.23c15.03,0,27.21,12.18,27.21,27.21v7.59" />
-        <path class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" d="M368.93,1010.41h38.02c12.02,0,21.77-9.75,21.77-21.77v-8.81" />
-        <line class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" x1="598.01" y1="1359.54" x2="598.01" y2="1368.18" />
-        <line class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" x1="598.01" y1="1363.84" x2="531.35" y2="1363.84" />
-        <line class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" x1="369.07" y1="1005.98" x2="369.07" y2="1014.62" />
-        <path class="line 수인·분당선" style="fill:none;stroke:#FFC20E;stroke-width:2.4;stroke-miterlimit:10;" d="M1009.02,531.76h-44.9c-15.03,0-27.21,12.18-27.21,27.21v15.5" />
-        <path class="line 7호선" style="fill:none;stroke:#677718;stroke-width:4.8;stroke-miterlimit:10;" d="M1198.31,176.33h-57.62c-12.02,0-21.76,9.74-21.76,21.76v1.13c0,12.02,9.74,21.76,21.76,21.76s21.76,9.74,21.76,21.76v409.25c0,15.03-12.19,27.22-27.22,27.21l-110.91-0.03c-7.22,0-14.15,2.87-19.25,7.97L792.02,900.17c-5.1,5.1-12.03,7.97-19.24,7.97H368.54c-15.03,0-27.21-12.18-27.21-27.21v-52.82c0-15.03-12.18-27.21-27.21-27.21H250.8c-15.03,0-27.21-12.18-27.21-27.21V657.54c0-15.03-12.18-27.21-27.21-27.21h-78.1" />
-        <line class="line 7호선" style="fill:none;stroke:#677718;stroke-width:4.8;stroke-miterlimit:10;" x1="1198.31" y1="169.34" x2="1198.31" y2="183.32" />
-        <path class="line 신림선" style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" d="M621.42,815.94v22.52c0,15.03-12.18,27.21-27.21,27.21h-41.06c-15.03,0-27.21,12.18-27.21,27.21v27.43c0,15.03,12.18,27.21,27.21,27.21h1.55c15.03,0,27.21,12.18,27.21,27.21v34.54c0,15.03,12.18,27.21,27.21,27.21h75.85" />
-        <line class="line 신림선" style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" x1="684.98" y1="1032.62" x2="684.98" y2="1041.26" />
-        <line class="line 우이신설선" style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" x1="490.8" y1="228.07" x2="490.8" y2="219.43" />
-        <path class="line 우이신설선" style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" d="M910.36,506.68V251.04c0-15.03-12.18-27.21-27.21-27.21H490.8" />
-        <path class="line 서해선" style="fill:none;stroke:#85C446;stroke-width:4.8;stroke-miterlimit:10;" d="M468.96,1383.05v-56.69c0-15.03-12.18-27.21-27.21-27.21H316.63c-15.03,0-27.21-12.18-27.21-27.21V549.37c0-12.69,10.29-22.98,22.98-22.98s22.98-10.29,22.98-22.98V144.73c0-15.03-12.18-27.21-27.21-27.21h-129v-6.27" />
-        <line class="line 서해선" style="fill:none;stroke:#85C446;stroke-width:4.8;stroke-miterlimit:10;" x1="475.92" y1="1383.05" x2="461.94" y2="1383.05" />
-        <path class="line 6호선" style="fill:none;stroke:#C77439;stroke-width:4.8;stroke-miterlimit:10;" d="M1251.4,512.49v-58.81c0-15.03-12.18-27.21-27.21-27.21H896.58c-15.03,0-27.21,12.18-27.21,27.21v203.17c0,15.03-12.18,27.21-27.21,27.21H478.41c-15.03,0-27.21-12.18-27.21-27.21V336.03c0-15.03,12.18-27.21,27.21-27.21h1.84c15.03,0,27.21,12.18,27.21,27.21v11.82c0,15.03-12.18,27.21-27.21,27.21h-1.84c-15.03,0-27.21,12.18-27.21,27.21v5.64" />
-        <path class="line 신분당선" style="fill:none;stroke:#D31245;stroke-width:2.4;stroke-miterlimit:10;" d="M812.21,807.93h32c15.03,0,27.21,12.18,27.21,27.21v292.56c0,15.03,12.18,27.21,27.21,27.21h203.2c15.03,0,27.21,12.18,27.21,27.21v73.54c0,15.03-12.18,27.21-27.21,27.21h-39.29c-15.03,0-27.21-12.18-27.21-27.21v-13.07c0-15.03-12.18-27.21-27.21-27.21H701.08" />
-        <line class="line 신분당선" style="fill:none;stroke:#D31245;stroke-width:2.4;stroke-miterlimit:10;" x1="701.07" y1="1211.1" x2="701.07" y2="1219.74" />
-        <path class="line 수인·분당선" style="fill:none;stroke:#FFC20E;stroke-width:4.8;stroke-miterlimit:10" d="M119.95,1246.01v173.15c0,15.03,12.18,27.21,27.21,27.21h239.97c15.03,0,27.21-12.18,27.21-27.21v-242.1c0-15.03,12.18-27.21,27.21-27.21h1.21c15.03,0,27.21,12.18,27.21,27.21v86.58c0,15.03,12.18,27.21,27.21,27.21h651.14c15.03,0,27.21-12.18,27.21-27.21v-142.29c0-15.06-12.22-27.25-27.28-27.21l-184.09,0.01c-15.05,0.03-27.27-12.16-27.27-27.21V568.92" />
-        <path class="line 경춘선" style="fill:none;stroke:#178C72;stroke-width:4.8;stroke-miterlimit:10;" d="M1008.11,515.89h373.27c15.03,0,27.21-12.18,27.21-27.21V74.56" />
-        <line class="line 경춘선" style="fill:none;stroke:#178C72;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="74.56" x2="1401.61" y2="74.56" />
-        <path class="line 5호선" style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" d="M1408.6,876.26v-86.78c0-15.03-12.18-27.21-27.21-27.21H1264.8c-15.03,0-27.21,12.18-27.21,27.21v59.72c0,15.03-12.18,27.21-27.21,27.21h-69.22c-15.03,0-27.21-12.18-27.21-27.21V573.89c0-15.03-12.18-27.21-27.21-27.21H971.52c-15.03,0-27.21,12.18-27.21,27.21v4.82c0,15.03-12.18,27.21-27.21,27.21h-54.12c-12.02,0-21.77-9.75-21.77-21.77c0-13.82-11.2-25.02-25.02-25.02h-47.54c-15.03,0-27.21-12.18-27.21-27.21v-44.19c0-15.04-12.2-27.22-27.23-27.21l-88.81,0.08c-15.02,0.01-27.19,12.2-27.19,27.22l0.07,314.61c0,15.03-12.18,27.22-27.21,27.22h-26.26c-15.02,0-27.2-12.17-27.21-27.19v-0.7c-0.01-15.02-12.19-27.19-27.21-27.19H382.97c-15.03,0-27.21-12.18-27.21-27.21V514.72c0-15.03-12.18-27.21-27.21-27.21h-56.01c-15.03,0-27.21-12.18-27.21-27.21v-47.22" />
-        <path class="line 5호선" style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" d="M1387.47,1036.54h-136.95c-15.03,0-27.21-12.18-27.21-27.21v-105.7c0-15.03-12.18-27.21-27.21-27.21h-9.8" />
-        <line class="line 5호선" style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" x1="252.31" y1="413.08" x2="238.33" y2="413.08" />
-        <line class="line 5호선" style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="876.27" x2="1401.61" y2="876.27" />
-        <line class="line 5호선" style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" x1="1387.47" y1="1029.55" x2="1387.47" y2="1043.53" />
-        <path class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" d="M436.6,839.45v169.67c0,15.03,12.18,27.21,27.2,27.21l34.54,0.01c15.03,0,27.21,12.19,27.21,27.21v312.4c0,15.03,12.18,27.21,27.21,27.21h649.97c15.03,0,27.21,12.18,27.21,27.21v56.57" />
-        <path class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" d="M119.95,1249.54V986.1c0-15.03,12.18-27.21,27.21-27.21h49.2c15.03,0,27.21-12.18,27.21-27.21v-66.63c0-15.03,12.18-27.21,27.21-27.21h381.37c15.03,0,27.21-12.18,27.21-27.21V535.41c0-15.03,12.18-27.21,27.21-27.21h397.19c15.03,0,27.21-12.18,27.21-27.21V156.75c0-15.03-12.18-27.21-27.21-27.21h-477.1" />
-        <line class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" x1="604.66" y1="122.55" x2="604.66" y2="136.53" />
-        <line class="line 1호선" style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" x1="1236.94" y1="1486.95" x2="1222.96" y2="1486.95" />
-        <path class="line 의정부경전철" style="fill:none;stroke:#FBAB18;stroke-width:2.4;stroke-miterlimit:10;" d="M1327.97,250.6V80.24c0-15.03-12.18-27.21-27.21-27.21h-200.71c-15.03,0-27.21,12.18-27.21,27.21v67.67c0,15.03-12.18,27.21-27.21,27.21h-22.52" />
-        <line class="line 의정부경전철" style="fill:none;stroke:#FBAB18;stroke-width:2.4;stroke-miterlimit:10;" x1="1332.29" y1="250.6" x2="1323.65" y2="250.6" />
-        <line class="line 의정부경전철" style="fill:none;stroke:#FBAB18;stroke-width:2.4;stroke-miterlimit:10;" x1="1022.36" y1="179.4" x2="1022.36" y2="170.76" />
-        <path class="line 4호선" style="fill:none;stroke:#00A9DC;stroke-width:4.8;stroke-miterlimit:10;" d="M406.41,1414.85v-290.22c0-15.03,12.18-27.21,27.21-27.21h274.03c15.03,0,27.21-12.18,27.21-27.21V701.48c0-15.03-12.18-27.21-27.21-27.21h-13.23c-15.03,0-27.21-12.18-27.21-27.21v-1.29c0-15.03,12.18-27.21,27.21-27.21h96.52c15.03,0,27.21-12.18,27.21-27.21V332.67c0-15.03,12.18-27.21,27.21-27.21h455.37c15.03,0,27.21,12.18,27.21,27.21v72.18" />
-        <line class="line 4호선" style="fill:none;stroke:#00A9DC;stroke-width:4.8;stroke-miterlimit:10;" x1="1334.95" y1="404.84" x2="1320.97" y2="404.84" />
-        <path class="line 9호선" style="fill:none;stroke:#B1A48D;stroke-width:4.8;stroke-miterlimit:10;" d="M1387.47,939.91H980.29c-7.22,0-14.14-2.87-19.24-7.97l-51.01-51.01c-5.1-5.1-12.02-7.97-19.24-7.97H696.05c-7.22,0-14.14-2.87-19.24-7.97L548.75,736.93c-5.1-5.1-12.03-7.97-19.24-7.97h-59.02c-15.03,0-27.21-12.18-27.21-27.21V507.18c0-15.03-12.18-27.21-27.21-27.21H310.75c-15.03,0-27.21-12.18-27.21-27.21v-40.18" />
-        <line class="line 9호선" style="fill:none;stroke:#B1A48D;stroke-width:4.8;stroke-miterlimit:10;" x1="290.53" y1="413.08" x2="276.55" y2="413.08" />
-        <line class="line 9호선" style="fill:none;stroke:#B1A48D;stroke-width:4.8;stroke-miterlimit:10;" x1="1387.47" y1="932.92" x2="1387.47" y2="946.9" />
-        <path class="line 8호선" style="fill:none;stroke:#EE2B74;stroke-width:4.8;stroke-miterlimit:10;" d="M1191.73,819.25h-163.84c-15.03,0-27.21,12.18-27.21,27.21v0.55c0,15.03,12.18,27.21,27.21,27.21h58.24c15.03,0,27.21,12.18,27.21,27.21v157.53c0,15.03,12.18,27.21,27.21,27.21h107.42c15.03,0,27.21,12.18,27.21,27.21v23.14c0,15.03-12.18,27.21-27.21,27.21h-63.51" />
-        <line class="line 8호선" style="fill:none;stroke:#EE2B74;stroke-width:4.8;stroke-miterlimit:10;" x1="1191.73" y1="826.24" x2="1191.73" y2="812.26" />
-        <path class="line 경강선" style="fill:none;stroke:#0066B3;stroke-width:4.8;stroke-miterlimit:10;" d="M1129.04,1215.39h252.34c15.03,0,27.21,12.18,27.21,27.21v244.34" />
-        <line class="line 경강선" style="fill:none;stroke:#0066B3;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="1486.95" x2="1401.61" y2="1486.95" />
-        <path class="line 6호선" style="fill:none;stroke:#C77439;stroke-width:1.92;stroke-miterlimit:10;" d="M460.84,398.06c0-8.05,6.05-14.09,14.09-14.09l-1.97,4.65" />
-        <path class="line 인천1호선" style="fill:none;stroke:#87B2D8;stroke-width:2.4;stroke-miterlimit:10;" d="M180.02,277.67v667.08c0,12.06,9.77,21.83,21.83,21.83s21.83,9.77,21.83,21.83v391.13c0,15.03-12.18,27.21-27.21,27.21H178.3c-15.03,0-27.21,12.18-27.21,27.21l0.33,47.09c0,15.03,12.18,27.21,27.21,27.21h591.41" />
-        <line class="line 인천1호선" style="fill:none;stroke:#87B2D8;stroke-width:2.4;stroke-miterlimit:10;" x1="770.04" y1="1503.77" x2="770.04" y2="1512.41" />
-        <path class="line 인천2호선" style="fill:none;stroke:#F7941D;stroke-width:2.4;stroke-miterlimit:10;" d="M262.75,1406.89h-3.87c-15.03,0-27.21-12.18-27.21-27.21V1099.6c0-15.03-12.18-27.21-27.21-27.21h-65.22c-15.03,0-27.21-12.18-27.21-27.21V322.59c0-15.03,12.18-27.21,27.21-27.21h2.77" />
-        <line class="line 인천2호선" style="fill:none;stroke:#F7941D;stroke-width:2.4;stroke-miterlimit:10;" x1="262.27" y1="1402.12" x2="262.27" y2="1410.76" />
-        <line class="line 인천2호선" style="fill:none;stroke:#F7941D;stroke-width:2.4;stroke-miterlimit:10;" x1="140.83" y1="291.05" x2="140.83" y2="299.69" />
-        <path class="line 김포골드라인" style="fill:none;stroke:#AD8505;stroke-width:2.4;stroke-miterlimit:10;" d="M335.39,464.12h-1.16c-15.03,0-27.21-12.18-27.21-27.21V250.98c0-15.03-12.18-27.21-27.21-27.21H98.46" />
-        <line class="line 김포골드라인" style="fill:none;stroke:#AD8505;stroke-width:2.4;stroke-miterlimit:10;" x1="98.6" y1="228.07" x2="98.6" y2="219.43" />
+        <g class="line 1호선">
+            <path style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" d="M368.93,1010.41h38.02c12.02,0,21.77-9.75,21.77-21.77v-8.81" />
+            <line style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" x1="598.01" y1="1359.54" x2="598.01" y2="1368.18" />
+            <line style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" x1="598.01" y1="1363.84" x2="531.35" y2="1363.84" />
+            <line style="fill:none;stroke:#005DAA;stroke-width:2.4;stroke-miterlimit:10;" x1="369.07" y1="1005.98" x2="369.07" y2="1014.62" />
+            <path style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" d="M436.6,839.45v169.67c0,15.03,12.18,27.21,27.2,27.21l34.54,0.01c15.03,0,27.21,12.19,27.21,27.21v312.4c0,15.03,12.18,27.21,27.21,27.21h649.97c15.03,0,27.21,12.18,27.21,27.21v56.57" />
+            <path style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" d="M119.95,1249.54V986.1c0-15.03,12.18-27.21,27.21-27.21h49.2c15.03,0,27.21-12.18,27.21-27.21v-66.63c0-15.03,12.18-27.21,27.21-27.21h381.37c15.03,0,27.21-12.18,27.21-27.21V535.41c0-15.03,12.18-27.21,27.21-27.21h397.19c15.03,0,27.21-12.18,27.21-27.21V156.75c0-15.03-12.18-27.21-27.21-27.21h-477.1" />
+            <line style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" x1="604.66" y1="122.55" x2="604.66" y2="136.53" />
+            <line style="fill:none;stroke:#005DAA;stroke-width:4.8;stroke-miterlimit:10;" x1="1236.94" y1="1486.95" x2="1222.96" y2="1486.95" />
+        </g>
+        <g class="line 2호선">
+            <path style="fill:none;stroke:#00B259;stroke-width:4.8;stroke-miterlimit:10;" d="M965.48,987.56H502.81c-15.03,0-27.21-12.18-27.21-27.21V594.27c0-15.03,12.18-27.21,27.21-27.21h462.67c15.03,0,27.21,12.18,27.21,27.21v366.07C992.69,975.38,980.51,987.56,965.48,987.56z" />
+            <path style="fill:none;stroke:#00B259;stroke-width:2.4;stroke-miterlimit:10;" d="M1000.68,658.25V566c0-15.03-12.18-27.21-27.21-27.21h-35.9c-15.03,0-27.21-12.18-27.21-27.21v-4.89" />
+            <path style="fill:none;stroke:#00B259;stroke-width:2.4;stroke-miterlimit:10;" d="M347.88,667.04v106.92c0,15.03,12.18,27.21,27.21,27.21h65.23c15.03,0,27.21,12.18,27.21,27.21v7.59" />
+        </g>
+        <g class="line 3호선">
+            <path style="fill:none;stroke:#F47D30;stroke-width:4.8;stroke-miterlimit:10;" d="M98.46,176.05h254.78c15.03,0,27.21,12.18,27.21,27.21v109.11c0,15.03,12.18,27.21,27.21,27.21h314.75c15.03,0,27.21,12.18,27.21,27.21v232.45c0,15.03,12.18,27.21,27.21,27.21h73.02c15.03,0,27.21,12.18,27.21,27.21v36.67c0,15.03-12.18,27.21-27.21,27.21h-11.4c-15.03,0-27.21,12.18-27.21,27.21v258.92c0,15.03,12.18,27.21,27.21,27.21h183.41c15.03,0,27.21,12.18,27.21,27.21v0.84c0,15.03,12.18,27.21,27.21,27.21h1.9c15.03,0,27.21-12.18,27.21-27.21v-33.4c0-15.03,12.18-27.21,27.21-27.21h80.33" />
+            <line style="fill:none;stroke:#F47D30;stroke-width:4.8;stroke-miterlimit:10;" x1="98.46" y1="183.02" x2="98.46" y2="169.05" />
+        </g>
+        <g class="line 4호선">
+            <path style="fill:none;stroke:#00A9DC;stroke-width:4.8;stroke-miterlimit:10;" d="M406.41,1414.85v-290.22c0-15.03,12.18-27.21,27.21-27.21h274.03c15.03,0,27.21-12.18,27.21-27.21V701.48c0-15.03-12.18-27.21-27.21-27.21h-13.23c-15.03,0-27.21-12.18-27.21-27.21v-1.29c0-15.03,12.18-27.21,27.21-27.21h96.52c15.03,0,27.21-12.18,27.21-27.21V332.67c0-15.03,12.18-27.21,27.21-27.21h455.37c15.03,0,27.21,12.18,27.21,27.21v72.18" />
+            <line style="fill:none;stroke:#00A9DC;stroke-width:4.8;stroke-miterlimit:10;" x1="1334.95" y1="404.84" x2="1320.97" y2="404.84" />
+        </g>
+        <g class="line 5호선">
+            <path style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" d="M1408.6,876.26v-86.78c0-15.03-12.18-27.21-27.21-27.21H1264.8c-15.03,0-27.21,12.18-27.21,27.21v59.72c0,15.03-12.18,27.21-27.21,27.21h-69.22c-15.03,0-27.21-12.18-27.21-27.21V573.89c0-15.03-12.18-27.21-27.21-27.21H971.52c-15.03,0-27.21,12.18-27.21,27.21v4.82c0,15.03-12.18,27.21-27.21,27.21h-54.12c-12.02,0-21.77-9.75-21.77-21.77c0-13.82-11.2-25.02-25.02-25.02h-47.54c-15.03,0-27.21-12.18-27.21-27.21v-44.19c0-15.04-12.2-27.22-27.23-27.21l-88.81,0.08c-15.02,0.01-27.19,12.2-27.19,27.22l0.07,314.61c0,15.03-12.18,27.22-27.21,27.22h-26.26c-15.02,0-27.2-12.17-27.21-27.19v-0.7c-0.01-15.02-12.19-27.19-27.21-27.19H382.97c-15.03,0-27.21-12.18-27.21-27.21V514.72c0-15.03-12.18-27.21-27.21-27.21h-56.01c-15.03,0-27.21-12.18-27.21-27.21v-47.22" />
+            <path style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" d="M1387.47,1036.54h-136.95c-15.03,0-27.21-12.18-27.21-27.21v-105.7c0-15.03-12.18-27.21-27.21-27.21h-9.8" />
+            <line style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" x1="252.31" y1="413.08" x2="238.33" y2="413.08" />
+            <line style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="876.27" x2="1401.61" y2="876.27" />
+            <line style="fill:none;stroke:#9370B1;stroke-width:4.8;stroke-miterlimit:10;" x1="1387.47" y1="1029.55" x2="1387.47" y2="1043.53" />
+        </g>
+        <g class="line 6호선">
+            <path style="fill:none;stroke:#C77439;stroke-width:4.8;stroke-miterlimit:10;" d="M1251.4,512.49v-58.81c0-15.03-12.18-27.21-27.21-27.21H896.58c-15.03,0-27.21,12.18-27.21,27.21v203.17c0,15.03-12.18,27.21-27.21,27.21H478.41c-15.03,0-27.21-12.18-27.21-27.21V336.03c0-15.03,12.18-27.21,27.21-27.21h1.84c15.03,0,27.21,12.18,27.21,27.21v11.82c0,15.03-12.18,27.21-27.21,27.21h-1.84c-15.03,0-27.21,12.18-27.21,27.21v5.64" />
+            <path style="fill:none;stroke:#C77439;stroke-width:1.92;stroke-miterlimit:10;" d="M460.84,398.06c0-8.05,6.05-14.09,14.09-14.09l-1.97,4.65" />
+        </g>
+        <g class="line 7호선">
+            <path style="fill:none;stroke:#677718;stroke-width:4.8;stroke-miterlimit:10;" d="M1198.31,176.33h-57.62c-12.02,0-21.76,9.74-21.76,21.76v1.13c0,12.02,9.74,21.76,21.76,21.76s21.76,9.74,21.76,21.76v409.25c0,15.03-12.19,27.22-27.22,27.21l-110.91-0.03c-7.22,0-14.15,2.87-19.25,7.97L792.02,900.17c-5.1,5.1-12.03,7.97-19.24,7.97H368.54c-15.03,0-27.21-12.18-27.21-27.21v-52.82c0-15.03-12.18-27.21-27.21-27.21H250.8c-15.03,0-27.21-12.18-27.21-27.21V657.54c0-15.03-12.18-27.21-27.21-27.21h-78.1" />
+            <line style="fill:none;stroke:#677718;stroke-width:4.8;stroke-miterlimit:10;" x1="1198.31" y1="169.34" x2="1198.31" y2="183.32" />
+        </g>
+        <g class="line 8호선">
+            <path style="fill:none;stroke:#EE2B74;stroke-width:4.8;stroke-miterlimit:10;" d="M1191.73,819.25h-163.84c-15.03,0-27.21,12.18-27.21,27.21v0.55c0,15.03,12.18,27.21,27.21,27.21h58.24c15.03,0,27.21,12.18,27.21,27.21v157.53c0,15.03,12.18,27.21,27.21,27.21h107.42c15.03,0,27.21,12.18,27.21,27.21v23.14c0,15.03-12.18,27.21-27.21,27.21h-63.51" />
+            <line style="fill:none;stroke:#EE2B74;stroke-width:4.8;stroke-miterlimit:10;" x1="1191.73" y1="826.24" x2="1191.73" y2="812.26" />
+        </g>
+        <g class="line 9호선">
+            <path style="fill:none;stroke:#B1A48D;stroke-width:4.8;stroke-miterlimit:10;" d="M1387.47,939.91H980.29c-7.22,0-14.14-2.87-19.24-7.97l-51.01-51.01c-5.1-5.1-12.02-7.97-19.24-7.97H696.05c-7.22,0-14.14-2.87-19.24-7.97L548.75,736.93c-5.1-5.1-12.03-7.97-19.24-7.97h-59.02c-15.03,0-27.21-12.18-27.21-27.21V507.18c0-15.03-12.18-27.21-27.21-27.21H310.75c-15.03,0-27.21-12.18-27.21-27.21v-40.18" />
+            <line style="fill:none;stroke:#B1A48D;stroke-width:4.8;stroke-miterlimit:10;" x1="290.53" y1="413.08" x2="276.55" y2="413.08" />
+            <line style="fill:none;stroke:#B1A48D;stroke-width:4.8;stroke-miterlimit:10;" x1="1387.47" y1="932.92" x2="1387.47" y2="946.9" />
+        </g>
+        <g class="line 경강선">
+            <path style="fill:none;stroke:#0066B3;stroke-width:4.8;stroke-miterlimit:10;" d="M1129.04,1215.39h252.34c15.03,0,27.21,12.18,27.21,27.21v244.34" />
+            <line style="fill:none;stroke:#0066B3;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="1486.95" x2="1401.61" y2="1486.95" />
+        </g>
+        <g class="line 경의·중앙선">
+            <path style="fill:none;stroke:#72C6A7;stroke-width:2.4;stroke-miterlimit:10;" d="M643.5,649.54V512.6c0-15.03-12.18-27.21-27.21-27.21H489.76" />
+            <line style="fill:none;stroke:#72C6A7;stroke-width:2.4;stroke-miterlimit:10;" x1="384.86" y1="53.42" x2="501.89" y2="53.42" />
+            <line style="fill:none;stroke:#72C6A7;stroke-width:2.4;stroke-miterlimit:10;" x1="502.08" y1="49.1" x2="502.08" y2="57.74" />
+            <path style="fill:none;stroke:#72C6A7;stroke-width:4.8;stroke-miterlimit:10;" d="M1408.6,554.83v165.65c0,15.03-12.18,27.21-27.21,27.21H1265.4c-15.03,0-27.21-12.18-27.21-27.21V551.15c0-15.03-12.18-27.21-27.21-27.21H958.9c-16.53,0-29.93,13.4-29.93,29.93v110.58c0,7.22-2.87,14.14-7.97,19.24l-62.08,62.08c-5.1,5.1-12.02,7.97-19.24,7.97H669.35c-15.02,0-27.2-12.17-27.21-27.19l-0.04-31.18c-0.01-15.02-12.19-27.19-27.21-27.19l-96.2,0.01c-15.03,0-27.21-12.18-27.21-27.21V494.05c0-16.53-13.4-29.93-29.93-29.93l-91.03,0.01c-15.03,0-27.21-12.18-27.21-27.21V136.75c0-15.03-12.18-27.21-27.21-27.21H135.76c-15.03,0-27.21-12.18-27.21-27.21v-1.69c0-15.03,12.18-27.21,27.21-27.21h242.16" />
+            <line style="fill:none;stroke:#72C6A7;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="554.9" x2="1401.61" y2="554.9" />
+        </g>
+        <g class="line 경춘선">
+            <path style="fill:none;stroke:#178C72;stroke-width:2.4;stroke-miterlimit:10;" d="M1166.83,515.03h-2.02c-15.03,0-27.21-12.18-27.21-27.21v-71.65c0-15.03-12.18-27.21-27.21-27.21h-2.98" />
+            <path style="fill:none;stroke:#178C72;stroke-width:4.8;stroke-miterlimit:10;" d="M1008.11,515.89h373.27c15.03,0,27.21-12.18,27.21-27.21V74.56" />
+            <line style="fill:none;stroke:#178C72;stroke-width:4.8;stroke-miterlimit:10;" x1="1415.58" y1="74.56" x2="1401.61" y2="74.56" />
+       </g>
+        <g class="line 공항철도">
+            <path style="fill:none;stroke:#0095D4;stroke-width:2.4;stroke-miterlimit:10;" d="M651.37,645.77v3.13c0,15.03-12.18,27.21-27.21,27.21H513.44c-16.53,0-29.93-13.4-29.93-29.93V499.22c0-15.03-12.18-27.21-27.21-27.21H240.04c-15.03,0-27.21-12.18-27.21-27.21V301.78c0-15.03-12.18-27.21-27.21-27.21H131.3c-15.03,0-27.21,12.18-27.21,27.21V794c0,15.03-12.18,27.21-27.21,27.21h-4.99" />
+            <line style="fill:none;stroke:#0095D4;stroke-width:2.4;stroke-miterlimit:10;" x1="72.22" y1="816.9" x2="72.22" y2="825.54" />
+            <path style="fill:none;stroke:#DCD252;stroke-width:0.379;stroke-miterlimit:10;" d="M651.37,645.77v3.13c0,15.03-12.18,27.21-27.21,27.21H513.44c-16.53,0-29.93-13.4-29.93-29.93V499.22c0-15.03-12.18-27.21-27.21-27.21H240.04c-15.03,0-27.21-12.18-27.21-27.21V301.78c0-15.03-12.18-27.21-27.21-27.21H131.3c-15.03,0-27.21,12.18-27.21,27.21V794c0,15.03-12.18,27.21-27.21,27.21h-4.99" />
+        </g>
+        <g class="line 김포골드라인">
+            <path style="fill:none;stroke:#AD8505;stroke-width:2.4;stroke-miterlimit:10;" d="M335.39,464.12h-1.16c-15.03,0-27.21-12.18-27.21-27.21V250.98c0-15.03-12.18-27.21-27.21-27.21H98.46" />
+            <line style="fill:none;stroke:#AD8505;stroke-width:2.4;stroke-miterlimit:10;" x1="98.6" y1="228.07" x2="98.6" y2="219.43" />
+        </g>
+        <g class="line 서해선">
+            <path style="fill:none;stroke:#85C446;stroke-width:4.8;stroke-miterlimit:10;" d="M468.96,1383.05v-56.69c0-15.03-12.18-27.21-27.21-27.21H316.63c-15.03,0-27.21-12.18-27.21-27.21V549.37c0-12.69,10.29-22.98,22.98-22.98s22.98-10.29,22.98-22.98V144.73c0-15.03-12.18-27.21-27.21-27.21h-129v-6.27" />
+            <line style="fill:none;stroke:#85C446;stroke-width:4.8;stroke-miterlimit:10;" x1="475.92" y1="1383.05" x2="461.94" y2="1383.05" />
+        </g>
+        <g class="line 수인·분당선">
+            <path style="fill:none;stroke:#FFC20E;stroke-width:2.4;stroke-miterlimit:10;" d="M1009.02,531.76h-44.9c-15.03,0-27.21,12.18-27.21,27.21v15.5" />
+            <path style="fill:none;stroke:#FFC20E;stroke-width:4.8;stroke-miterlimit:10" d="M119.95,1246.01v173.15c0,15.03,12.18,27.21,27.21,27.21h239.97c15.03,0,27.21-12.18,27.21-27.21v-242.1c0-15.03,12.18-27.21,27.21-27.21h1.21c15.03,0,27.21,12.18,27.21,27.21v86.58c0,15.03,12.18,27.21,27.21,27.21h651.14c15.03,0,27.21-12.18,27.21-27.21v-142.29c0-15.06-12.22-27.25-27.28-27.21l-184.09,0.01c-15.05,0.03-27.27-12.16-27.27-27.21V568.92" />
+        </g>
+        <g class="line 신림선">
+            <path style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" d="M621.42,815.94v22.52c0,15.03-12.18,27.21-27.21,27.21h-41.06c-15.03,0-27.21,12.18-27.21,27.21v27.43c0,15.03,12.18,27.21,27.21,27.21h1.55c15.03,0,27.21,12.18,27.21,27.21v34.54c0,15.03,12.18,27.21,27.21,27.21h75.85" />
+            <line style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" x1="684.98" y1="1032.62" x2="684.98" y2="1041.26" />
+        </g>
+        <g class="line 신분당선">
+            <path style="fill:none;stroke:#D31245;stroke-width:2.4;stroke-miterlimit:10;" d="M812.21,807.93h32c15.03,0,27.21,12.18,27.21,27.21v292.56c0,15.03,12.18,27.21,27.21,27.21h203.2c15.03,0,27.21,12.18,27.21,27.21v73.54c0,15.03-12.18,27.21-27.21,27.21h-39.29c-15.03,0-27.21-12.18-27.21-27.21v-13.07c0-15.03-12.18-27.21-27.21-27.21H701.08" />
+            <line style="fill:none;stroke:#D31245;stroke-width:2.4;stroke-miterlimit:10;" x1="701.07" y1="1211.1" x2="701.07" y2="1219.74" />
+        </g>
+        <g class="line 에버라인">
+            <path style="fill:none;stroke:#59AD40;stroke-width:2.4;stroke-miterlimit:10;" d="M835.12,1295.47V1311c0,15.03,12.18,27.21,27.21,27.21h438.41c15.03,0,27.21,12.18,27.21,27.21v121.52" />
+            <line style="fill:none;stroke:#59AD40;stroke-width:2.4;stroke-miterlimit:10;" x1="1323.64" y1="1486.95" x2="1332.28" y2="1486.95" />
+        </g>
+        <g class="line 우이신설선">
+            <line style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" x1="490.8" y1="228.07" x2="490.8" y2="219.43" />
+            <path style="fill:none;stroke:#939498;stroke-width:2.4;stroke-miterlimit:10;" d="M910.36,506.68V251.04c0-15.03-12.18-27.21-27.21-27.21H490.8" />
+        </g>
+        <g class="line 의정부경전철">
+            <path style="fill:none;stroke:#FBAB18;stroke-width:2.4;stroke-miterlimit:10;" d="M1327.97,250.6V80.24c0-15.03-12.18-27.21-27.21-27.21h-200.71c-15.03,0-27.21,12.18-27.21,27.21v67.67c0,15.03-12.18,27.21-27.21,27.21h-22.52" />
+            <line style="fill:none;stroke:#FBAB18;stroke-width:2.4;stroke-miterlimit:10;" x1="1332.29" y1="250.6" x2="1323.65" y2="250.6" />
+            <line style="fill:none;stroke:#FBAB18;stroke-width:2.4;stroke-miterlimit:10;" x1="1022.36" y1="179.4" x2="1022.36" y2="170.76" />
+        </g>        
+        <g class="line 인천1호선">
+            <path style="fill:none;stroke:#87B2D8;stroke-width:2.4;stroke-miterlimit:10;" d="M180.02,277.67v667.08c0,12.06,9.77,21.83,21.83,21.83s21.83,9.77,21.83,21.83v391.13c0,15.03-12.18,27.21-27.21,27.21H178.3c-15.03,0-27.21,12.18-27.21,27.21l0.33,47.09c0,15.03,12.18,27.21,27.21,27.21h591.41" />
+            <line style="fill:none;stroke:#87B2D8;stroke-width:2.4;stroke-miterlimit:10;" x1="770.04" y1="1503.77" x2="770.04" y2="1512.41" />
+        </g>
+        <g class="line 인천2호선">
+            <path style="fill:none;stroke:#F7941D;stroke-width:2.4;stroke-miterlimit:10;" d="M262.75,1406.89h-3.87c-15.03,0-27.21-12.18-27.21-27.21V1099.6c0-15.03-12.18-27.21-27.21-27.21h-65.22c-15.03,0-27.21-12.18-27.21-27.21V322.59c0-15.03,12.18-27.21,27.21-27.21h2.77" />
+            <line style="fill:none;stroke:#F7941D;stroke-width:2.4;stroke-miterlimit:10;" x1="262.27" y1="1402.12" x2="262.27" y2="1410.76" />
+            <line style="fill:none;stroke:#F7941D;stroke-width:2.4;stroke-miterlimit:10;" x1="140.83" y1="291.05" x2="140.83" y2="299.69" />
+        </g>
     </g>
     <g id="transfers">
         <g class="transfer" id="신설동_환승">
@@ -1701,7 +1747,7 @@
             <tspan x="0" y="11">(이수)</tspan>
         </text>
         <text transform="translate(818.7979 887.4607)" class="station 3호선 7호선 9호선" id="고속터미널" visibility="hidden">고속터미널</text>
-        <text transform="translate(294.5791 501.1267)" class="station 5호선 9호선 김포도시철도 공항철도 서해선" id="김포공항" visibility="hidden">김포공항</text>
+        <text transform="translate(294.5791 501.1267)" class="station 5호선 9호선 김포골드라인 공항철도 서해선" id="김포공항" visibility="hidden">김포공항</text>
         <text transform="translate(261.6514 441.4807)" class="station 9호선" id="개화" visibility="hidden">개화</text>
         <text transform="translate(222.71 441.4807)" class="station 5호선" id="방화" visibility="hidden">방화</text>
         <text id="인천공항2터미널" transform="translate(65.2695 770.5808)" class="station 공항철도" visibility="hidden">
@@ -1755,15 +1801,15 @@
         <text transform="translate(117.3115 775.1863)" class="station 인천2호선" id="인천가좌" visibility="hidden">인천가좌</text>
         <text transform="translate(117.3115 839.99)" class="station 인천2호선" id="가재울" visibility="hidden">가재울</text>
         <text transform="translate(117.3115 902.9128)" class="station 인천2호선" id="주안국가산단" visibility="hidden">주안국가산단</text>
-        <text transform="translate(285.7983 356.1506)" class="station 김포도시철도" id="고촌" visibility="hidden">고촌</text>
-        <text transform="translate(285.7983 327.1903)" class="station 김포도시철도" id="풍무" visibility="hidden">풍무</text>
-        <text transform="translate(285.7983 298.6306)" class="station 김포도시철도" id="사우" visibility="hidden">사우</text>
-        <text transform="translate(269.2617 270.3703)" class="station 김포도시철도" id="걸포북변" visibility="hidden">걸포북변</text>
-        <text transform="translate(264.9746 236.9699)" class="station 김포도시철도" id="운양" visibility="hidden">운양</text>
-        <text transform="translate(231.2988 236.9695)" class="station 김포도시철도" id="장기" visibility="hidden">장기</text>
-        <text transform="translate(197.1758 236.9695)" class="station 김포도시철도" id="마산" visibility="hidden">마산</text>
-        <text transform="translate(163.6118 236.9695)" class="station 김포도시철도" id="구래" visibility="hidden">구래</text>
-        <text transform="translate(129.6011 236.9695)" class="station 김포도시철도" id="양촌" visibility="hidden">양촌</text>
+        <text transform="translate(285.7983 356.1506)" class="station 김포골드라인" id="고촌" visibility="hidden">고촌</text>
+        <text transform="translate(285.7983 327.1903)" class="station 김포골드라인" id="풍무" visibility="hidden">풍무</text>
+        <text transform="translate(285.7983 298.6306)" class="station 김포골드라인" id="사우" visibility="hidden">사우</text>
+        <text transform="translate(269.2617 270.3703)" class="station 김포골드라인" id="걸포북변" visibility="hidden">걸포북변</text>
+        <text transform="translate(264.9746 236.9699)" class="station 김포골드라인" id="운양" visibility="hidden">운양</text>
+        <text transform="translate(231.2988 236.9695)" class="station 김포골드라인" id="장기" visibility="hidden">장기</text>
+        <text transform="translate(197.1758 236.9695)" class="station 김포골드라인" id="마산" visibility="hidden">마산</text>
+        <text transform="translate(163.6118 236.9695)" class="station 김포골드라인" id="구래" visibility="hidden">구래</text>
+        <text transform="translate(129.6011 236.9695)" class="station 김포골드라인" id="양촌" visibility="hidden">양촌</text>
         <text transform="translate(117.3525 327.9944)" class="station 인천2호선" id="검단오류" visibility="hidden">검단오류</text>
         <text transform="translate(77.5479 471.4187)" class="station 인천2호선 공항철도" id="검암" visibility="hidden">검암</text>
         <text transform="translate(172.4707 264.3117)" class="station 인천1호선 공항철도" id="계양" visibility="hidden">계양</text>

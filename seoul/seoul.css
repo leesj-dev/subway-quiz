@@ -178,6 +178,8 @@ select {
   overflow: hidden;
   opacity: 40%;
   cursor: not-allowed;
+  margin: 0px .15vw;
+  line-height: 100%;
 }
 
 .clickable-on {
@@ -185,6 +187,8 @@ select {
   overflow: hidden;
   opacity: 40%;
   cursor: pointer;
+  margin: 0px .15vw;
+  line-height: 100%;
   transition: opacity .1s ease-out;
   -moz-transition: opacity .1s ease-out;
   -webkit-transition: opacity .1s ease-out;
@@ -290,6 +294,8 @@ h1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 0px 0px 25px;
 }
 
 #timer {
@@ -333,6 +339,38 @@ h1 {
   color: "#B1B4C0";
 }
 
+#transparency,
+.markSelect {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#circleContainerColumn {
+  width: 200px;
+  margin-left: 30px;
+}
+
+#progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4.25vh;
+}
+
+.progressPercentage {
+  font-size: 15px;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.progressCnt {
+  font-size: 15px;
+  padding-left: 10px;
+  vertical-align: middle;
+}
 
 /* 미디어 쿼리 */
 @media (max-aspect-ratio: 7/10) {
@@ -399,12 +437,6 @@ h1 {
     margin: 0px 0px;
   }
 
-  #main {
-    flex-direction: column;
-    width: calc(95vw - 300px);
-    margin-top: 1vw;
-  }
-
   #time {
     flex-direction: column;
     margin-top: 17vh;
@@ -437,6 +469,21 @@ h1 {
   }
 }
 
+@media (min-aspect-ratio: 7/10) and (max-aspect-ratio: 13/10) {
+  #main {
+    flex-direction: column;
+    width: calc(95vw - 300px);
+    margin-top: 1vw;
+  }
+}
+
+@media (min-aspect-ratio: 13/10) {
+  #main {
+    flex-direction: column;
+    width: calc(95vw - 530px);
+    margin-top: 1vw;
+  }
+}
 
 #slider {
   /* To remove default styles appplied by webkit browsers */
@@ -507,20 +554,4 @@ h1 {
   padding: 0 10px;
   border-radius: 1px;
 
-}
-
-#transparency,
-.markSelect {
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-#progress {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 4.25vh;
 }

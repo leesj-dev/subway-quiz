@@ -7,18 +7,75 @@ let solved = 0;
 let minSetting = parseInt(document.getElementById("min").innerText);
 let minSettingInitial = minSetting;
 let inactive = (document.getElementById("slider").value ** 1.5 / 1000).toString();
-let viewportWidth;
-let viewportHeight;
+let viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+let flg;
 const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.4";
+const lineData = {
+    "1호선": 99,
+    "2호선": 51,
+    "3호선": 44,
+    "4호선": 51,
+    "5호선": 56,
+    "6호선": 39,
+    "7호선": 53,
+    "8호선": 18,
+    "9호선": 38,
+    "경강선": 11,
+    "경의·중앙선": 58,
+    "경춘선": 25,
+    "공항철도": 14,
+    "김포골드라인": 10,
+    "서해선": 21,
+    "수인·분당선": 63,
+    "신림선": 11,
+    "신분당선": 16,
+    "에버라인": 15,
+    "우이신설선": 13,
+    "의정부경전철": 15,
+    "인천1호선": 30,
+    "인천2호선": 27,
+}
+
+// turn the keys into an array
+const lineNames = Object.keys(lineData);
+
+// 화면 크기에 따라, circles의 배치를 조절
+function setCircleContainer() {
+    let html;
+    if (window.matchMedia("(max-aspect-ratio: 13/10)").matches) {
+        // 13:10 비율 미만이라면
+        flg = false;
+        html = "";
+        document.getElementById("circleContainerColumn").style.width = "0px";
+        document.getElementById("circleContainerColumn").style.marginLeft = "0px";
+        lineNames.forEach(line => {
+            html += `<div class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
+            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></div>`;
+        })
+        document.getElementById("circleContainerRow").innerHTML += html;
+        document.getElementById("circleContainerColumn").innerHTML = "";
+    } else {
+        // 13:10 비율 이상이라면
+        flg = true;
+        html = `<table id="progress">`;
+        lineNames.forEach(line => {
+            html += `<tr><td class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
+            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></td>`;
+            html += `<td class="progressPercentage"><span id="percentage_${line}">0</span><span>%</span></td>`;
+            html += `<td class="progressCnt"><span style="font-weight: bold;" id="cnt_${line}">0</span><span>/</span><span>${lineData[line]}</span></td></tr>`;
+        })
+        html += `</table>`;
+        document.getElementById("circleContainerColumn").innerHTML += html;
+        document.getElementById("circleContainerRow").innerHTML = "";
+    }
+}
 
 // add svg pan zoom module
 window.onload = function () {
-    // get viewport width and height
-    viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
+    setCircleContainer();
     // set svg width
     document.getElementById("map").setAttribute("width", viewportWidth * 0.95 - 300)
 
@@ -66,10 +123,8 @@ window.addEventListener("resize", function () {
     panZoom.center();
 });
 
-
-// local storage로부터 
+// local storage로부터 최고기록 가져옴
 localStorage.getItem("highScore") === null ? localStorage.setItem("highScore", 0) : document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
-
 
 // 역 표시 체크박스 변경 시
 document.getElementById("check1").addEventListener("change", function () {
@@ -88,11 +143,17 @@ document.getElementById("check2").addEventListener("change", function () {
     changeTransferOpacity();
 })
 
+// 노선 node focus 버튼 변경 시
+let check3 = true;
+document.getElementById("check3").addEventListener("change", function () {
+    check3 === true ? check3 = false : check3 = true;
+})
+
 // 투명도 변경 시
 document.getElementById("slider").addEventListener("input", function (event) {
     event.preventDefault();
     inactive = (event.target.value ** 1.5 / 1000).toString();
-    const lines = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의·중앙선", "경춘선", "공항철도", "김포골드라인", "서해선", "수인·분당선", "신림선", "신분당선", "에버라인", "우이신설선", "의정부경전철", "인천1호선", "인천2호선"]
+    const lines = [...lineNames];
     let subwayMap = document.getElementById("map").contentDocument;
     try {
         // 현재 active한 호선 추출 (없다면 catch로 넘어감)
@@ -136,7 +197,14 @@ document.getElementById("answer").addEventListener("submit", function (event) {
                     solved += 1;
                     document.getElementById("solved").innerHTML = solved;
                     showPopup("correct");
-                    if (document.getElementById("solved").innerHTML === document.getElementById("total").innerHTML) {
+
+                    if (flg) { // 13:10 비율 이상인 경우
+                        let solvedOnLine = parseInt(document.getElementById("cnt_" + line).innerHTML) + 1;
+                        document.getElementById("cnt_" + line).innerHTML = solvedOnLine;
+                        document.getElementById("percentage_" + line).innerHTML = Math.round(solvedOnLine / lineData[line] * 100);
+                    }
+
+                    if (solved === document.getElementById("total").innerHTML) {
                         document.getElementById("complete").style.display = "block";
                         giveUp();
                     }
@@ -208,11 +276,28 @@ function changeTransferOpacity() {
     })
 };
 
+// 호선 선택 버튼 클릭 시 그 부분만 확대해서 보여줌
+function showNode(node) {
+    const bbox = node.getBBox();
 
+    // pan so the node is at the center
+    const { width, height, realZoom } = panZoom.getSizes()
+    panZoom.pan({
+        x: -realZoom * (bbox.x - width / (realZoom * 2) + bbox.width / 2),
+        y: -realZoom * (bbox.y - height / (realZoom * 2) + bbox.height / 2)
+    })
+
+    // we want to zoom in to see just around the node
+    const relativeZoom = panZoom.getZoom();
+
+    const desiredWidth = bbox.width * realZoom + 200; // plus 200 for some space around the node
+    const desiredHeight = bbox.height * realZoom + 200;
+    panZoom.zoom(relativeZoom * Math.min((width / desiredWidth), (height / desiredHeight)));
+}
 
 // 호선 선택 시
 function selectLine(id) {
-    const lines = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의·중앙선", "경춘선", "공항철도", "김포골드라인", "서해선", "수인·분당선", "신림선", "신분당선", "에버라인", "우이신설선", "의정부경전철", "인천1호선", "인천2호선"]
+    const lines = [...lineNames];
     subwayMap = document.getElementById("map").contentDocument;
     lineName = id.slice(7);
     let opacity = document.getElementById(id).style.opacity;
@@ -228,7 +313,8 @@ function selectLine(id) {
             // 모든 호선이 비활성화되면 투명도 active로 초기화
             if ([...circles].every(data => data.style.opacity === inactiveCircle)) {
                 lines.forEach(line => batchSetOpacity(subwayMap.getElementsByClassName(line), active));
-                batchSetOpacity(subwayMap.getElementsByClassName("transfer"), active);
+                let transfer = subwayMap.getElementsByClassName("transfer");
+                [...transfer].forEach(station => batchSetOpacity(station.children, active));
                 lineName = null;
             }
         }
@@ -251,6 +337,12 @@ function selectLine(id) {
 
             // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 inactive로 변경
             changeTransferOpacity();
+
+            // 노선 클릭 시 확대 버튼이 활성화되어 있다면, 그 노선만 확대해서 보여줌
+            if (check3) {
+                let node = subwayMap.getElementsByClassName("line " + lineName)[0];
+                showNode(node);
+            }
         }
     }
 }
@@ -307,7 +399,7 @@ function giveUp() {
     batchSetOpacity(circles, inactiveCircle);
 
     // 모든 노선의 opacity를 active로 변경
-    const lines = ["1호선", "2호선", "3호선", "4호선", "5호선", "6호선", "7호선", "8호선", "9호선", "경강선", "경의·중앙선", "경춘선", "공항철도", "김포골드라인", "서해선", "수인·분당선", "신림선", "신분당선", "에버라인", "우이신설선", "의정부경전철", "인천1호선", "인천2호선"]
+    const lines = [...lineNames];
     let subwayMap = document.getElementById("map").contentDocument;
     let totalLines = lines.map(x => subwayMap.getElementsByClassName(x))
     totalLines.forEach(line => batchSetOpacity(line, active));
