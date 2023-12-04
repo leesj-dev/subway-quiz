@@ -203,7 +203,6 @@ document.getElementById("answer").addEventListener("submit", function (event) {
                     showPopup("correct");
 
                     if (flg) { // 13:10 비율 이상인 경우
-                        let solvedOnLine = parseInt(document.getElementById("cnt_" + line).innerHTML) + 1;
                         let linesArr = [];
                         try { // 환승역인 경우, 환승역이 지나는 모든 노선을 linesArr에 push해야 함
                             let transferStation = subwayMap.getElementById(station + "_환승");
@@ -218,12 +217,13 @@ document.getElementById("answer").addEventListener("submit", function (event) {
                         catch (e) { // 환승역이 아니라면, line만 넣으면 됨
                             linesArr = [line];
                         }
-                        linesArr.forEach(line => {
-                            document.getElementById("cnt_" + line).innerHTML = solvedOnLine;
-                            document.getElementById("percentage_" + line).innerHTML = Math.round(solvedOnLine / lineData[line] * 100);
+                        linesArr.forEach(l => { // 해당 호선의 맞힌 개수와 퍼센트를 업데이트
+                            let solvedOnLine = parseInt(document.getElementById("cnt_" + l).innerHTML) + 1;
+                            document.getElementById("cnt_" + l).innerHTML = solvedOnLine;
+                            document.getElementById("percentage_" + l).innerHTML = Math.round(solvedOnLine / lineData[l] * 100);
                         });
                     }
-
+                    // 다 맞혔다면 게임 종료
                     if (solved === document.getElementById("total").innerHTML) {
                         document.getElementById("complete").style.display = "block";
                         giveUp();
@@ -237,7 +237,6 @@ document.getElementById("answer").addEventListener("submit", function (event) {
         } catch (error) {
             showPopup("warning");
         }
-
     }
     document.getElementById("station").value = "";  // 입력한 역명은 clear (호선은 유지)
 })
