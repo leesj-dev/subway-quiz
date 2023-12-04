@@ -42,37 +42,6 @@ const lineData = {
 // turn the keys into an array
 const lineNames = Object.keys(lineData);
 
-// 화면 크기에 따라, circles의 배치를 조절
-function setCircleContainer() {
-    let html;
-    if (window.matchMedia("(max-aspect-ratio: 13/10)").matches) {
-        // 13:10 비율 미만이라면
-        flg = false;
-        html = "";
-        document.getElementById("circleContainerColumn").style.width = "0px";
-        document.getElementById("circleContainerColumn").style.marginLeft = "0px";
-        lineNames.forEach(line => {
-            html += `<div class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
-            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></div>`;
-        })
-        document.getElementById("circleContainerRow").innerHTML += html;
-        document.getElementById("circleContainerColumn").innerHTML = "";
-    } else {
-        // 13:10 비율 이상이라면
-        flg = true;
-        html = `<table id="progress">`;
-        lineNames.forEach(line => {
-            html += `<tr><td class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
-            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></td>`;
-            html += `<td class="progressPercentage"><span id="percentage_${line}">0</span><span>%</span></td>`;
-            html += `<td class="progressCnt"><span style="font-weight: bold;" id="cnt_${line}">0</span><span>/</span><span>${lineData[line]}</span></td></tr>`;
-        })
-        html += `</table>`;
-        document.getElementById("circleContainerColumn").innerHTML += html;
-        document.getElementById("circleContainerRow").innerHTML = "";
-    }
-}
-
 // add svg pan zoom module
 window.onload = function () {
     setCircleContainer();
@@ -112,7 +81,6 @@ window.onload = function () {
         // beforePan: beforePan, // under development
     });
 };
-
 
 // 창 크기 바뀔 때
 window.addEventListener("resize", function () {
@@ -240,6 +208,37 @@ document.getElementById("answer").addEventListener("submit", function (event) {
     }
     document.getElementById("station").value = "";  // 입력한 역명은 clear (호선은 유지)
 })
+
+// 화면 크기에 따라, circles의 배치를 조절
+function setCircleContainer() {
+    let html;
+    if (window.matchMedia("(max-aspect-ratio: 13/10)").matches) {
+        // 13:10 비율 미만이라면
+        flg = false;
+        html = "";
+        document.getElementById("circleContainerColumn").style.width = "0px";
+        document.getElementById("circleContainerColumn").style.marginLeft = "0px";
+        lineNames.forEach(line => {
+            html += `<div class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
+            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></div>`;
+        })
+        document.getElementById("circleContainerRow").innerHTML += html;
+        document.getElementById("circleContainerColumn").innerHTML = "";
+    } else {
+        // 13:10 비율 이상이라면
+        flg = true;
+        html = `<table id="progress">`;
+        lineNames.forEach(line => {
+            html += `<tr><td class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
+            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></td>`;
+            html += `<td class="progressPercentage"><span id="percentage_${line}">0</span><span>%</span></td>`;
+            html += `<td class="progressCnt"><span style="font-weight: bold;" id="cnt_${line}">0</span><span>/</span><span>${lineData[line]}</span></td></tr>`;
+        })
+        html += `</table>`;
+        document.getElementById("circleContainerColumn").innerHTML += html;
+        document.getElementById("circleContainerRow").innerHTML = "";
+    }
+}
 
 // 제한 시간 가감
 function addTime(i) {
