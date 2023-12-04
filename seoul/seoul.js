@@ -164,6 +164,10 @@ document.getElementById("slider").addEventListener("input", function (event) {
         let notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
         notSelectedLines.forEach(line => batchSetOpacity(line, inactive));
 
+        // 앞에서 환승역 투명도도 같이 바뀌므로 (notSelectedLines에 포함됨), 해당 호선을 다시 active로 변경
+        let selectedLine = subwayMap.getElementsByClassName(lineName);
+        batchSetOpacity(selectedLine, active);
+
         // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 새로운 inactive로 변경
         changeTransferOpacity();
     }
@@ -200,8 +204,24 @@ document.getElementById("answer").addEventListener("submit", function (event) {
 
                     if (flg) { // 13:10 비율 이상인 경우
                         let solvedOnLine = parseInt(document.getElementById("cnt_" + line).innerHTML) + 1;
-                        document.getElementById("cnt_" + line).innerHTML = solvedOnLine;
-                        document.getElementById("percentage_" + line).innerHTML = Math.round(solvedOnLine / lineData[line] * 100);
+                        let linesArr = [];
+                        try { // 환승역인 경우, 환승역이 지나는 모든 노선을 linesArr에 push해야 함
+                            let transferStation = subwayMap.getElementById(station + "_환승");
+                            for (let child of transferStation.children) {
+                                let classList = [...child.classList];
+                                if (classList.includes("fill")) { // fill을 뺸 나머지 class명을 linesArr에 push
+                                    classList.splice(classList.indexOf("fill"), 1);
+                                    linesArr.push(classList.pop());
+                                }
+                            }
+                        }
+                        catch (e) { // 환승역이 아니라면, line만 넣으면 됨
+                            linesArr = [line];
+                        }
+                        linesArr.forEach(line => {
+                            document.getElementById("cnt_" + line).innerHTML = solvedOnLine;
+                            document.getElementById("percentage_" + line).innerHTML = Math.round(solvedOnLine / lineData[line] * 100);
+                        });
                     }
 
                     if (solved === document.getElementById("total").innerHTML) {
