@@ -207,7 +207,7 @@ document.getElementById("answer").addEventListener("submit", function (event) {
                         let linesArr = [];
                         try { // 환승역인 경우, 환승역이 지나는 모든 노선을 linesArr에 push해야 함
                             let transferStation = subwayMap.getElementById(station + "_환승");
-                            for (let child of transferStation.children) {
+                            for (const child of transferStation.children) {
                                 let classList = [...child.classList];
                                 if (classList.includes("fill")) { // fill을 뺸 나머지 class명을 linesArr에 push
                                     classList.splice(classList.indexOf("fill"), 1);
@@ -408,10 +408,10 @@ function giveUp() {
     document.getElementById("min").innerText = document.getElementById("min").innerText;  // 더 이상 변경 방지
     document.getElementById("sec").innerText = document.getElementById("sec").innerText;
     let incorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="hidden"]');
-    for (let i = 0; i < incorrect.length; i++) {
-        incorrect[i].setAttribute("fill", "red");
-        incorrect[i].setAttribute("font-weight", "bold");
-        incorrect[i].setAttribute("visibility", "visible");
+    for (const element of incorrect) {
+        element.setAttribute("fill", "red");
+        element.setAttribute("font-weight", "bold");
+        element.setAttribute("visibility", "visible");
     }
 
     // 모든 동그라미의 opacity를 inactiveCircle로 변경
@@ -448,10 +448,10 @@ function giveUp() {
 function resetTimer() {
     document.getElementById("complete").style.display = "none";
     let previousCorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="visible"]');
-    for (let i = 0; i < previousCorrect.length; i++) {
-        previousCorrect[i].setAttribute("fill", "black");
-        previousCorrect[i].setAttribute("font-weight", "regular");
-        previousCorrect[i].setAttribute("visibility", "hidden");
+    for (const element of previousCorrect) {
+        element.setAttribute("fill", "black");
+        element.setAttribute("font-weight", "regular");
+        element.setAttribute("visibility", "hidden");
     }
     document.getElementById("min").innerText = minSetting < 10 ? "0" + minSetting : minSetting;
     document.getElementById("sec").innerText = "00";
