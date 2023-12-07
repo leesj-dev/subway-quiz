@@ -6,6 +6,7 @@ let lineName;
 let panZoom;
 let solved = 0;
 let inactive = (document.getElementById("slider").value ** 1.5 / 1000).toString();
+const minSettingMax = 99;
 const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.4";
@@ -52,6 +53,7 @@ if (minSetting === null) {
     minSetting = 90;
     localStorage.setItem("minSetting", minSetting);
 } else {
+    minSetting = parseInt(minSetting);
     document.getElementById("min").innerHTML = minSetting < 10 ? "0" + minSetting : minSetting;
 }
 
@@ -365,12 +367,12 @@ function selectLine(id) {
 // 제한 시간 가감
 function addTime(i) {
     let min = minSetting;
-    // minSettingInitial 이상으로 못 바꾸게 하고 싶으면 (i === 1 && min < minSettingInitial)로 대체
-    if (i === 1 || (i === -1 && min > 1)) {
+    if ((i === 1 && min < minSettingMax) || (i === -1 && min > 1)) {
         min += i
     }
     document.getElementById("min").innerText = min < 10 ? "0" + min : min;
     minSetting = min
+    localStorage.setItem("minSetting", minSetting);
 }
 
 // 타이머 시작
