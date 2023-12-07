@@ -252,9 +252,7 @@ function showPopup(e) {
     // 팝업이 2초 내에 두 번 이상 뜰 때 새로 팝업 뜨게 함
     const allPopups = document.getElementsByClassName("popup");
     clearTimeout(timeout);
-    for (let i = 0; i < allPopups.length; i++) {
-        allPopups[i].style.display = "none";
-    }
+    [...allPopups].forEach(item => item.style.display = "none");
     item.classList.remove("popup");  // reset animation
     void item.offsetWidth;  // trigger reflow
     item.classList.add("popup");  // start animation
