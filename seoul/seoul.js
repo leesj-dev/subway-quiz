@@ -418,7 +418,7 @@ function giveUp() {
     let incorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="hidden"]');
     for (const element of incorrect) {
         element.setAttribute("fill", "red");
-        element.setAttribute("font-weight", "bold");
+        // element.setAttribute("font-weight", "bold");
         element.setAttribute("visibility", "visible");
     }
 
@@ -458,7 +458,7 @@ function resetTimer() {
     const previousCorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="visible"]');
     for (const element of previousCorrect) {
         element.setAttribute("fill", "black");
-        element.setAttribute("font-weight", "regular");
+        // element.setAttribute("font-weight", "bold");
         element.setAttribute("visibility", "hidden");
     }
     document.getElementById("min").innerText = minSetting < 10 ? "0" + minSetting : minSetting;
