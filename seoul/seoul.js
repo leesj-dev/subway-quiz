@@ -1,72 +1,110 @@
 let timeout;
 let timer;
+let minSetting;
 let subwayMap;
 let lineName;
 let panZoom;
 let solved = 0;
-let minSetting = parseInt(document.getElementById("min").innerText);
-let minSettingInitial = minSetting;
 let inactive = (document.getElementById("slider").value ** 1.5 / 1000).toString();
-let viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-let viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-let flg;
 const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.4";
-const lineData = {
-    "1호선": 99,
-    "2호선": 51,
-    "3호선": 44,
-    "4호선": 51,
-    "5호선": 56,
-    "6호선": 39,
-    "7호선": 53,
-    "8호선": 18,
-    "9호선": 38,
-    "경강선": 11,
-    "경의·중앙선": 58,
-    "경춘선": 25,
-    "공항철도": 14,
-    "김포골드라인": 10,
-    "서해선": 21,
-    "수인·분당선": 63,
-    "신림선": 11,
-    "신분당선": 16,
-    "에버라인": 15,
-    "우이신설선": 13,
-    "의정부경전철": 15,
-    "인천1호선": 30,
-    "인천2호선": 27,
+const lineData = { // [맞힌 개수, 총 개수]
+    "1호선": [0, 99],
+    "2호선": [0, 51],
+    "3호선": [0, 44],
+    "4호선": [0, 51],
+    "5호선": [0, 56],
+    "6호선": [0, 39],
+    "7호선": [0, 53],
+    "8호선": [0, 18],
+    "9호선": [0, 38],
+    "경강선": [0, 11],
+    "경의·중앙선": [0, 58],
+    "경춘선": [0, 25],
+    "공항철도": [0, 14],
+    "김포골드라인": [0, 10],
+    "서해선": [0, 21],
+    "수인·분당선": [0, 63],
+    "신림선": [0, 11],
+    "신분당선": [0, 16],
+    "에버라인": [0, 15],
+    "우이신설선": [0, 13],
+    "의정부경전철": [0, 15],
+    "인천1호선": [0, 30],
+    "인천2호선": [0, 27],
 }
 
-// turn the keys into an array
+// lineData의 key를 array로 반환
 const lineNames = Object.keys(lineData);
 
-// add svg pan zoom module
-window.onload = function () {
-    setCircleContainer();
-    // set svg width
-    document.getElementById("map").setAttribute("width", viewportWidth * 0.95 - 300)
+// local storage로부터 데이터 가져옴
+highScore = localStorage.getItem("highScore")
+if (highScore === null) {
+    highScore = 0;
+    localStorage.setItem("highScore", highScore);
+} else {
+    document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
+}
 
-    // stop panning over the borders
-    let beforePan;
-    beforePan = function (oldPan, newPan) {
-        let sizes = this.getSizes(),
-            gutterWidth = (viewportWidth * 0.95 - 300),  // as defined in the css
-            gutterHeight = (viewportHeight * 0.95 - 130), // as defined in the css
-            // gutterWidth = sizes.viewBox.width,
-            // gutterHeight = sizes.viewBox.height,
-            leftLimit = gutterWidth - (sizes.viewBox.x + sizes.viewBox.width) * sizes.realZoom,
-            rightLimit = sizes.width - gutterWidth - (sizes.viewBox.x * sizes.realZoom),
-            topLimit = gutterHeight - (sizes.viewBox.y + sizes.viewBox.height) * sizes.realZoom,
-            bottomLimit = sizes.height - gutterHeight - (sizes.viewBox.y * sizes.realZoom)
+minSetting = localStorage.getItem("minSetting");
+if (minSetting === null) {
+    minSetting = 90;
+    localStorage.setItem("minSetting", minSetting);
+} else {
+    document.getElementById("min").innerHTML = minSetting < 10 ? "0" + minSetting : minSetting;
+}
+
+// circleContainerRow 내 HTML 생성
+let html = "";
+lineNames.forEach(line => {
+    html += `<div class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
+    html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></div>`;
+})
+document.getElementById("circleContainerRow").innerHTML += html;
+
+// circleContainerColumn 내 HTML 생성
+html = `<table id="progress">`;
+lineNames.forEach(line => {
+    html += `<tr><td class="circleBox">`;
+    html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></td>`;
+    html += `<td class="progressPercentage"><span id="percentage_${line}">0</span><span>%</span></td>`;
+    html += `<td class="progressCnt"><span style="font-weight: bold;" id="cnt_${line}">0</span><span>/</span><span>${lineData[line][1]}</span></td></tr>`;
+})
+html += `</table>`;
+document.getElementById("circleContainerColumn").innerHTML += html;
+
+// svg가 화면을 꽉 채우도록 width 설정 (css에 정의된 main의 width와 같게 설정)
+const mainWidth = document.getElementById("main").offsetWidth;
+document.getElementById("map").setAttribute("width", mainWidth);
+
+// svg-pan-zoom이 지도 넘어서 패닝하는 것 방지
+let beforePan = function (oldPan, newPan) {
+    let sizes = this.getSizes(),
+        gutterWidth = document.getElementById("map").offsetWidth,
+        gutterHeight = document.getElementById("map").offsetHeight,
+        leftLimit = gutterWidth - (sizes.viewBox.x + sizes.viewBox.width) * sizes.realZoom,
+        rightLimit = sizes.width - gutterWidth - sizes.viewBox.x * sizes.realZoom,
+        topLimit = gutterHeight - (sizes.viewBox.y + sizes.viewBox.height) * sizes.realZoom,
+        bottomLimit = sizes.height - gutterHeight - sizes.viewBox.y * sizes.realZoom,
         customPan = {};
-        customPan.x = Math.max(leftLimit, Math.min(rightLimit, newPan.x));
-        customPan.y = Math.max(topLimit, Math.min(bottomLimit, newPan.y));
 
-        return customPan
+    if (leftLimit < 0) {
+        customPan.x = Math.max(leftLimit, Math.min(rightLimit, newPan.x))
+    } else {
+        customPan.x = Math.min(leftLimit, Math.max(rightLimit, newPan.x))
     }
-    // initialize svg pan zoom
+
+    if (topLimit < 0) {
+        customPan.y = Math.max(topLimit, Math.min(bottomLimit, newPan.y))
+    } else {
+        customPan.y = Math.min(topLimit, Math.max(bottomLimit, newPan.y))
+    }
+    return customPan
+}
+
+// 로딩이 완료되면 svg-pan-zoom initialization
+window.onload = function () {
     panZoom = svgPanZoom("#map", {
         panEnabled: true,
         zoomEnabled: true,
@@ -78,25 +116,32 @@ window.onload = function () {
         minZoom: 1,
         maxZoom: 5,
         zoomScaleSensitivity: 0.2,
-        // beforePan: beforePan, // under development
+        beforePan: beforePan,
     });
+    // 화면을 처음부터 채우고 싶을 때
+    // panZoom.contain()
+    // panZoom.setMinZoom(window.panZoom.getZoom())
 };
 
 // 창 크기 바뀔 때
 window.addEventListener("resize", function () {
-    viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    document.getElementById("map").setAttribute("width", viewportWidth * 0.95 - 300)
+    const mainWidth = document.getElementById("main").offsetWidth;
+    document.getElementById("map").setAttribute("width", mainWidth);
     panZoom.updateBBox();
     panZoom.resize();
     panZoom.center();
-});
 
-// local storage로부터 최고기록 가져옴
-localStorage.getItem("highScore") === null ? localStorage.setItem("highScore", 0) : document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
+    // 모든 노선이 비활성화된 게 아니라면, node 확대 update
+    const circles = document.getElementsByClassName("clickable-on");
+    if (![...circles].every(data => data.style.opacity === inactiveCircle) && document.getElementById("check3").checked === true) {
+        const node = subwayMap.getElementsByClassName("line " + lineName)[0];
+        showNode(node);
+    }
+});
 
 // 역 표시 체크박스 변경 시
 document.getElementById("check1").addEventListener("change", function () {
-    let subwayMap = document.getElementById("map").contentDocument;
+    subwayMap = document.getElementById("map").contentDocument;
     if (this.checked) {
         subwayMap.getElementById("marks").style.display = "block";
     } else {
@@ -104,36 +149,23 @@ document.getElementById("check1").addEventListener("change", function () {
     }
 })
 
-// 환승역 타 노선 색 표시 버튼 변경 시
-let check2 = true;
-document.getElementById("check2").addEventListener("change", function () {
-    check2 === true ? check2 = false : check2 = true;
-    changeTransferOpacity();
-})
-
-// 노선 node focus 버튼 변경 시
-let check3 = true;
-document.getElementById("check3").addEventListener("change", function () {
-    check3 === true ? check3 = false : check3 = true;
-})
-
 // 투명도 변경 시
 document.getElementById("slider").addEventListener("input", function (event) {
     event.preventDefault();
     inactive = (event.target.value ** 1.5 / 1000).toString();
+    subwayMap = document.getElementById("map").contentDocument;
     const lines = [...lineNames];
-    let subwayMap = document.getElementById("map").contentDocument;
     try {
         // 현재 active한 호선 추출 (없다면 catch로 넘어감)
         lineName = [...document.getElementsByClassName("clickable-on")].filter((e) => e.style.opacity === active)[0].getAttribute("id").slice(7);
 
         // active하지 않은 호선의 투명도를 새로운 inactive로 변경
         lines.splice(lines.indexOf(lineName), 1);
-        let notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
+        const notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
         notSelectedLines.forEach(line => batchSetOpacity(line, inactive));
 
         // 앞에서 환승역 투명도도 같이 바뀌므로 (notSelectedLines에 포함됨), 해당 호선을 다시 active로 변경
-        let selectedLine = subwayMap.getElementsByClassName(lineName);
+        const selectedLine = subwayMap.getElementsByClassName(lineName);
         batchSetOpacity(selectedLine, active);
 
         // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 새로운 inactive로 변경
@@ -145,7 +177,7 @@ document.getElementById("slider").addEventListener("input", function (event) {
 // 제출 버튼 클릭 시
 document.getElementById("answer").addEventListener("submit", function (event) {
     event.preventDefault();
-    let subwayMap = document.getElementById("map").contentDocument;
+    subwayMap = document.getElementById("map").contentDocument;
     let station = event.target["station"].value;
     let line;
     if (station != "") { // 빈 form이 아니라면
@@ -158,11 +190,11 @@ document.getElementById("answer").addEventListener("submit", function (event) {
             if (twoStations.includes(station)) { // 역명이 겹치는 경우
                 station = station + "_" + line;
             }
-            let svgElement = subwayMap.getElementById(station);
+            const svgElement = subwayMap.getElementById(station);
 
             // 역명이 존재하고, svg에 해당 호선이 존재하는 경우
             if (svgElement != null && svgElement.classList.contains(line)) {
-                let currentState = svgElement.getAttribute("visibility");
+                const currentState = svgElement.getAttribute("visibility");
                 if (currentState === "hidden") {
                     svgElement.setAttribute("visibility", "visible");
                     svgElement.style.opacity = active;
@@ -170,27 +202,29 @@ document.getElementById("answer").addEventListener("submit", function (event) {
                     document.getElementById("solved").innerHTML = solved;
                     showPopup("correct");
 
-                    if (flg) { // 13:10 비율 이상인 경우
-                        let linesArr = [];
-                        try { // 환승역인 경우, 환승역이 지나는 모든 노선을 linesArr에 push해야 함
-                            let transferStation = subwayMap.getElementById(station + "_환승");
-                            for (const child of transferStation.children) {
-                                let classList = [...child.classList];
-                                if (classList.includes("fill")) { // fill을 뺸 나머지 class명을 linesArr에 push
-                                    classList.splice(classList.indexOf("fill"), 1);
-                                    linesArr.push(classList.pop());
-                                }
+                    // 13:10 비율 이상인 경우에서만 보임
+                    let linesArr = [];
+                    try { // 환승역인 경우, 환승역이 지나는 모든 노선을 linesArr에 push해야 함
+                        const transferStation = subwayMap.getElementById(station + "_환승");
+                        for (const child of transferStation.children) {
+                            const classList = [...child.classList];
+                            if (classList.includes("fill")) { // fill을 뺸 나머지 class명을 linesArr에 push
+                                classList.splice(classList.indexOf("fill"), 1);
+                                linesArr.push(classList.pop());
                             }
                         }
-                        catch (e) { // 환승역이 아니라면, line만 넣으면 됨
-                            linesArr = [line];
-                        }
-                        linesArr.forEach(l => { // 해당 호선의 맞힌 개수와 퍼센트를 업데이트
-                            let solvedOnLine = parseInt(document.getElementById("cnt_" + l).innerHTML) + 1;
-                            document.getElementById("cnt_" + l).innerHTML = solvedOnLine;
-                            document.getElementById("percentage_" + l).innerHTML = Math.round(solvedOnLine / lineData[l] * 100);
-                        });
                     }
+                    catch (error) { // 환승역이 아니라면, line만 넣으면 됨
+                        linesArr = [line];
+                    }
+                    linesArr.forEach(line => { // 해당 호선의 맞힌 개수와 퍼센트를 업데이트
+                        lineData[line][0] += 1;
+                        const solvedOnLine = lineData[line][0];
+                        const totalQuestions = lineData[line][1];
+                        document.getElementById("cnt_" + line).innerHTML = solvedOnLine;
+                        document.getElementById("percentage_" + line).innerHTML = Math.round(solvedOnLine / totalQuestions * 100);
+                    });
+
                     // 다 맞혔다면 게임 종료
                     if (solved === document.getElementById("total").innerHTML) {
                         document.getElementById("complete").style.display = "block";
@@ -204,51 +238,11 @@ document.getElementById("answer").addEventListener("submit", function (event) {
             }
         } catch (error) {
             showPopup("warning");
+            console.log(error);
         }
     }
     document.getElementById("station").value = "";  // 입력한 역명은 clear (호선은 유지)
 })
-
-// 화면 크기에 따라, circles의 배치를 조절
-function setCircleContainer() {
-    let html;
-    if (window.matchMedia("(max-aspect-ratio: 13/10)").matches) {
-        // 13:10 비율 미만이라면
-        flg = false;
-        html = "";
-        document.getElementById("circleContainerColumn").style.width = "0px";
-        document.getElementById("circleContainerColumn").style.marginLeft = "0px";
-        lineNames.forEach(line => {
-            html += `<div class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
-            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></div>`;
-        })
-        document.getElementById("circleContainerRow").innerHTML += html;
-        document.getElementById("circleContainerColumn").innerHTML = "";
-    } else {
-        // 13:10 비율 이상이라면
-        flg = true;
-        html = `<table id="progress">`;
-        lineNames.forEach(line => {
-            html += `<tr><td class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
-            html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></td>`;
-            html += `<td class="progressPercentage"><span id="percentage_${line}">0</span><span>%</span></td>`;
-            html += `<td class="progressCnt"><span style="font-weight: bold;" id="cnt_${line}">0</span><span>/</span><span>${lineData[line]}</span></td></tr>`;
-        })
-        html += `</table>`;
-        document.getElementById("circleContainerColumn").innerHTML += html;
-        document.getElementById("circleContainerRow").innerHTML = "";
-    }
-}
-
-// 제한 시간 가감
-function addTime(i) {
-    let m = minSetting;
-    if ((i === 1 && m < minSettingInitial) || (i === -1 && m > 1)) {
-        m += i
-    }
-    document.getElementById("min").innerText = m < 10 ? "0" + m : m;
-    minSetting = m
-}
 
 // 팝업창 띄우기
 function showPopup(e) {
@@ -273,16 +267,16 @@ function batchSetOpacity(elements, value) {
 
 // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 inactive로 변경
 function changeTransferOpacity() {
-    let transfer = subwayMap.getElementsByClassName("transfer");
+    subwayMap = document.getElementById("map").contentDocument;
+    const transfer = subwayMap.getElementsByClassName("transfer");
     [...transfer].forEach(station => {
         // 호선을 선택한 경우
         if (lineName != null) {
             // 해당 호선을 포함한다면
             if (station.getElementsByClassName(lineName).length > 0) {
-                if (check2 === true) {
-                    batchSetOpacity(station.children, active);
-                } else {
-                    let filtered = [...station.children].filter((e) => (e.classList.contains("fill")) && !(e.classList.contains(lineName))); // 해당 호선을 제외한 나머지 호선들
+                batchSetOpacity(station.children, active);
+                if (document.getElementById("check2").checked === false) { // 환승역 타 노선 색 표시 버튼이 꺼져있다면
+                    const filtered = [...station.children].filter((e) => (e.classList.contains("fill")) && !(e.classList.contains(lineName))); // 해당 호선을 제외한 나머지 호선들
                     batchSetOpacity(filtered, inactive);
                 }
             } else { // 해당 호선을 포함하지 않는다면
@@ -296,48 +290,51 @@ function changeTransferOpacity() {
 
 // 호선 선택 버튼 클릭 시 그 부분만 확대해서 보여줌
 function showNode(node) {
+    // beforePan이 panning을 못하게 방해하므로 잠시 비활성화
+    panZoom.setBeforePan(null);
+
+    // node의 bounding box를 구함
     const bbox = node.getBBox();
 
-    // pan so the node is at the center
-    const { width, height, realZoom } = panZoom.getSizes()
+    // node가 가운데에 오도록 pan
+    const { width, height, realZoom } = panZoom.getSizes();
     panZoom.pan({
         x: -realZoom * (bbox.x - width / (realZoom * 2) + bbox.width / 2),
         y: -realZoom * (bbox.y - height / (realZoom * 2) + bbox.height / 2)
-    })
+    });
 
-    // we want to zoom in to see just around the node
+    // node에 focus하도록 zoom
     const relativeZoom = panZoom.getZoom();
-
-    const desiredWidth = bbox.width * realZoom + 200; // plus 200 for some space around the node
-    const desiredHeight = bbox.height * realZoom + 200;
+    const desiredWidth = (bbox.width + 200) * realZoom; // 200px 여유공간
+    const desiredHeight = (bbox.height + 200) * realZoom;
     panZoom.zoom(relativeZoom * Math.min((width / desiredWidth), (height / desiredHeight)));
+
+    // beforePan 재활성화
+    panZoom.setBeforePan(beforePan);
 }
 
 // 호선 선택 시
 function selectLine(id) {
-    const lines = [...lineNames];
     subwayMap = document.getElementById("map").contentDocument;
     lineName = id.slice(7);
-    let opacity = document.getElementById(id).style.opacity;
-    let circles = document.getElementsByClassName("clickable-on");
+    const lines = [...lineNames];
+    const opacity = document.getElementById(id).style.opacity;
+    const circles = document.getElementsByClassName("clickable-on");
 
     // class가 clickable-on인지 확인
     if (document.getElementById(id).getAttribute("class") === "clickable-on") {
-        // toggle off
-        if (opacity === active) {
+        if (opacity === active) {  // toggle off
             // 선택한 동그라미 비활성화
             document.getElementById(id).style.opacity = inactiveCircle;
 
             // 모든 호선이 비활성화되면 투명도 active로 초기화
             if ([...circles].every(data => data.style.opacity === inactiveCircle)) {
                 lines.forEach(line => batchSetOpacity(subwayMap.getElementsByClassName(line), active));
-                let transfer = subwayMap.getElementsByClassName("transfer");
+                const transfer = subwayMap.getElementsByClassName("transfer");
                 [...transfer].forEach(station => batchSetOpacity(station.children, active));
                 lineName = null;
             }
-        }
-        // toggle on
-        else {
+        } else {  // toggle on
             // 선택한 동그라미 외 나머지 비활성화
             batchSetOpacity(circles, inactiveCircle);
 
@@ -345,24 +342,35 @@ function selectLine(id) {
             document.getElementById(id).style.opacity = active;
 
             // 선택한 호선의 투명도를 active로 변경
-            let selectedLine = subwayMap.getElementsByClassName(lineName);
+            const selectedLine = subwayMap.getElementsByClassName(lineName);
             batchSetOpacity(selectedLine, active);
 
             // 선택하지 않은 호선의 투명도를 inactive로 변경
             lines.splice(lines.indexOf(lineName), 1);
-            let notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
+            const notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
             notSelectedLines.forEach(line => batchSetOpacity(line, inactive));
 
             // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 inactive로 변경
             changeTransferOpacity();
 
             // 노선 클릭 시 확대 버튼이 활성화되어 있다면, 그 노선만 확대해서 보여줌
-            if (check3) {
-                let node = subwayMap.getElementsByClassName("line " + lineName)[0];
+            if (document.getElementById("check3").checked === true) {
+                const node = subwayMap.getElementsByClassName("line " + lineName)[0];
                 showNode(node);
             }
         }
     }
+}
+
+// 제한 시간 가감
+function addTime(i) {
+    let min = minSetting;
+    // minSettingInitial 이상으로 못 바꾸게 하고 싶으면 (i === 1 && min < minSettingInitial)로 대체
+    if (i === 1 || (i === -1 && min > 1)) {
+        min += i
+    }
+    document.getElementById("min").innerText = min < 10 ? "0" + min : min;
+    minSetting = min
 }
 
 // 타이머 시작
@@ -413,13 +421,13 @@ function giveUp() {
     }
 
     // 모든 동그라미의 opacity를 inactiveCircle로 변경
-    let circles = document.getElementsByClassName("clickable-on");
+    const circles = document.getElementsByClassName("clickable-on");
     batchSetOpacity(circles, inactiveCircle);
 
     // 모든 노선의 opacity를 active로 변경
+    subwayMap = document.getElementById("map").contentDocument;
     const lines = [...lineNames];
-    let subwayMap = document.getElementById("map").contentDocument;
-    let totalLines = lines.map(x => subwayMap.getElementsByClassName(x))
+    const totalLines = lines.map(x => subwayMap.getElementsByClassName(x))
     totalLines.forEach(line => batchSetOpacity(line, active));
 
     // 환승역들의 opacity를 active로 변경
@@ -445,7 +453,7 @@ function giveUp() {
 // 타이머 리셋
 function resetTimer() {
     document.getElementById("complete").style.display = "none";
-    let previousCorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="visible"]');
+    const previousCorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="visible"]');
     for (const element of previousCorrect) {
         element.setAttribute("fill", "black");
         element.setAttribute("font-weight", "regular");
@@ -454,7 +462,8 @@ function resetTimer() {
     document.getElementById("min").innerText = minSetting < 10 ? "0" + minSetting : minSetting;
     document.getElementById("sec").innerText = "00";
     document.getElementById("solved").innerText = 0;
-    solved = 0 // solved 변수 초기화
+    solved = 0; // solved 변수 초기화
+    panZoom.zoom(1); // 확대 비율 초기화
 
     document.getElementById("start").disabled = false;
     document.getElementById("start").classList = ["button-on"];

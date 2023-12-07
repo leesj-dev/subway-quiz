@@ -348,28 +348,36 @@ h1 {
   justify-content: center;
 }
 
-#circleContainerColumn {
-  width: 200px;
-  margin-left: 30px;
-}
-
 #progress {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 4.25vh;
+  margin-top: 6vh;
+  table-layout: fixed;
 }
 
-.progressPercentage {
-  font-size: 15px;
-  padding-left: 10px;
-  vertical-align: middle;
+#progress td {
+  overflow: hidden;
 }
 
+#progress td:nth-of-type(2) {
+  width: 35px;
+}
+
+#progress td:nth-of-type(3) {
+  width: 55px;
+}
+
+.progressPercentage,
 .progressCnt {
-  font-size: 15px;
-  padding-left: 10px;
+  font-size: 20px;
+  padding: 0px 0px 3px 10px;
   vertical-align: middle;
+  text-align: right;
+}
+
+.circleBox {
+  line-height: 100%;
 }
 
 /* 미디어 쿼리 */
@@ -418,11 +426,18 @@ h1 {
   }
 
   #map {
-    max-height: calc(90vh - 130px);
+    height: calc(90vh - 130px);
   }
 
   .circle {
     width: 3.5vw;
+  }
+
+  #circleContainerColumn {
+    width: 0px;
+    margin-left: 0px;
+    visibility: hidden;
+    overflow: hidden;
   }
 }
 
@@ -469,19 +484,31 @@ h1 {
   }
 }
 
-@media (min-aspect-ratio: 7/10) and (max-aspect-ratio: 13/10) {
+@media (min-aspect-ratio: 7/10) and (max-aspect-ratio: 15/10) {
   #main {
     flex-direction: column;
     width: calc(95vw - 300px);
     margin-top: 1vw;
   }
+
+  #circleContainerColumn {
+    width: 0px;
+    margin-left: 0px;
+    visibility: hidden;
+  }
 }
 
-@media (min-aspect-ratio: 13/10) {
+@media (min-aspect-ratio: 15/10) {
   #main {
     flex-direction: column;
-    width: calc(95vw - 530px);
+    width: calc(95vw - 490px);
     margin-top: 1vw;
+  }
+
+  #circleContainerColumn {
+    width: 160px;
+    margin-left: 30px;
+    visibility: visible;
   }
 }
 
