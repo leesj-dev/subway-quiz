@@ -445,6 +445,7 @@ function giveUp() {
     document.getElementById("submit").disabled = true;
     document.getElementById("submit").classList = ["button-off"];
     document.getElementById("station").disabled = true;
+    document.getElementById("markSelect1").style.display = "flex";
 
     // 최고기록 갱신
     highScore = Math.max(localStorage.getItem("highScore"), solved);
@@ -473,5 +474,4 @@ function resetTimer() {
     document.getElementById("reset").classList = ["button-off"];
     document.getElementById("plus").style.display = "inline";
     document.getElementById("minus").style.display = "inline";
-    document.getElementById("markSelect1").style.display = "flex";
 }
