@@ -68,23 +68,24 @@ if (minSetting === null) {
 }
 
 // circleContainerRow 내 HTML 생성
-let html = "";
+let htmlRow = "";
 lineNames.forEach(line => {
-    html += `<div class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
-    html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></div>`;
+    htmlRow += `<div class="clickable-off" id="circle_${line}" onclick="selectLine(this.id);">`;
+    htmlRow += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></div>`;
 })
-document.getElementById("circleContainerRow").innerHTML += html;
+document.getElementById("circleContainerRow").innerHTML += htmlRow;
 
 // circleContainerColumn 내 HTML 생성
-html = `<table id="progress">`;
+let htmlColumn = ""
+htmlColumn = `<table id="progress">`;
 lineNames.forEach(line => {
-    html += `<tr><td class="circleBox">`;
-    html += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></td>`;
-    html += `<td class="progressPercentage"><span id="percentage_${line}">0</span><span>%</span></td>`;
-    html += `<td class="progressCnt"><span style="font-weight: bold;" id="cnt_${line}">0</span><span>/</span><span>${lineData[line][1]}</span></td></tr>`;
+    htmlColumn += `<tr><td class="circleBox">`;
+    htmlColumn += `<object class="circle" data="circles/${line}.svg" type="image/svg+xml"></object></td>`;
+    htmlColumn += `<td class="progressPercentage"><span id="percentage_${line}">0</span><span>%</span></td>`;
+    htmlColumn += `<td class="progressCnt"><span style="font-weight: bold;" id="cnt_${line}">0</span><span>/</span><span>${lineData[line][1]}</span></td></tr>`;
 })
-html += `</table>`;
-document.getElementById("circleContainerColumn").innerHTML += html;
+htmlColumn += `</table>`;
+document.getElementById("circleContainerColumn").innerHTML += htmlColumn;
 
 // svg가 화면을 꽉 채우도록 width 설정 (css에 정의된 main의 width와 같게 설정)
 const mainWidth = document.getElementById("main").offsetWidth;
@@ -528,6 +529,13 @@ function resetTimer() {
     document.getElementById("solved").innerText = 0;
     solved = 0; // solved 변수 초기화
     panZoom.zoom(1); // 확대 비율 초기화
+
+    // lineData 초기화
+    [...document.getElementsByClassName("progressPercentage")].forEach(element => element.firstChild.innerHTML = "0");
+    [...document.getElementsByClassName("progressCnt")].forEach(element => element.firstChild.innerHTML = "0");
+    for (const key in lineData) {
+        lineData[key][0] = 0;
+    }
 
     document.getElementById("start").disabled = false;
     document.getElementById("start").classList = ["button-on"];
