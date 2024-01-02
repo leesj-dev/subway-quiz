@@ -1,8 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="main" x="0px" y="0px" viewBox="0 0 1474.02 1568.16" style="enable-background:new 0 0 1474.02 1568.16;" xml:space="preserve">
     <defs>
         <style id="style" type="text/css">
-            @import url('../fonts/Pretendard-Regular.subset.woff2');
-            @import url('../fonts/Pretendard-Bold.subset.woff2');
+            @font-face {
+                font-family: Pretendard;
+                src: url('../fonts/Pretendard-Regular.subset.woff2');
+                font-weight: 400;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: Pretendard;
+                src: url('../fonts/Pretendard-Bold.subset.woff2');
+                font-weight: 700;
+                font-style: bold;
+            }
             .white{fill:#FFFFFF;} <!-- white -->
             .transferFill{fill:#FFFFFF;} 
             .mark{fill:#FFFFFF;}
