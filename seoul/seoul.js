@@ -269,21 +269,21 @@ document.getElementById("answer").addEventListener("submit", function (event) {
                     showPopup("correct");
 
                     // 13:10 비율 이상인 경우에서만 보임
-                    let linesArr = [];
-                    try { // 환승역인 경우, 환승역이 지나는 모든 노선을 linesArr에 push해야 함
+                    let linesSet = new Set(); // array가 아닌 set을 쓰는 이유는 지선 환승역 때문
+                    try { // 환승역인 경우, 환승역이 지나는 모든 노선을 linesSet에 push해야 함
                         const transferStation = subwayMap.getElementById(station + "_환승");
                         for (const child of transferStation.children) {
                             const classList = [...child.classList];
-                            if (classList.includes("fill")) { // fill을 뺸 나머지 class명을 linesArr에 push
+                            if (classList.includes("fill")) { // fill을 뺸 나머지 class명을 linesSet에 push
                                 classList.splice(classList.indexOf("fill"), 1);
-                                linesArr.push(classList.pop());
+                                linesSet.add(classList.pop());
                             }
                         }
                     }
                     catch (error) { // 환승역이 아니라면, line만 넣으면 됨
-                        linesArr = [line];
+                        linesSet = new Set([line]);
                     }
-                    linesArr.forEach(line => { // 해당 호선의 맞힌 개수와 퍼센트를 업데이트
+                    linesSet.forEach(line => { // 해당 호선의 맞힌 개수와 퍼센트를 업데이트
                         lineData[line][0] += 1;
                         const solvedOnLine = lineData[line][0];
                         const totalQuestions = lineData[line][1];
