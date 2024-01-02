@@ -10,6 +10,16 @@ const minSettingMax = 99;
 const twoStations = ["신촌", "양평"];
 const active = "1";
 const inactiveCircle = "0.4";
+const cdotMap = {
+    "전대.에버랜드": "전대·에버랜드",
+    "전대에버랜드": "전대·에버랜드",
+    "4.19민주묘지": "4·19민주묘지",
+    "419민주묘지": "4·19민주묘지",
+    "시청.용인대": "시청·용인대",
+    "시청용인대": "시청·용인대",
+    "운동장.송담대": "운동장·송담대",
+    "운동장송담대": "운동장·송담대"
+};
 const lineData = { // [맞힌 개수, 총 개수]
     "1호선": [0, 99],
     "2호선": [0, 51],
@@ -34,7 +44,7 @@ const lineData = { // [맞힌 개수, 총 개수]
     "의정부경전철": [0, 15],
     "인천1호선": [0, 30],
     "인천2호선": [0, 27],
-}
+};
 
 // lineData의 key를 array로 반환
 const lineNames = Object.keys(lineData);
@@ -105,6 +115,55 @@ let beforePan = function (oldPan, newPan) {
     return customPan
 }
 
+// touch support using hammer.js
+let eventsHandler = {
+    haltEventListeners: ['touchstart', 'touchend', 'touchmove', 'touchleave', 'touchcancel'], init: function (options) {
+        let instance = options.instance,
+            initialScale = 1,
+            pannedX = 0,
+            pannedY = 0;
+
+        // Init Hammer
+        // Listen only for pointer and touch events
+        this.hammer = Hammer(options.svgElement, { inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput });
+
+        // Enable pinch
+        this.hammer.get('pinch').set({ enable: true });
+
+        // Handle double tap
+        this.hammer.on('doubletap', function (ev) { instance.zoomIn() });
+
+        // Handle pan
+        this.hammer.on('panstart panmove', function (ev) {
+            // On pan start reset panned variables
+            if (ev.type === 'panstart') {
+                pannedX = 0;
+                pannedY = 0;
+            };
+            // Pan only the difference
+            instance.panBy({ x: ev.deltaX - pannedX, y: ev.deltaY - pannedY });
+            pannedX = ev.deltaX;
+            pannedY = ev.deltaY;
+        });
+
+        // Handle pinch
+        this.hammer.on('pinchstart pinchmove', function (ev) {
+            // On pinch start remember initial zoom
+            if (ev.type === 'pinchstart') {
+                initialScale = instance.getZoom();
+                instance.zoomAtPoint(initialScale * ev.scale, { x: ev.center.x, y: ev.center.y });
+            }
+            instance.zoomAtPoint(initialScale * ev.scale, { x: ev.center.x, y: ev.center.y });
+        })
+
+        // Prevent moving the page on some devices when panning over SVG
+        options.svgElement.addEventListener('touchmove', function (e) { e.preventDefault(); });
+    }
+    , destroy: function () {
+        this.hammer.destroy();
+    }
+}
+
 // 로딩이 완료되면 svg-pan-zoom initialization
 window.onload = function () {
     panZoom = svgPanZoom("#map", {
@@ -119,6 +178,7 @@ window.onload = function () {
         maxZoom: 5,
         zoomScaleSensitivity: 0.2,
         beforePan: beforePan,
+        customEventsHandler: eventsHandler
     });
     // 화면을 처음부터 채우고 싶을 때
     // panZoom.contain()
@@ -186,6 +246,9 @@ document.getElementById("answer").addEventListener("submit", function (event) {
         try {
             // 호선을 선택한 경우 (선택 안 할 시 catch로 넘어감)
             line = [...document.getElementsByClassName("clickable-on")].filter((e) => e.style.opacity === active)[0].getAttribute("id").slice(7);
+            if (cdotMap.hasOwnProperty(station)) { // cdot이 포함된 경우, 온점이나 공백 허용
+                station = cdotMap[station];
+            }
             if (station === "이수" || station === "총신대입구") { // 역 이름이 두 개인 경우
                 station = "이수";
             }
@@ -341,14 +404,14 @@ function selectLine(id) {
             // 선택한 동그라미 활성화
             document.getElementById(id).style.opacity = active;
 
-            // 선택한 호선의 투명도를 active로 변경
-            const selectedLine = subwayMap.getElementsByClassName(lineName);
-            batchSetOpacity(selectedLine, active);
-
             // 선택하지 않은 호선의 투명도를 inactive로 변경
             lines.splice(lines.indexOf(lineName), 1);
             const notSelectedLines = lines.map(x => subwayMap.getElementsByClassName(x));
             notSelectedLines.forEach(line => batchSetOpacity(line, inactive));
+
+            // 선택한 호선의 투명도를 active로 변경
+            const selectedLine = subwayMap.getElementsByClassName(lineName);
+            batchSetOpacity(selectedLine, active);
 
             // 환승역에 선택한 호선이 있다면 투명도를 active로 변경, 없다면 inactive로 변경
             changeTransferOpacity();
