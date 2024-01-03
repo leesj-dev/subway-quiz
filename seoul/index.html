@@ -11,71 +11,67 @@
 <body>
     <div id="wrapper">
         <div id="left-panel">
-            <h1>수도권 도시철도 QUIZ</h1>
-            <div id="time">
-                <div class="container">
-                    <table id="time-control">
-                        <tbody>
-                            <td>
-                                <input class="round-button" type="button" value="−" id="minus" onclick="addTime(-1);" />
-                            </td>
-                            <td id="display">
-                                <span id="min">90</span>
-                                <span>:</span>
-                                <span id="sec">00</span>
-                            </td>
-                            <td>
-                                <input class="round-button" type="button" value="+" id="plus" onclick="addTime(1);" />
-                            </td>
-                        </tbody>
-                    </table>
-                    <form id="timer">
-                        <input class="button-on" type="button" value="시작" id="start" onclick="startTimer();" />
-                        <input class="button-off" type="button" value="포기" id="give-up" onclick="giveUp();" disabled />
-                        <input class="button-off" type="button" value="리셋" id="reset" onclick="resetTimer();"
-                            disabled />
-                    </form>
+            <h1 class="title">수도권 도시철도 QUIZ</h1>
+            <div class="time">
+                <table id="time-control">
+                    <tbody>
+                        <td>
+                            <input class="round-button" type="button" value="−" id="minus" onclick="addTime(-1);" />
+                        </td>
+                        <td id="display">
+                            <span id="min">90</span>
+                            <span>:</span>
+                            <span id="sec">00</span>
+                        </td>
+                        <td>
+                            <input class="round-button" type="button" value="+" id="plus" onclick="addTime(1);" />
+                        </td>
+                    </tbody>
+                </table>
+                <form id="timer">
+                    <input class="button-on" type="button" value="시작" id="start" onclick="startTimer();" />
+                    <input class="button-off" type="button" value="포기" id="give-up" onclick="giveUp();" disabled />
+                    <input class="button-off" type="button" value="리셋" id="reset" onclick="resetTimer();" disabled />
+                </form>
+            </div>
+            <div class="questions">
+                <div id="score">SCORE</div>
+                <span id="solved" style="font-weight: bold;">0</span>
+                <span id="slash">/</span>
+                <span id="total">642</span>
+                <div id="complete">&nbsp;COMPLETE</div>
+                <div>
+                    <span id="highScoreText">HIGH SCORE</span>
+                    <span id="highScore">0</span>
                 </div>
-                <div class="container" id="questions">
-                    <div id="score">SCORE</div>
-                    <span id="solved" style="font-weight: bold;">0</span>
-                    <span id="slash">&nbsp;/&nbsp;</span>
-                    <span id="total">642</span>
-                    <div id="complete">&nbsp;COMPLETE</div>
-                    <div>
-                        <span id="highScoreText" style="font-size: 16px; ">HIGH SCORE</span>
-                        <span id="highScore" style="font-size: 16px; font-weight: bold;">0</span>
-                    </div>
+            </div>
+            <div class="transparency">
+                <input type="range" min="0" max="100" value="30" id="slider" />
+                <div class="settingsText">투명도</div>
+            </div>
+            <div class="options">
+                <div class="markSelect" id="markSelect1">
+                    <input type="checkbox" class="check" id="check1" checked />
+                    <div class="settingsText">역 눈금 표시</div>
                 </div>
-                <div class="container" id="transparency">
-                    <input type="range" min="0" max="100" value="30" id="slider" />
-                    <div class="settingsText">투명도</div>
+                <div class="markSelect" id="markSelect2">
+                    <input type="checkbox" class="check" id="check2" onclick="changeTransferOpacity();" checked />
+                    <div class="settingsText">환승역 타 노선 색 표시</div>
                 </div>
-                <div class="contianer" id="options">
-                    <div class="container markSelect" id="markSelect1">
-                        <input type="checkbox" class="check" id="check1" checked />
-                        <div class="settingsText">역 눈금 표시</div>
-                    </div>
-                    <div class="container markSelect" id="markSelect2">
-                        <input type="checkbox" class="check" id="check2" onclick="changeTransferOpacity();" checked />
-                        <div class="settingsText">환승역 타 노선 색 표시</div>
-                    </div>
-                    <div class="container markSelect" id="markSelect3">
-                        <input type="checkbox" class="check" id="check3" checked />
-                        <div class="settingsText">노선 클릭 시 확대</div>
-                    </div>
+                <div class="markSelect" id="markSelect3">
+                    <input type="checkbox" class="check" id="check3" checked />
+                    <div class="settingsText">노선 클릭 시 확대</div>
                 </div>
-
             </div>
         </div>
         <div id="main">
-            <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div style="display: flex; justify-content: center; align-items: center;">
                 <object id="map" data="seoul_KORAIL.svg" type="image/svg+xml"></object>
             </div>
-            <div class="container" id="type-area">
-                <div class="container" id="circleContainerRow">
+            <div id="type-area">
+                <div id="circleContainerRow">
                 </div>
-                <div class="container">
+                <div>
                     <form id="answer">
                         <input class="type-input" id="station" name="station" type="text" placeholder="역명을 입력하세요"
                             autocomplete="off" disabled />
@@ -87,11 +83,12 @@
                     <div class="popup" id="warning">&#9888; 노선을 선택하세요</div>
                 </div>
             </div>
+            <footer style="text-align: center; font-size: 13px; margin-bottom: 5px; color: #BBBBBB;">© 2023–2024 이승준.
+                All Rights Reserved.</footer>
         </div>
         <div id="circleContainerColumn">
         </div>
     </div>
-    <div style="text-align: center; font-size: 10px;">© 2024 이승준. All Rights Reserved.</div>
 </body>
 <script type="text/javascript" src="svg-pan-zoom.js"></script>
 <script type="text/javascript" src="hammer.js"></script>
