@@ -40,7 +40,7 @@
                 <span id="slash">/</span>
                 <span id="total">642</span>
                 <div id="complete">&nbsp;COMPLETE</div>
-                <div>
+                <div id="highScoreContainer">
                     <span id="highScoreText">HIGH SCORE</span>
                     <span id="highScore">0</span>
                 </div>
@@ -65,7 +65,7 @@
             </div>
         </div>
         <div id="main">
-            <div style="display: flex; justify-content: center; align-items: center;">
+            <div id="mapContainer">
                 <object id="map" data="seoul_KORAIL.svg" type="image/svg+xml"></object>
             </div>
             <div id="type-area">
@@ -83,11 +83,14 @@
                     <div class="popup" id="warning">&#9888; 노선을 선택하세요</div>
                 </div>
             </div>
-            <footer style="text-align: center; font-size: 13px; margin-bottom: 5px; color: #BBBBBB;">© 2023–2024 이승준.
-                All Rights Reserved.</footer>
+            <footer>© 2023–2024 이승준. All Rights Reserved.</footer>
         </div>
         <div id="circleContainerColumn">
         </div>
+    </div>
+    <div id="unsupportedScreen">
+        <div>&#10060;</div>
+        <div>지원하지 않는 해상도입니다.<br>창 크기를 조절하거나 배율을 축소해보세요.</div>
     </div>
 </body>
 <script type="text/javascript" src="svg-pan-zoom.js"></script>

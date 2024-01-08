@@ -29,6 +29,7 @@ html,
 body {
     height: 100%;
     overflow: hidden;
+    margin: 0;
 }
 
 /* button & input dimensions */
@@ -226,6 +227,12 @@ input {
     justify-content: center;
 }
 
+#mapContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #complete {
     display: none;
     text-align: center;
@@ -303,6 +310,7 @@ input {
 
 #type-area {
     text-align: center;
+    margin: 10px 0px;
 }
 
 #answer {
@@ -317,6 +325,10 @@ input {
     width: 170px;
 }
 
+#correct {
+    background-color: greenyellow;
+}
+
 #wrong {
     background-color: tomato;
 }
@@ -324,10 +336,6 @@ input {
 #duplicate,
 #warning {
     background-color: yellow;
-}
-
-#correct {
-    background-color: greenyellow;
 }
 
 #give-up {
@@ -371,8 +379,37 @@ input {
     text-align: right;
 }
 
-.circleBox {
+#circleContainerRow {
     line-height: 100%;
+}
+
+footer {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 5px;
+    color: #BBBBBB;
+}
+
+#unsupportedScreen {
+    width: 100%;
+    height: 100%;
+    background-color: #eff1f5;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#unsupportedScreen>div:nth-child(1) {
+    font-size: calc(2vw + 20px);
+    margin-right: calc(1vw + 10px);
+}
+
+#unsupportedScreen>div:nth-child(2) {
+    font-size: calc(1vw + 10px);
+    line-height: 140%;
+    color: #4f4f4f;
 }
 
 /* slider */
@@ -468,9 +505,11 @@ input {
     }
 
     .round-button {
-        font-size: 15px;
-        border-radius: 20px;
-        padding: 0px 10px;
+        font-size: 3vw;
+        height: 6vw;
+        border-radius: 4vw;
+        padding: 0 2vw;
+        margin: min(2px, 0.5vw);
     }
 
     .title {
@@ -482,13 +521,16 @@ input {
 
     .time {
         grid-area: 2 / 1 / 4 / 2;
-        margin-top: .5vh;
+        margin-top: 5px;
         margin-bottom: 1vh;
+        margin-left: 2vw;
     }
 
     .questions {
         grid-area: 2 / 2 / 4 / 3;
-        margin: auto;
+        margin-top: calc(2vw + 5px);
+        margin-left: 4vw;
+        margin-right: 3vw;
     }
 
     .transparency {
@@ -498,7 +540,7 @@ input {
 
     .options {
         grid-area: 3 / 3 / 4 / 5;
-        padding-left: 15px;
+        padding-left: 5px;
     }
 
     #wrapper {
@@ -511,18 +553,9 @@ input {
         margin-left: 0px;
     }
 
-    .questions {
-        margin-left: 4vw;
-        margin-right: 3vw;
-    }
-
     #complete {
         position: absolute;
         margin-left: -6px;
-    }
-
-    #type-area {
-        margin-bottom: 10px;
     }
 
     #display,
@@ -532,7 +565,7 @@ input {
     }
 
     #map {
-        height: 105vw;
+        height: max(105vw, 50vh);
         max-width: 100%;
     }
 
@@ -548,20 +581,24 @@ input {
     }
 
     #score {
-        font-size: 2.5vw;
+        font-size: max(12px, 2.5vw);
     }
 
     .questions span {
-        font-size: 3vw;
+        font-size: max(14px, 3vw);
+    }
+
+    #highScoreContainer {
+        line-height: 1;
     }
 
     #highScoreText,
     #highScore {
-        font-size: 2vw;
+        font-size: max(9px, 2vw);
     }
 
     .settingsText {
-        font-size: 2vw;
+        font-size: max(13px, 2vw);
     }
 
     .check {
@@ -579,35 +616,44 @@ input {
         transform: translate(-50%, -50%);
     }
 
+    .transparency {
+        justify-content: left;
+    }
+
+    .settingsText {
+        margin: auto 0;
+    }
+
     #slash {
         margin: 2px;
     }
 
     #slider {
-        width: 130px;
+        width: min(calc(40vw - 50px), 170px);
+        margin: auto 0;
     }
 
     #slider::-webkit-slider-thumb {
-        width: 15px;
-        height: 15px;
-        margin: 4px 0;
+        width: min(3.5vw, 15px);
+        height: min(3.5vw, 15px);
+        margin: min(1vw, 4px) 0;
     }
 
     #slider::-moz-range-thumb {
-        width: 15px;
-        height: 15px;
-        margin: 4px 0;
+        width: min(3.5vw, 15px);
+        height: min(3.5vw, 15px);
+        margin: min(1vw, 4px) 0;
     }
 
     #slider::-webkit-slider-runnable-track {
-        height: 25px;
-        border-radius: 12px;
+        height: min(5.5vw, 25px);
+        border-radius: min(3vw, 12px);
     }
 
     /* For firefox */
     #slider::-moz-range-track {
-        height: 25px;
-        border-radius: 12px;
+        height: min(5.5vw, 25px);
+        border-radius: min(3vw, 12px);
     }
 }
 
@@ -669,10 +715,6 @@ input {
         max-width: 100%;
     }
 
-    #type-area {
-        margin: 10px 0px;
-    }
-
     #circleContainerRow .circle {
         width: calc(1vw + 20px)
     }
@@ -683,7 +725,8 @@ input {
 }
 
 /* Landscape & 가로가 충분히 길지 않을 때 */
-@media (min-aspect-ratio: 6.5/10) and (max-aspect-ratio: 15/10) {
+@media (min-aspect-ratio: 6.5/10) and (max-aspect-ratio: 15/10),
+(min-aspect-ratio: 15/10) and (max-width: 1460px) {
     #main {
         flex-direction: column;
         width: calc(95vw - 300px);
@@ -698,7 +741,7 @@ input {
 }
 
 /* Landscape & 가로가 충분히 길 때 */
-@media (min-aspect-ratio: 15/10) {
+@media (min-aspect-ratio: 15/10) and (min-width: 1460px) {
     #main {
         flex-direction: column;
         width: calc(95vw - 490px);

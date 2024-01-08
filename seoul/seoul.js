@@ -165,6 +165,23 @@ let eventsHandler = {
     }
 }
 
+// 지원되는 창 크기인지 체크
+let checkResolution = function () {
+    const wrapper = document.getElementById("wrapper");
+    const unsupportedScreen = document.getElementById("unsupportedScreen");
+    const isPortrait = window.matchMedia("(max-aspect-ratio: 6.5/10)").matches;
+    const isLongLandscape = window.matchMedia("(min-aspect-ratio: 15/10) and (min-width: 1460px)").matches;
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    if ((isPortrait && viewportWidth < 440) || (!isPortrait && (viewportWidth < 855 || viewportHeight < 750)) || (isLongLandscape && viewportHeight < 830)) {
+        wrapper.style.display = "none";
+        unsupportedScreen.style.display = "flex";
+    } else {
+        wrapper.style.display = "flex";
+        unsupportedScreen.style.display = "none";
+    }
+}
+
 // 로딩이 완료되면 svg-pan-zoom initialization
 window.onload = function () {
     panZoom = svgPanZoom("#map", {
@@ -182,12 +199,14 @@ window.onload = function () {
         customEventsHandler: eventsHandler
     });
     // 화면을 처음부터 채우고 싶을 때
-    // panZoom.contain()
-    // panZoom.setMinZoom(window.panZoom.getZoom())
+    // panZoom.contain();
+    // panZoom.setMinZoom(window.panZoom.getZoom());
+    checkResolution();
 };
 
 // 창 크기 바뀔 때
 window.addEventListener("resize", function () {
+    checkResolution();
     const mainWidth = document.getElementById("main").offsetWidth;
     document.getElementById("map").setAttribute("width", mainWidth);
     panZoom.updateBBox();
