@@ -1,0 +1,6 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1536 1536" style="enable-background:new 0 0 1536 1536;" xml:space="preserve">
+<g>
+	<rect x="0" y="0" width="1536" height="1536" style="rx: 485px; ry: 485px; fill: white; fill-opacity: 0.5;" class="svg-pan-zoom-control-background"/>
+	<path d="M1049.8,0H486.2C217.7,0,0,217.7,0,486.2v563.6C0,1318.3,217.7,1536,486.2,1536h563.6c268.5,0,486.2-217.7,486.2-486.2V486.2C1536,217.7,1318.3,0,1049.8,0z M1280,832c0,17.3-6.3,32.3-19,45s-27.7,19-45,19H896v320c0,17.3-6.3,32.3-19,45s-27.7,19-45,19H704c-17.3,0-32.3-6.3-45-19s-19-27.7-19-45V896H320c-17.3,0-32.3-6.3-45-19s-19-27.7-19-45V704c0-17.3,6.3-32.3,19-45s27.7-19,45-19h320V320c0-17.3,6.3-32.3,19-45s27.7-19,45-19h128c17.3,0,32.3,6.3,45,19s19,27.7,19,45v320h320c17.3,0,32.3,6.3,45,19s19,27.7,19,45V832z" class="svg-pan-zoom-control-element"/>
+</g>
+</svg>
