@@ -19,7 +19,9 @@
                             <input class="round-button" type="button" value="−" id="minus" onclick="addTime(-1);" />
                         </td>
                         <td id="display">
-                            <span id="min">90</span>
+                            <span id="min" onclick="showInput();">90</span>
+                            <input type="number" id="min-input" onblur="hideInput();" style="display: none;"
+                                onchange="leadingZeros(this)" onkeyup="leadingZeros(this)" onclick="leadingZeros(this)">
                             <span>:</span>
                             <span id="sec">00</span>
                         </td>

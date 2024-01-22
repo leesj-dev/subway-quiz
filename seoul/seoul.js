@@ -63,7 +63,7 @@ if (minSetting === null) {
     minSetting = 90;
     localStorage.setItem("minSetting", minSetting);
 } else {
-    minSetting = parseInt(minSetting);
+    minSetting = Number(minSetting);
     document.getElementById("min").innerHTML = minSetting < 10 ? "0" + minSetting : minSetting;
 }
 
@@ -118,7 +118,7 @@ let beforePan = function (oldPan, newPan) {
 
 // touch support using hammer.js
 let eventsHandler = {
-    haltEventListeners: ['touchstart', 'touchend', 'touchmove', 'touchleave', 'touchcancel'], init: function (options) {
+    haltEventListeners: ["touchstart", "touchend", "touchmove", "touchleave", "touchcancel"], init: function (options) {
         let instance = options.instance,
             initialScale = 1,
             pannedX = 0,
@@ -129,15 +129,15 @@ let eventsHandler = {
         this.hammer = Hammer(options.svgElement, { inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput });
 
         // Enable pinch
-        this.hammer.get('pinch').set({ enable: true });
+        this.hammer.get("pinch").set({ enable: true });
 
         // Handle double tap
-        this.hammer.on('doubletap', function (ev) { instance.zoomIn() });
+        this.hammer.on("doubletap", function (ev) { instance.zoomIn() });
 
         // Handle pan
-        this.hammer.on('panstart panmove', function (ev) {
+        this.hammer.on("panstart panmove", function (ev) {
             // On pan start reset panned variables
-            if (ev.type === 'panstart') {
+            if (ev.type === "panstart") {
                 pannedX = 0;
                 pannedY = 0;
             };
@@ -148,9 +148,9 @@ let eventsHandler = {
         });
 
         // Handle pinch
-        this.hammer.on('pinchstart pinchmove', function (ev) {
+        this.hammer.on("pinchstart pinchmove", function (ev) {
             // On pinch start remember initial zoom
-            if (ev.type === 'pinchstart') {
+            if (ev.type === "pinchstart") {
                 initialScale = instance.getZoom();
                 instance.zoomAtPoint(initialScale * ev.scale, { x: ev.center.x, y: ev.center.y });
             }
@@ -158,7 +158,7 @@ let eventsHandler = {
         })
 
         // Prevent moving the page on some devices when panning over SVG
-        options.svgElement.addEventListener('touchmove', function (e) { e.preventDefault(); });
+        options.svgElement.addEventListener("touchmove", function (e) { e.preventDefault(); });
     }
     , destroy: function () {
         this.hammer.destroy();
@@ -445,14 +445,58 @@ function selectLine(id) {
     }
 }
 
+// 제한시간 min 텍스트 기반 수정
+function showInput() {
+    document.getElementById("min").style.display = "none";
+    document.getElementById("min-input").style.display = "inline-block";
+    document.getElementById("min-input").value = document.getElementById("min").innerText;
+    document.getElementById("min-input").focus();
+}
+
+function hideInput() {
+    document.getElementById("min").style.display = "inline";
+    document.getElementById("min-input").style.display = "none";
+}
+
+// 한 자리수 앞에 0 붙이기 
+function leadingZeros(input) {
+    if (!isNaN(input.value)) { // 숫자라면
+        if (input.value.length > 2 && input.value[0] === "0") { // 0이 붙은 두 자리 수 이상의 수일 때 앞에 붙은 0 모두 제거
+            input.value = Number(input.value);
+        }
+        if (input.value.length === 1 && input.value != "0") { // 0이 아닌 한 자리 수일 때 앞에 0 붙이기 (0을 제외하는 이유는 0X에서 X를 지우는 순간 00이 되기 때문)
+            input.value = "0" + input.value;
+        }
+    }
+}
+
+// 엔터 키 입력 시 min 수정
+document.getElementById("min-input").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        if (this.value != "" && !isNaN(this.value)) { // 숫자이고 공백이 아니면
+            if (this.value > minSettingMax) { // 최댓값 초과 시 최댓값으로 설정
+                this.value = minSettingMax;
+            } else if (Number(this.value) < 1) { // 1 미만의 숫자일 떄 1로 설정
+                this.value = "01";
+            }
+            document.getElementById("min").innerText = this.value
+            minSetting = Number(this.value);
+            localStorage.setItem("minSetting", minSetting);
+        } else { // 숫자가 아니거나 공백이라면 이전 값으로 설정
+            document.getElementById("min").innerText = minSetting;
+        }
+        hideInput();
+    }
+});
+
 // 제한 시간 가감
 function addTime(i) {
     let min = minSetting;
     if ((i === 1 && min < minSettingMax) || (i === -1 && min > 1)) {
-        min += i
+        min += i;
     }
     document.getElementById("min").innerText = min < 10 ? "0" + min : min;
-    minSetting = min
+    minSetting = min;
     localStorage.setItem("minSetting", minSetting);
 }
 

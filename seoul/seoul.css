@@ -282,6 +282,20 @@ input {
     color: #42454f;
     text-align: center;
     width: 150px;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+#display input {
+    font-size: 40px;
+    color: #42454f;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 48px;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
 }
 
 #highScoreText {
@@ -342,6 +356,13 @@ input {
     color: "#B1B4C0";
 }
 
+#solved,
+#total,
+#highScore {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
 .transparency,
 .markSelect {
     text-align: center;
@@ -377,6 +398,8 @@ input {
     padding: 0px 0px calc(0.7vh - 2px) calc(1.75vh - 7px);
     vertical-align: middle;
     text-align: right;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
 }
 
 #circleContainerRow {
@@ -388,6 +411,22 @@ footer {
     font-size: 13px;
     margin-top: 5px;
     color: #BBBBBB;
+}
+
+#min-input {
+    display: none;
+    appearance: textfield;
+    -moz-appearance: textfield;
+    margin: 0;
+    width: 30px;
+    text-align: center;
+}
+
+#min-input::-webkit-inner-spin-button,
+#min-input::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 #unsupportedScreen {
@@ -562,6 +601,11 @@ footer {
     #display span {
         font-size: 4vw;
         width: 16vw;
+    }
+
+    #display input {
+        font-size: 4vw;
+        width: 4.7vw;
     }
 
     #map {
