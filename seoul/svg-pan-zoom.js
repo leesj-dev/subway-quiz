@@ -1,4 +1,6 @@
-// svg-pan-zoom v3.6.1, leesj-dev's fork v1.2.0
+// svg-pan-zoom, v3.6.1
+// forked by dash14, v3.6.9
+// re-forked by leesj-dev, v3.6.10
 // https://github.com/ariutta/svg-pan-zoom
 
 var zoomInSvgContent;
@@ -34,7 +36,7 @@ function appendSvgContent(zoomGroup, svgContent) {
           style.setAttribute("id", "svg-pan-zoom-controls-styles");
           style.setAttribute("type", "text/css");
           style.textContent =
-            ".svg-pan-zoom-control { cursor: pointer; fill: black; fill-opacity: 0.333; } .svg-pan-zoom-control:hover { fill-opacity: 0.8; }";
+            ".svg-pan-zoom-control { cursor: pointer; fill: black; fill-opacity: 0.333; } .svg-pan-zoom-control:hover { fill-opacity: 0.8; } .svg-pan-zoom-control-background { fill: white; fill-opacity: 0.5; } .svg-pan-zoom-control-background { fill-opacity: 0.8; }";
           defs.appendChild(style);
         }
 
@@ -172,7 +174,7 @@ function appendSvgContent(zoomGroup, svgContent) {
           instance.controlIcons.parentNode.removeChild(instance.controlIcons);
           instance.controlIcons = null;
         }
-      }
+      },
     };
 
   }, { "./svg-utilities": 5 }], 2: [function (require, module, exports) {
@@ -246,7 +248,7 @@ function appendSvgContent(zoomGroup, svgContent) {
         );
 
         // Update active state
-        this.activeState.zoom = zoom;
+        this.activeState.zoom = isFinite(zoom) ? zoom : 1;
         this.activeState.x = (this.options.width - this.viewBox.width * zoom) / 2;
         this.activeState.y = (this.options.height - this.viewBox.height * zoom) / 2;
 
@@ -302,6 +304,8 @@ function appendSvgContent(zoomGroup, svgContent) {
             this.options.height / this.viewBox.height
           );
         }
+
+        newScale = isFinite(newScale) ? newScale : 1;
 
         newCTM.a = newScale; //x-scale
         newCTM.d = newScale; //y-scale
@@ -435,7 +439,7 @@ function appendSvgContent(zoomGroup, svgContent) {
         if (willPan) {
           var preventPan = this.options.beforePan(this.getPan(), {
             x: newCTM.e,
-            y: newCTM.f
+            y: newCTM.f,
           }),
             // If prevent pan is an object
             preventPanX = false,
@@ -545,9 +549,10 @@ function appendSvgContent(zoomGroup, svgContent) {
 
   }, { "./svg-utilities": 5, "./utilities": 7 }], 3: [function (require, module, exports) {
     var svgPanZoom = require("./svg-pan-zoom.js");
+    var Utils = require("./utilities");
 
     // UMD module definition
-    (function (window, document) {
+    (function (_this) {
       // AMD
       if (typeof define === "function" && define.amd) {
         define("svg-pan-zoom", function () {
@@ -559,11 +564,11 @@ function appendSvgContent(zoomGroup, svgContent) {
 
         // Browser
         // Keep exporting globally as module.exports is available because of browserify
-        window.svgPanZoom = svgPanZoom;
+        _this.svgPanZoom = svgPanZoom;
       }
-    })(window, document);
+    })(Utils.getGlobalThis());
 
-  }, { "./svg-pan-zoom.js": 4 }], 4: [function (require, module, exports) {
+  }, { "./svg-pan-zoom.js": 4, "./utilities": 7 }], 4: [function (require, module, exports) {
     var Wheel = require("./uniwheel"),
       ControlIcons = require("./control-icons"),
       Utils = require("./utilities"),
@@ -595,10 +600,11 @@ function appendSvgContent(zoomGroup, svgContent) {
       onPan: null,
       customEventsHandler: null,
       eventsListenerElement: null,
-      onUpdatedCTM: null
+      onUpdatedCTM: null,
     };
 
-    var passiveListenerOption = { passive: true };
+    var passiveListenerTrueOption = { passive: true };
+    var passiveListenerFalseOption = { passive: false };
 
     SvgPanZoom.prototype.init = function (svg, options) {
       var that = this;
@@ -616,9 +622,7 @@ function appendSvgContent(zoomGroup, svgContent) {
       this.state = "none";
 
       // Get dimensions
-      var boundingClientRectNormalized = SvgUtils.getBoundingClientRectNormalized(
-        svg
-      );
+      var boundingClientRectNormalized = SvgUtils.getBoundingClientRectNormalized(svg);
       this.width = boundingClientRectNormalized.width;
       this.height = boundingClientRectNormalized.height;
 
@@ -658,7 +662,7 @@ function appendSvgContent(zoomGroup, svgContent) {
             if (that.viewport && that.options.onUpdatedCTM) {
               return that.options.onUpdatedCTM(ctm);
             }
-          }
+          },
         }
       );
 
@@ -688,43 +692,51 @@ function appendSvgContent(zoomGroup, svgContent) {
 
       this.eventListeners = {
         // Mouse down group
-        mousedown: function (evt) {
+        pointerdown: function (evt) {
+          if (evt.pointerType === "touch") return;
           var result = that.handleMouseDown(evt, prevEvt);
           prevEvt = evt;
           return result;
         },
         touchstart: function (evt) {
-          var result = that.handleMouseDown(evt, prevEvt);
+          var result = that.handleTouchStart(evt, prevEvt);
           prevEvt = evt;
           return result;
         },
 
         // Mouse up group
-        mouseup: function (evt) {
+        pointerup: function (evt) {
+          if (evt.pointerType === "touch") return;
           return that.handleMouseUp(evt);
         },
         touchend: function (evt) {
-          return that.handleMouseUp(evt);
+          return that.handleTouchEnd(evt);
         },
 
         // Mouse move group
-        mousemove: function (evt) {
+        pointermove: function (evt) {
+          if (evt.pointerType === "touch") return;
           return that.handleMouseMove(evt);
         },
         touchmove: function (evt) {
-          return that.handleMouseMove(evt);
+          return that.handleTouchMove(evt);
         },
 
         // Mouse leave group
-        mouseleave: function (evt) {
+        pointerleave: function (evt) {
+          if (evt.pointerType === "touch") return;
+          return that.handleMouseUp(evt);
+        },
+        pointercancel: function (evt) {
+          if (evt.pointerType === "touch") return;
           return that.handleMouseUp(evt);
         },
         touchleave: function (evt) {
-          return that.handleMouseUp(evt);
+          return that.handleTouchEnd(evt);
         },
         touchcancel: function (evt) {
-          return that.handleMouseUp(evt);
-        }
+          return that.handleTouchEnd(evt);
+        },
       };
 
       // Init custom events handler if available
@@ -733,12 +745,12 @@ function appendSvgContent(zoomGroup, svgContent) {
         this.options.customEventsHandler.init({
           svgElement: this.svg,
           eventsListenerElement: this.options.eventsListenerElement,
-          instance: this.getPublicInstance()
+          instance: this.getPublicInstance(),
         });
 
         // Custom event handler may halt builtin listeners
-        var haltEventListeners = this.options.customEventsHandler
-          .haltEventListeners;
+        var haltEventListeners =
+          this.options.customEventsHandler.haltEventListeners;
         if (haltEventListeners && haltEventListeners.length) {
           for (var i = haltEventListeners.length - 1; i >= 0; i--) {
             if (this.eventListeners.hasOwnProperty(haltEventListeners[i])) {
@@ -754,7 +766,9 @@ function appendSvgContent(zoomGroup, svgContent) {
         (this.options.eventsListenerElement || this.svg).addEventListener(
           event,
           this.eventListeners[event],
-          !this.options.preventMouseEventsDefault ? passiveListenerOption : false
+          !this.options.preventMouseEventsDefault
+            ? passiveListenerTrueOption
+            : passiveListenerFalseOption
         );
       }
 
@@ -814,7 +828,6 @@ function appendSvgContent(zoomGroup, svgContent) {
         return;
       }
 
-      /* console error fix
       if (this.options.preventMouseEventsDefault) {
         if (evt.preventDefault) {
           evt.preventDefault();
@@ -822,7 +835,6 @@ function appendSvgContent(zoomGroup, svgContent) {
           evt.returnValue = false;
         }
       }
-      */
 
       // Default delta in case that deltaY is not available
       var delta = evt.deltaY || 1,
@@ -1119,6 +1131,115 @@ function appendSvgContent(zoomGroup, svgContent) {
     };
 
     /**
+     * Handle click event
+     *
+     * @param {Event} evt
+     */
+    SvgPanZoom.prototype.handleTouchStart = function (evt, prevEvt) {
+      if (evt.touches.length == 1) {
+        this.handleMouseDown(evt, prevEvt);
+      } else {
+        if (this.options.preventMouseEventsDefault) {
+          if (evt.preventDefault) {
+            evt.preventDefault();
+          } else {
+            evt.returnValue = false;
+          }
+        }
+
+        this.firstEventCTM = this.viewport.getCTM();
+        var touch1 = SvgUtils.getTouchPoint(evt, this.svg, 0);
+        var touch2 = SvgUtils.getTouchPoint(evt, this.svg, 1);
+        this.firstDistance = Utils.calculateDistance(touch1, touch2);
+        touch1.x = (touch1.x + touch2.x) / 2;
+        touch1.y = (touch1.y + touch2.y) / 2;
+        this.stateOrigin = touch1.matrixTransform(this.firstEventCTM.inverse());
+        this.firstZoomLevel = this.getZoom();
+      }
+    };
+
+    /**
+     * Handle mouse move event
+     *
+     * @param  {Event} evt
+     */
+    SvgPanZoom.prototype.handleTouchMove = function (evt) {
+      if (evt.touches.length == 1) {
+        this.handleMouseMove(evt);
+      } else {
+        // pan and zoom
+        if (this.options.preventMouseEventsDefault) {
+          if (evt.preventDefault) {
+            evt.preventDefault();
+          } else {
+            evt.returnValue = false;
+          }
+        }
+        if (!this.options.panEnabled && !this.options.zoomEnabled) {
+          return;
+        }
+
+        var touch1 = SvgUtils.getTouchPoint(evt, this.svg, 0);
+        var touch2 = SvgUtils.getTouchPoint(evt, this.svg, 1);
+        var center = this.svg.createSVGPoint();
+        center.x = (touch1.x + touch2.x) / 2;
+        center.y = (touch1.y + touch2.y) / 2;
+
+        if (this.state === "pan" && this.options.panEnabled) {
+          // Pan mode
+          var point = center.matrixTransform(this.firstEventCTM.inverse());
+          var viewportCTM = this.firstEventCTM.translate(
+            point.x - this.stateOrigin.x,
+            point.y - this.stateOrigin.y
+          );
+          this.viewport.setCTM(viewportCTM);
+        }
+
+        if (this.options.zoomEnabled) {
+          // zoom
+          var distance = Utils.calculateDistance(touch1, touch2);
+          var scale = distance / this.firstDistance;
+          var inversedScreenCTM = this.svg.getScreenCTM().inverse();
+          var relativeTouchPoint = center.matrixTransform(inversedScreenCTM);
+          this.zoomAtPoint(this.firstZoomLevel * scale, relativeTouchPoint, true);
+        }
+      }
+    };
+
+    /**
+     * Handle mouse button release event
+     *
+     * @param {Event} evt
+     */
+    SvgPanZoom.prototype.handleTouchEnd = function (evt) {
+      if (evt.touches.length == 0) {
+        this.handleMouseUp(evt);
+      } else {
+        if (this.options.preventMouseEventsDefault) {
+          if (evt.preventDefault) {
+            evt.preventDefault();
+          } else {
+            evt.returnValue = false;
+          }
+        }
+
+        this.firstEventCTM = this.viewport.getCTM();
+        if (evt.touches.length == 1) {
+          this.stateOrigin = SvgUtils.getEventPoint(evt, this.svg).matrixTransform(
+            this.firstEventCTM.inverse()
+          );
+        } else {
+          var touch1 = SvgUtils.getTouchPoint(evt, this.svg, 0);
+          var touch2 = SvgUtils.getTouchPoint(evt, this.svg, 1);
+          this.firstDistance = Utils.calculateDistance(touch1, touch2);
+          touch1.x = (touch1.x + touch2.x) / 2;
+          touch1.y = (touch1.y + touch2.y) / 2;
+          this.stateOrigin = touch1.matrixTransform(this.firstEventCTM.inverse());
+        }
+      }
+    };
+
+    /**
      * Adjust viewport size (only) so it will fit in SVG
      * Does not center image
      */
@@ -1246,7 +1367,7 @@ function appendSvgContent(zoomGroup, svgContent) {
         this.options.customEventsHandler.destroy({
           svgElement: this.svg,
           eventsListenerElement: this.options.eventsListenerElement,
-          instance: this.getPublicInstance()
+          instance: this.getPublicInstance(),
         });
       }
 
@@ -1255,7 +1376,9 @@ function appendSvgContent(zoomGroup, svgContent) {
         (this.options.eventsListenerElement || this.svg).removeEventListener(
           event,
           this.eventListeners[event],
-          !this.options.preventMouseEventsDefault ? passiveListenerOption : false
+          !this.options.preventMouseEventsDefault
+            ? passiveListenerTrueOption
+            : passiveListenerFalseOption
         );
       }
 
@@ -1264,9 +1387,6 @@ function appendSvgContent(zoomGroup, svgContent) {
 
       // Remove control icons
       this.getPublicInstance().disableControlIcons();
-
-      // Reset zoom and pan
-      this.reset();
 
       // Remove instance from instancesStore
       instancesStore = instancesStore.filter(function (instance) {
@@ -1483,14 +1603,14 @@ function appendSvgContent(zoomGroup, svgContent) {
               width: that.width,
               height: that.height,
               realZoom: that.getZoom(),
-              viewBox: that.viewport.getViewBox()
+              viewBox: that.viewport.getViewBox(),
             };
           },
           // Destroy
           destroy: function () {
             that.destroy();
             return that.pi;
-          }
+          },
         };
       }
 
@@ -1521,7 +1641,7 @@ function appendSvgContent(zoomGroup, svgContent) {
         // If instance not found - create one
         instancesStore.push({
           svg: svg,
-          instance: new SvgPanZoom(svg, options)
+          instance: new SvgPanZoom(svg, options),
         });
 
         // Return just pushed instance
@@ -1538,7 +1658,10 @@ function appendSvgContent(zoomGroup, svgContent) {
       _browser = "unknown";
 
     // http://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser
-    if (/*@cc_on!@*/ false || !!document.documentMode) {
+    if (
+    /*@cc_on!@*/ false ||
+      (typeof document != "undefined" && !!document.documentMode)
+    ) {
       // internet explorer
       _browser = "ie";
     }
@@ -1750,6 +1873,25 @@ function appendSvgContent(zoomGroup, svgContent) {
       },
 
       /**
+       * Instantiate an SVGPoint object with given touch event coordinates
+       *
+       * @param {Event} evt
+       * @param  {SVGSVGElement} svg
+       * @param  {Number} touch
+       * @return {SVGPoint}     point
+       */
+      getTouchPoint: function (evt, svg, touch) {
+        var point = svg.createSVGPoint();
+
+        Utils.touchNormalize(evt, svg, touch);
+
+        point.x = evt.clientX;
+        point.y = evt.clientY;
+
+        return point;
+      },
+
+      /**
        * Get SVG center point
        *
        * @param  {SVGSVGElement} svg
@@ -1773,7 +1915,7 @@ function appendSvgContent(zoomGroup, svgContent) {
         point.y = y;
 
         return point;
-      }
+      },
     };
 
   }, { "./utilities": 7 }], 6: [function (require, module, exports) {
@@ -1781,15 +1923,21 @@ function appendSvgContent(zoomGroup, svgContent) {
     // A unified cross browser mouse wheel event handler
     // https://github.com/teemualap/uniwheel
 
-    module.exports = (function () {
+    var Utils = require("./utilities");
 
+    module.exports = (function () {
       //Full details: https://developer.mozilla.org/en-US/docs/Web/Reference/Events/wheel
 
-      var prefix = "", _addEventListener, _removeEventListener, support, fns = [];
-      var passiveOption = { passive: true };
+      var prefix = "",
+        _addEventListener,
+        _removeEventListener,
+        support,
+        fns = [];
+      var passiveTrueOption = { passive: true };
+      var passiveFalseOption = { passive: false };
 
       // detect event model
-      if (window.addEventListener) {
+      if (Utils.getGlobalThis().addEventListener) {
         _addEventListener = "addEventListener";
         _removeEventListener = "removeEventListener";
       } else {
@@ -1798,16 +1946,22 @@ function appendSvgContent(zoomGroup, svgContent) {
         prefix = "on";
       }
 
-      // detect available wheel event
-      support = "onwheel" in document.createElement("div") ? "wheel" : // Modern browsers support "wheel"
-        document.onmousewheel !== undefined ? "mousewheel" : // Webkit and IE support at least "mousewheel"
-          "DOMMouseScroll"; // let's assume that remaining browsers are older Firefox
-
+      function getSupport() {
+        if (!support) {
+          support =
+            "onwheel" in document.createElement("div")
+              ? "wheel" // Modern browsers support "wheel"
+              : document.onmousewheel !== undefined
+                ? "mousewheel" // Webkit and IE support at least "mousewheel"
+                : "DOMMouseScroll"; // let's assume that remaining browsers are older Firefox
+        }
+        return support;
+      }
 
       function createCallback(element, callback) {
+        // detect available wheel event
 
         var fn = function (originalEvent) {
-
           !originalEvent && (originalEvent = window.event);
 
           // create a normalized event object
@@ -1820,29 +1974,29 @@ function appendSvgContent(zoomGroup, svgContent) {
             deltaX: 0,
             delatZ: 0,
             preventDefault: function () {
-              originalEvent.preventDefault ?
-                originalEvent.preventDefault() :
-                originalEvent.returnValue = false;
+              originalEvent.preventDefault
+                ? originalEvent.preventDefault()
+                : (originalEvent.returnValue = false);
             }
           };
 
           // calculate deltaY (and deltaX) according to the event
-          if (support == "mousewheel") {
-            event.deltaX = - 1 / 40 * originalEvent.wheelDelta;
+          if (getSupport() == "mousewheel") {
+            event.deltaY = (-1 / 40) * originalEvent.wheelDelta;
             // Webkit also support wheelDeltaX
-            originalEvent.wheelDeltaX && (event.deltaX = - 1 / 40 * originalEvent.wheelDeltaX);
+            originalEvent.wheelDeltaX &&
+              (event.deltaX = (-1 / 40) * originalEvent.wheelDeltaX);
           } else {
-            event.deltaX = originalEvent.detail;
+            event.deltaY = originalEvent.detail;
           }
 
           // it's time to fire the callback
           return callback(event);
-
         };
 
         fns.push({
           element: element,
-          fn: fn,
+          fn: fn
         });
 
         return fn;
@@ -1868,45 +2022,62 @@ function appendSvgContent(zoomGroup, svgContent) {
       function _addWheelListener(elem, eventName, callback, isPassiveListener) {
         var cb;
 
-        if (support === "wheel") {
+        if (getSupport() === "wheel") {
           cb = callback;
         } else {
           cb = createCallback(elem, callback);
         }
 
-        elem[_addEventListener](prefix + eventName, cb, isPassiveListener ? passiveOption : false);
+        elem[_addEventListener](
+          prefix + eventName,
+          cb,
+          isPassiveListener ? passiveTrueOption : passiveFalseOption
+        );
       }
 
       function _removeWheelListener(elem, eventName, callback, isPassiveListener) {
-
         var cb;
 
-        if (support === "wheel") {
+        if (getSupport() === "wheel") {
           cb = callback;
         } else {
           cb = getCallback(elem);
         }
 
-        elem[_removeEventListener](prefix + eventName, cb, isPassiveListener ? passiveOption : false);
+        elem[_removeEventListener](
+          prefix + eventName,
+          cb,
+          isPassiveListener ? passiveTrueOption : passiveFalseOption
+        );
 
         removeCallback(elem);
       }
 
       function addWheelListener(elem, callback, isPassiveListener) {
-        _addWheelListener(elem, support, callback, isPassiveListener);
+        _addWheelListener(elem, getSupport(), callback, isPassiveListener);
 
         // handle MozMousePixelScroll in older Firefox
-        if (support == "DOMMouseScroll") {
-          _addWheelListener(elem, "MozMousePixelScroll", callback, isPassiveListener);
+        if (getSupport() == "DOMMouseScroll") {
+          _addWheelListener(
+            elem,
+            "MozMousePixelScroll",
+            callback,
+            isPassiveListener
+          );
         }
       }
 
       function removeWheelListener(elem, callback, isPassiveListener) {
-        _removeWheelListener(elem, support, callback, isPassiveListener);
+        _removeWheelListener(elem, getSupport(), callback, isPassiveListener);
 
         // handle MozMousePixelScroll in older Firefox
-        if (support == "DOMMouseScroll") {
-          _removeWheelListener(elem, "MozMousePixelScroll", callback, isPassiveListener);
+        if (getSupport() == "DOMMouseScroll") {
+          _removeWheelListener(
+            elem,
+            "MozMousePixelScroll",
+            callback,
+            isPassiveListener
+          );
         }
       }
 
@@ -1914,306 +2085,373 @@ function appendSvgContent(zoomGroup, svgContent) {
         on: addWheelListener,
         off: removeWheelListener
       };
-
     })();
 
-  }, {}], 7: [function (require, module, exports) {
-    module.exports = {
-      /**
-       * Extends an object
-       *
-       * @param  {Object} target object to extend
-       * @param  {Object} source object to take properties from
-       * @return {Object}        extended object
-       */
-      extend: function (target, source) {
-        target = target || {};
-        for (var prop in source) {
-          // Go recursively
-          if (this.isObject(source[prop])) {
-            target[prop] = this.extend(target[prop], source[prop]);
-          } else {
-            target[prop] = source[prop];
-          }
-        }
-        return target;
-      },
+  }, { "./utilities": 7 }], 7: [function (require, module, exports) {
+    (function (global) {
+      (function () {
+        module.exports = {
+          /**
+           * Get global this object
+           *
+           * @return {Object}        global this object
+           */
+          getGlobalThis: function () {
+            if (typeof globalThis !== "undefined") return globalThis;
+            if (typeof self !== "undefined") return self;
+            if (typeof window !== "undefined") return window;
+            if (typeof global !== "undefined") return global;
+            // Note: this might still return the wrong result!
+            if (typeof this !== "undefined") return this;
+            throw new Error("Unable to locate global `this`");
+          },
 
-      /**
-       * Checks if an object is a DOM element
-       *
-       * @param  {Object}  o HTML element or String
-       * @return {Boolean}   returns true if object is a DOM element
-       */
-      isElement: function (o) {
-        return (
-          o instanceof HTMLElement ||
-          o instanceof SVGElement ||
-          o instanceof SVGSVGElement || //DOM2
-          (o &&
-            typeof o === "object" &&
-            o !== null &&
-            o.nodeType === 1 &&
-            typeof o.nodeName === "string")
-        );
-      },
-
-      /**
-       * Checks if an object is an Object
-       *
-       * @param  {Object}  o Object
-       * @return {Boolean}   returns true if object is an Object
-       */
-      isObject: function (o) {
-        return Object.prototype.toString.call(o) === "[object Object]";
-      },
-
-      /**
-       * Checks if variable is Number
-       *
-       * @param  {Integer|Float}  n
-       * @return {Boolean}   returns true if variable is Number
-       */
-      isNumber: function (n) {
-        return !isNaN(parseFloat(n)) && isFinite(n);
-      },
-
-      /**
-       * Search for an SVG element
-       *
-       * @param  {Object|String} elementOrSelector DOM Element or selector String
-       * @return {Object|Null}                   SVG or null
-       */
-      getSvg: function (elementOrSelector) {
-        var element, svg;
-
-        if (!this.isElement(elementOrSelector)) {
-          // If selector provided
-          if (
-            typeof elementOrSelector === "string" ||
-            elementOrSelector instanceof String
-          ) {
-            // Try to find the element
-            element = document.querySelector(elementOrSelector);
-
-            if (!element) {
-              throw new Error(
-                "Provided selector did not find any elements. Selector: " +
-                elementOrSelector
-              );
-              return null;
-            }
-          } else {
-            throw new Error("Provided selector is not an HTML object nor String");
-            return null;
-          }
-        } else {
-          element = elementOrSelector;
-        }
-
-        if (element.tagName.toLowerCase() === "svg") {
-          svg = element;
-        } else {
-          if (element.tagName.toLowerCase() === "object") {
-            svg = element.contentDocument.documentElement;
-          } else {
-            if (element.tagName.toLowerCase() === "embed") {
-              svg = element.getSVGDocument().documentElement;
-            } else {
-              if (element.tagName.toLowerCase() === "img") {
-                throw new Error(
-                  'Cannot script an SVG in an "img" element. Please use an "object" element or an in-line SVG.'
-                );
+          /**
+           * Extends an object
+           *
+           * @param  {Object} target object to extend
+           * @param  {Object} source object to take properties from
+           * @return {Object}        extended object
+           */
+          extend: function (target, source) {
+            target = target || {};
+            for (var prop in source) {
+              // Go recursively
+              if (this.isObject(source[prop])) {
+                target[prop] = this.extend(target[prop], source[prop]);
               } else {
-                throw new Error("Cannot get SVG.");
+                target[prop] = source[prop];
               }
-              return null;
             }
-          }
-        }
+            return target;
+          },
 
-        return svg;
-      },
-
-      /**
-       * Attach a given context to a function
-       * @param  {Function} fn      Function
-       * @param  {Object}   context Context
-       * @return {Function}           Function with certain context
-       */
-      proxy: function (fn, context) {
-        return function () {
-          return fn.apply(context, arguments);
-        };
-      },
-
-      /**
-       * Returns object type
-       * Uses toString that returns [object SVGPoint]
-       * And than parses object type from string
-       *
-       * @param  {Object} o Any object
-       * @return {String}   Object type
-       */
-      getType: function (o) {
-        return Object.prototype.toString
-          .apply(o)
-          .replace(/^\[object\s/, "")
-          .replace(/\]$/, "");
-      },
-
-      /**
-       * If it is a touch event than add clientX and clientY to event object
-       *
-       * @param  {Event} evt
-       * @param  {SVGSVGElement} svg
-       */
-      mouseAndTouchNormalize: function (evt, svg) {
-        // If no clientX then fallback
-        if (evt.clientX === void 0 || evt.clientX === null) {
-          // Fallback
-          evt.clientX = 0;
-          evt.clientY = 0;
-
-          // If it is a touch event
-          if (evt.touches !== void 0 && evt.touches.length) {
-            if (evt.touches[0].clientX !== void 0) {
-              evt.clientX = evt.touches[0].clientX;
-              evt.clientY = evt.touches[0].clientY;
-            } else if (evt.touches[0].pageX !== void 0) {
-              var rect = svg.getBoundingClientRect();
-
-              evt.clientX = evt.touches[0].pageX - rect.left;
-              evt.clientY = evt.touches[0].pageY - rect.top;
-            }
-            // If it is a custom event
-          } else if (evt.originalEvent !== void 0) {
-            if (evt.originalEvent.clientX !== void 0) {
-              evt.clientX = evt.originalEvent.clientX;
-              evt.clientY = evt.originalEvent.clientY;
-            }
-          }
-        }
-      },
-
-      /**
-       * Check if an event is a double click/tap
-       * TODO: For touch gestures use a library (hammer.js) that takes in account other events
-       * (touchmove and touchend). It should take in account tap duration and traveled distance
-       *
-       * @param  {Event}  evt
-       * @param  {Event}  prevEvt Previous Event
-       * @return {Boolean}
-       */
-      isDblClick: function (evt, prevEvt) {
-        // Double click detected by browser
-        if (evt.detail === 2) {
-          return true;
-        }
-        // Try to compare events
-        else if (prevEvt !== void 0 && prevEvt !== null) {
-          var timeStampDiff = evt.timeStamp - prevEvt.timeStamp, // should be lower than 250 ms
-            touchesDistance = Math.sqrt(
-              Math.pow(evt.clientX - prevEvt.clientX, 2) +
-              Math.pow(evt.clientY - prevEvt.clientY, 2)
+          /**
+           * Checks if an object is a DOM element
+           *
+           * @param  {Object}  o HTML element or String
+           * @return {Boolean}   returns true if object is a DOM element
+           */
+          isElement: function (o) {
+            return (
+              o instanceof HTMLElement ||
+              o instanceof SVGElement ||
+              o instanceof SVGSVGElement || //DOM2
+              (o &&
+                typeof o === "object" &&
+                o !== null &&
+                o.nodeType === 1 &&
+                typeof o.nodeName === "string")
             );
+          },
 
-          return timeStampDiff < 250 && touchesDistance < 10;
-        }
+          /**
+           * Checks if an object is an Object
+           *
+           * @param  {Object}  o Object
+           * @return {Boolean}   returns true if object is an Object
+           */
+          isObject: function (o) {
+            return Object.prototype.toString.call(o) === "[object Object]";
+          },
 
-        // Nothing found
-        return false;
-      },
+          /**
+           * Checks if variable is Number
+           *
+           * @param  {Integer|Float}  n
+           * @return {Boolean}   returns true if variable is Number
+           */
+          isNumber: function (n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+          },
 
-      /**
-       * Returns current timestamp as an integer
-       *
-       * @return {Number}
-       */
-      now:
-        Date.now ||
-        function () {
-          return new Date().getTime();
-        },
+          /**
+           * Search for an SVG element
+           *
+           * @param  {Object|String} elementOrSelector DOM Element or selector String
+           * @return {Object|Null}                   SVG or null
+           */
+          getSvg: function (elementOrSelector) {
+            var element, svg;
 
-      // From underscore.
-      // Returns a function, that, when invoked, will only be triggered at most once
-      // during a given window of time. Normally, the throttled function will run
-      // as much as it can, without ever going more than once per `wait` duration;
-      // but if you'd like to disable the execution on the leading edge, pass
-      // `{leading: false}`. To disable execution on the trailing edge, ditto.
-      throttle: function (func, wait, options) {
-        var that = this;
-        var context, args, result;
-        var timeout = null;
-        var previous = 0;
-        if (!options) {
-          options = {};
-        }
-        var later = function () {
-          previous = options.leading === false ? 0 : that.now();
-          timeout = null;
-          result = func.apply(context, args);
-          if (!timeout) {
-            context = args = null;
-          }
-        };
-        return function () {
-          var now = that.now();
-          if (!previous && options.leading === false) {
-            previous = now;
-          }
-          var remaining = wait - (now - previous);
-          context = this; // eslint-disable-line consistent-this
-          args = arguments;
-          if (remaining <= 0 || remaining > wait) {
-            clearTimeout(timeout);
-            timeout = null;
-            previous = now;
-            result = func.apply(context, args);
-            if (!timeout) {
-              context = args = null;
+            if (!this.isElement(elementOrSelector)) {
+              // If selector provided
+              if (
+                typeof elementOrSelector === "string" ||
+                elementOrSelector instanceof String
+              ) {
+                // Try to find the element
+                element = document.querySelector(elementOrSelector);
+
+                if (!element) {
+                  throw new Error(
+                    "Provided selector did not find any elements. Selector: " +
+                    elementOrSelector
+                  );
+                  return null;
+                }
+              } else {
+                throw new Error("Provided selector is not an HTML object nor String");
+                return null;
+              }
+            } else {
+              element = elementOrSelector;
             }
-          } else if (!timeout && options.trailing !== false) {
-            timeout = setTimeout(later, remaining);
-          }
-          return result;
+
+            if (element.tagName.toLowerCase() === "svg") {
+              svg = element;
+            } else {
+              if (element.tagName.toLowerCase() === "object") {
+                svg = element.contentDocument.documentElement;
+              } else {
+                if (element.tagName.toLowerCase() === "embed") {
+                  svg = element.getSVGDocument().documentElement;
+                } else {
+                  if (element.tagName.toLowerCase() === "img") {
+                    throw new Error(
+                      'Cannot script an SVG in an "img" element. Please use an "object" element or an in-line SVG.'
+                    );
+                  } else {
+                    throw new Error("Cannot get SVG.");
+                  }
+                  return null;
+                }
+              }
+            }
+
+            return svg;
+          },
+
+          /**
+           * Attach a given context to a function
+           * @param  {Function} fn      Function
+           * @param  {Object}   context Context
+           * @return {Function}           Function with certain context
+           */
+          proxy: function (fn, context) {
+            return function () {
+              return fn.apply(context, arguments);
+            };
+          },
+
+          /**
+           * Returns object type
+           * Uses toString that returns [object SVGPoint]
+           * And than parses object type from string
+           *
+           * @param  {Object} o Any object
+           * @return {String}   Object type
+           */
+          getType: function (o) {
+            return Object.prototype.toString
+              .apply(o)
+              .replace(/^\[object\s/, "")
+              .replace(/\]$/, "");
+          },
+
+          /**
+           * If it is a touch event than add clientX and clientY to event object
+           *
+           * @param  {Event} evt
+           * @param  {SVGSVGElement} svg
+           */
+          mouseAndTouchNormalize: function (evt, svg) {
+            // If no clientX then fallback
+            if (evt.clientX === void 0 || evt.clientX === null) {
+              // Fallback
+              evt.clientX = 0;
+              evt.clientY = 0;
+
+              // If it is a touch event
+              if (evt.touches !== void 0 && evt.touches.length) {
+                if (evt.touches[0].clientX !== void 0) {
+                  evt.clientX = evt.touches[0].clientX;
+                  evt.clientY = evt.touches[0].clientY;
+                } else if (evt.touches[0].pageX !== void 0) {
+                  var rect = svg.getBoundingClientRect();
+
+                  evt.clientX = evt.touches[0].pageX - rect.left;
+                  evt.clientY = evt.touches[0].pageY - rect.top;
+                }
+                // If it is a custom event
+              } else if (evt.originalEvent !== void 0) {
+                if (evt.originalEvent.clientX !== void 0) {
+                  evt.clientX = evt.originalEvent.clientX;
+                  evt.clientY = evt.originalEvent.clientY;
+                }
+              }
+            }
+          },
+
+          /**
+           * If it is a touch event than add clientX and clientY to event object
+           *
+           * @param  {Event} evt
+           * @param  {SVGSVGElement} svg
+           * @param  {Number} touch
+           */
+          touchNormalize: function (evt, svg, touch) {
+            // If it is a touch event
+            if (evt.touches !== void 0 && evt.touches.length) {
+              if (evt.touches[touch].clientX !== void 0) {
+                evt.clientX = evt.touches[touch].clientX;
+                evt.clientY = evt.touches[touch].clientY;
+              } else if (evt.touches[touch].pageX !== void 0) {
+                var rect = svg.getBoundingClientRect();
+
+                evt.clientX = evt.touches[touch].pageX - rect.left;
+                evt.clientY = evt.touches[touch].pageY - rect.top;
+              }
+              // If it is a custom event
+            } else {
+              // If no clientX then fallback
+              if (evt.clientX === void 0 || evt.clientX === null) {
+                // Fallback
+                evt.clientX = 0;
+                evt.clientY = 0;
+                if (evt.originalEvent !== void 0) {
+                  if (evt.originalEvent.clientX !== void 0) {
+                    evt.clientX = evt.originalEvent.clientX;
+                    evt.clientY = evt.originalEvent.clientY;
+                  }
+                }
+              }
+            }
+          },
+
+          /**
+           * Check if an event is a double click/tap
+           * TODO: For touch gestures use a library (hammer.js) that takes in account other events
+           * (touchmove and touchend). It should take in account tap duration and traveled distance
+           *
+           * @param  {Event}  evt
+           * @param  {Event}  prevEvt Previous Event
+           * @return {Boolean}
+           */
+          isDblClick: function (evt, prevEvt) {
+            // Double click detected by browser
+            if (evt.detail === 2) {
+              return true;
+            }
+            // Try to compare events
+            else if (prevEvt !== void 0 && prevEvt !== null) {
+              var timeStampDiff = evt.timeStamp - prevEvt.timeStamp, // should be lower than 250 ms
+                touchesDistance = Math.sqrt(
+                  Math.pow(evt.clientX - prevEvt.clientX, 2) +
+                  Math.pow(evt.clientY - prevEvt.clientY, 2)
+                );
+
+              return timeStampDiff < 250 && touchesDistance < 10;
+            }
+
+            // Nothing found
+            return false;
+          },
+
+          /**
+           * Returns current timestamp as an integer
+           *
+           * @return {Number}
+           */
+          now:
+            Date.now ||
+            function () {
+              return new Date().getTime();
+            },
+
+          // From underscore.
+          // Returns a function, that, when invoked, will only be triggered at most once
+          // during a given window of time. Normally, the throttled function will run
+          // as much as it can, without ever going more than once per `wait` duration;
+          // but if you'd like to disable the execution on the leading edge, pass
+          // `{leading: false}`. To disable execution on the trailing edge, ditto.
+          throttle: function (func, wait, options) {
+            var that = this;
+            var context, args, result;
+            var timeout = null;
+            var previous = 0;
+            if (!options) {
+              options = {};
+            }
+            var later = function () {
+              previous = options.leading === false ? 0 : that.now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) {
+                context = args = null;
+              }
+            };
+            return function () {
+              var now = that.now();
+              if (!previous && options.leading === false) {
+                previous = now;
+              }
+              var remaining = wait - (now - previous);
+              context = this; // eslint-disable-line consistent-this
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                clearTimeout(timeout);
+                timeout = null;
+                previous = now;
+                result = func.apply(context, args);
+                if (!timeout) {
+                  context = args = null;
+                }
+              } else if (!timeout && options.trailing !== false) {
+                timeout = setTimeout(later, remaining);
+              }
+              return result;
+            };
+          },
+
+          /**
+           * Create a requestAnimationFrame simulation
+           *
+           * @param  {Number|String} refreshRate
+           * @return {Function}
+           */
+          createRequestAnimationFrame: function (refreshRate) {
+            var timeout = null;
+
+            // Convert refreshRate to timeout
+            if (refreshRate !== "auto" && refreshRate < 60 && refreshRate > 1) {
+              timeout = Math.floor(1000 / refreshRate);
+            }
+
+            if (timeout === null) {
+              return window.requestAnimationFrame || requestTimeout(33);
+            } else {
+              return requestTimeout(timeout);
+            }
+          },
+
+          /**
+           * Calculate distance of points
+           *
+           * @param  {SVGPoint} point1
+           * @param  {SVGPoint} point2
+           * @return {Number}
+           */
+          calculateDistance: function (point1, point2) {
+            var dx = point1.x - point2.x;
+            var dy = point1.y - point2.y;
+            return Math.sqrt(dx * dx + dy * dy);
+          },
         };
-      },
 
-      /**
-       * Create a requestAnimationFrame simulation
-       *
-       * @param  {Number|String} refreshRate
-       * @return {Function}
-       */
-      createRequestAnimationFrame: function (refreshRate) {
-        var timeout = null;
-
-        // Convert refreshRate to timeout
-        if (refreshRate !== "auto" && refreshRate < 60 && refreshRate > 1) {
-          timeout = Math.floor(1000 / refreshRate);
+        /**
+         * Create a callback that will execute after a given timeout
+         *
+         * @param  {Function} timeout
+         * @return {Function}
+         */
+        function requestTimeout(timeout) {
+          return function (callback) {
+            window.setTimeout(callback, timeout);
+          };
         }
 
-        if (timeout === null) {
-          return window.requestAnimationFrame || requestTimeout(33);
-        } else {
-          return requestTimeout(timeout);
-        }
-      }
-    };
-
-    /**
-     * Create a callback that will execute after a given timeout
-     *
-     * @param  {Function} timeout
-     * @return {Function}
-     */
-    function requestTimeout(timeout) {
-      return function (callback) {
-        window.setTimeout(callback, timeout);
-      };
-    }
-
+      }).call(this)
+    }).call(this, typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
   }, {}]
 }, {}, [3]);
