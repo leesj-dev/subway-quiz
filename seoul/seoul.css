@@ -38,7 +38,10 @@ button,
 input {
     height: 42px;
     padding: 0px 10px;
-    margin: 3px;
+}
+
+object {
+    display: block;
 }
 
 /* popups */
@@ -375,36 +378,49 @@ input {
 
 #progress {
     display: flex;
+    align-self: center;
     flex-direction: column;
     justify-content: center;
     margin: 3vh 0px;
     table-layout: fixed;
+    border-spacing: 1.1vh;
 }
 
-#progress td {
+#progress * {
+    line-height: 100%;
+}
+
+
+#progress .circle {
+    width: 3vh;
+}
+
+.circleBox {
     overflow: hidden;
-}
-
-#progress td:nth-of-type(2) {
-    width: 35px;
-}
-
-#progress td:nth-of-type(3) {
-    width: 55px;
+    padding: 0px;
 }
 
 .progressPercentage,
 .progressCnt {
     font-size: min(22px, calc(3.5vh - 14px));
-    padding: 0px 0px calc(0.7vh - 2px) calc(1.75vh - 7px);
     vertical-align: middle;
     text-align: right;
+    padding-bottom: 0.25vh;
     font-feature-settings: "tnum";
     font-variant-numeric: tabular-nums;
 }
 
+.progressPercentage {
+    width: 40px;
+}
+
+.progressCnt {
+    width: 62px;
+}
+
 #circleContainerRow {
     line-height: 100%;
+    margin-bottom: 10px;
 }
 
 footer {
@@ -709,7 +725,7 @@ footer {
         max-width: 280px;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: max(260px, calc(50vh - 150px)) max(180px, calc(40vh - 150px)) calc(20vh - 10px) 50px 120px;
+        grid-template-rows: max(260px, calc(40vh - 50px)) max(180px, calc(40vh - 150px)) 20vh 50px 120px;
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
@@ -719,7 +735,7 @@ footer {
         width: 240px;
         height: 240px;
         padding: 10px;
-        margin: 15px 10px calc(30vh - 150px) 10px;
+        margin: 15px 10px 0px 10px;
     }
 
     .time {
@@ -729,7 +745,6 @@ footer {
 
     .questions {
         grid-area: 3 / 1 / 4 / 2;
-        margin-bottom: calc(20vh - 70px);
     }
 
     .transparency {
@@ -794,14 +809,10 @@ footer {
     }
 
     #circleContainerColumn {
-        width: 160px;
+        display: flex;
         margin-left: 30px;
         visibility: visible;
         justify-content: center;
         align-items: center;
-    }
-
-    #circleContainerColumn .circle {
-        width: calc(3.5vh - 7px)
     }
 }
