@@ -1,6 +1,19 @@
-// svg-pan-zoom v3.6.1-leesj
+// svg-pan-zoom v3.6.1, leesj-dev's fork v1.2.0
 // https://github.com/ariutta/svg-pan-zoom
-// edited by leesj-dev
+
+var zoomInSvgContent;
+var zoomOutSvgContent;
+var zoomResetSvgContent;
+
+function appendSvgContent(zoomGroup, svgContent) {
+  var parser = new DOMParser();
+  var externalSVG = parser.parseFromString(svgContent, "image/svg+xml").querySelector("svg");
+  var elementsInsideG = externalSVG.querySelectorAll("g > *");
+  elementsInsideG.forEach(function (element) {
+    zoomGroup.appendChild(element.cloneNode(true));
+  });
+}
+
 (function () { function r(e, n, t) { function o(i, f) { if (!n[i]) { if (!e[i]) { var c = "function" == typeof require && require; if (!f && c) return c(i, !0); if (u) return u(i, !0); var a = new Error("Cannot find module '" + i + "'"); throw a.code = "MODULE_NOT_FOUND", a } var p = n[i] = { exports: {} }; e[i][0].call(p.exports, function (r) { var n = e[i][1][r]; return o(n || r) }, p, p.exports, r, e, n, t) } return n[i].exports } for (var u = "function" == typeof require && require, i = 0; i < t.length; i++)o(t[i]); return o } return r })()({
   1: [function (require, module, exports) {
     var SvgUtils = require("./svg-utilities");
@@ -70,16 +83,16 @@
           false
         );
 
-        // Load external SVG file using fetch
-        fetch("./zoom/zoom_in.svg")
-          .then(response => response.text())
-          .then(externalSVGContent => {
-            var parser = new DOMParser();
-            var elementsInsideG = parser.parseFromString(externalSVGContent, "image/svg+xml").querySelectorAll("g > *");
-            elementsInsideG.forEach(function (element) {
-              zoomIn.appendChild(element.cloneNode(true));
-            });
-          })
+        if (!zoomInSvgContent) {
+          fetch("./zoom/zoom_in.svg")
+            .then(response => response.text())
+            .then(svgContent => {
+              zoomInSvgContent = svgContent;
+              appendSvgContent(zoomIn, zoomInSvgContent);
+            })
+        } else {
+          appendSvgContent(zoomIn, zoomInSvgContent);
+        }
 
         return zoomIn;
       },
@@ -105,16 +118,16 @@
           false
         );
 
-        // Load external SVG file using fetch
-        fetch("./zoom/zoom_reset.svg")
-          .then(response => response.text())
-          .then(externalSVGContent => {
-            var parser = new DOMParser();
-            var elementsInsideG = parser.parseFromString(externalSVGContent, "image/svg+xml").querySelectorAll("g > *");
-            elementsInsideG.forEach(function (element) {
-              resetPanZoomControl.appendChild(element.cloneNode(true));
-            });
-          })
+        if (!zoomResetSvgContent) {
+          fetch("./zoom/zoom_reset.svg")
+            .then(response => response.text())
+            .then(svgContent => {
+              zoomResetSvgContent = svgContent;
+              appendSvgContent(resetPanZoomControl, zoomResetSvgContent);
+            })
+        } else {
+          appendSvgContent(resetPanZoomControl, zoomResetSvgContent);
+        }
 
         return resetPanZoomControl;
       },
@@ -140,16 +153,16 @@
           false
         );
 
-        // Load external SVG file using fetch
-        fetch("./zoom/zoom_out.svg")
-          .then(response => response.text())
-          .then(externalSVGContent => {
-            var parser = new DOMParser();
-            var elementsInsideG = parser.parseFromString(externalSVGContent, "image/svg+xml").querySelectorAll("g > *");
-            elementsInsideG.forEach(function (element) {
-              zoomOut.appendChild(element.cloneNode(true));
-            });
-          })
+        if (!zoomOutSvgContent) {
+          fetch("./zoom/zoom_out.svg")
+            .then(response => response.text())
+            .then(svgContent => {
+              zoomOutSvgContent = svgContent;
+              appendSvgContent(zoomOut, zoomOutSvgContent);
+            })
+        } else {
+          appendSvgContent(zoomOut, zoomOutSvgContent);
+        }
 
         return zoomOut;
       },
@@ -1815,11 +1828,11 @@
 
           // calculate deltaY (and deltaX) according to the event
           if (support == "mousewheel") {
-            event.deltaY = - 1 / 40 * originalEvent.wheelDelta;
+            event.deltaX = - 1 / 40 * originalEvent.wheelDelta;
             // Webkit also support wheelDeltaX
             originalEvent.wheelDeltaX && (event.deltaX = - 1 / 40 * originalEvent.wheelDeltaX);
           } else {
-            event.deltaY = originalEvent.detail;
+            event.deltaX = originalEvent.detail;
           }
 
           // it's time to fire the callback

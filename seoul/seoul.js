@@ -91,6 +91,23 @@ document.getElementById("circleContainerColumn").innerHTML += htmlColumn;
 const mainWidth = document.getElementById("main").offsetWidth;
 document.getElementById("map").setAttribute("width", mainWidth);
 
+// 지원되는 창 크기인지 체크
+let checkResolution = function () {
+    const wrapper = document.getElementById("wrapper");
+    const unsupportedScreen = document.getElementById("unsupportedScreen");
+    const isPortrait = window.matchMedia("(max-aspect-ratio: 6.5/10)").matches;
+    const isLongLandscape = window.matchMedia("(min-aspect-ratio: 15/10) and (min-width: 1460px)").matches;
+    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    if ((isPortrait && viewportWidth < 440) || (!isPortrait && (viewportWidth < 855 || viewportHeight < 750)) || (isLongLandscape && viewportHeight < 830)) {
+        wrapper.style.display = "none";
+        unsupportedScreen.style.display = "flex";
+    } else {
+        wrapper.style.display = "flex";
+        unsupportedScreen.style.display = "none";
+    }
+}
+
 // svg-pan-zoom이 지도 넘어서 패닝하는 것 방지
 let beforePan = function (oldPan, newPan) {
     let sizes = this.getSizes(),
@@ -103,15 +120,15 @@ let beforePan = function (oldPan, newPan) {
         customPan = {};
 
     if (leftLimit < 0) {
-        customPan.x = Math.max(leftLimit, Math.min(rightLimit, newPan.x))
+        customPan.x = Math.max(leftLimit, Math.min(rightLimit, newPan.x));
     } else {
-        customPan.x = Math.min(leftLimit, Math.max(rightLimit, newPan.x))
+        customPan.x = Math.min(leftLimit, Math.max(rightLimit, newPan.x));
     }
 
     if (topLimit < 0) {
-        customPan.y = Math.max(topLimit, Math.min(bottomLimit, newPan.y))
+        customPan.y = Math.max(topLimit, Math.min(bottomLimit, newPan.y));
     } else {
-        customPan.y = Math.min(topLimit, Math.max(bottomLimit, newPan.y))
+        customPan.y = Math.min(topLimit, Math.max(bottomLimit, newPan.y));
     }
     return customPan
 }
@@ -162,23 +179,6 @@ let eventsHandler = {
     }
     , destroy: function () {
         this.hammer.destroy();
-    }
-}
-
-// 지원되는 창 크기인지 체크
-let checkResolution = function () {
-    const wrapper = document.getElementById("wrapper");
-    const unsupportedScreen = document.getElementById("unsupportedScreen");
-    const isPortrait = window.matchMedia("(max-aspect-ratio: 6.5/10)").matches;
-    const isLongLandscape = window.matchMedia("(min-aspect-ratio: 15/10) and (min-width: 1460px)").matches;
-    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    if ((isPortrait && viewportWidth < 440) || (!isPortrait && (viewportWidth < 855 || viewportHeight < 750)) || (isLongLandscape && viewportHeight < 830)) {
-        wrapper.style.display = "none";
-        unsupportedScreen.style.display = "flex";
-    } else {
-        wrapper.style.display = "flex";
-        unsupportedScreen.style.display = "none";
     }
 }
 
