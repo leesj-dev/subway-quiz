@@ -2170,10 +2170,10 @@
         <text transform="translate(349.5977 341.7898)" class="station 경의·중앙선" id="강매" visibility="hidden">강매</text>
         <text transform="translate(349.5977 289.364)" class="station 경의·중앙선" id="행신" visibility="hidden">행신</text>
         <text transform="translate(352.7031 242.5368)" class="station 경의·중앙선 서해선" id="능곡" visibility="hidden">능곡</text>
-        <text transform="translate(299.4634 135.1852)" class="station 경의·중앙선" id="곡산" visibility="hidden">곡산</text>
-        <text transform="translate(256.6162 135.1852)" class="station 경의·중앙선" id="백마" visibility="hidden">백마</text>
-        <text transform="translate(213.6567 135.1852)" class="station 경의·중앙선" id="풍산" visibility="hidden">풍산</text>
-        <text transform="translate(170.4653 135.1843)" class="station 경의·중앙선" id="일산" visibility="hidden">일산</text>
+        <text transform="translate(299.4634 135.1852)" class="station 경의·중앙선 서해선" id="곡산" visibility="hidden">곡산</text>
+        <text transform="translate(256.6162 135.1852)" class="station 경의·중앙선 서해선" id="백마" visibility="hidden">백마</text>
+        <text transform="translate(213.6567 135.1852)" class="station 경의·중앙선 서해선" id="풍산" visibility="hidden">풍산</text>
+        <text transform="translate(170.4653 135.1843)" class="station 경의·중앙선 서해선" id="일산" visibility="hidden">일산</text>
         <text transform="translate(134.124 123.5349)" class="station 경의·중앙선" id="탄현" visibility="hidden">탄현</text>
         <text transform="translate(85.7764 86.6838)" class="station 경의·중앙선" id="야당" visibility="hidden">야당</text>
         <text transform="translate(134.1216 68.0554)" class="station 경의·중앙선" id="운정" visibility="hidden">운정</text>
