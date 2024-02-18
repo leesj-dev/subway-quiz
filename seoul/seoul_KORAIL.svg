@@ -1675,7 +1675,7 @@
         <text transform="translate(371.4785 1215.1892)" class="station 4호선 수인·분당선" id="한대앞" visibility="hidden">한대앞</text>
         <text transform="translate(379.7471 1244.4177)" class="station 4호선 수인·분당선" id="중앙" visibility="hidden">중앙</text>
         <text transform="translate(379.583 1273.6472)" class="station 4호선 수인·분당선" id="고잔" visibility="hidden">고잔</text>
-        <text transform="translate(371.8698 1302.5295)" class="station 4호선 수인·분당선 서해선" id="초지" visibility="hidden">초지</text>
+        <text transform="translate(383.8698 1314.5295)" class="station 4호선 수인·분당선 서해선" id="초지" visibility="hidden">초지</text>
         <text transform="translate(379.6177 1332.1062)" class="station 4호선 수인·분당선" id="안산" visibility="hidden">안산</text>
         <text transform="translate(363.3232 1361.3347)" class="station 4호선 수인·분당선" id="신길온천" visibility="hidden">신길온천</text>
         <text transform="translate(379.7476 1390.5642)" class="station 4호선 수인·분당선" id="정왕" visibility="hidden">정왕</text>
@@ -2166,7 +2166,7 @@
         </text>
         <text transform="translate(457.71 439.8825)" class="station 6호선" id="증산" visibility="hidden">증산</text>
         <text transform="translate(349.5977 436.844)" class="station 경의·중앙선" id="수색" visibility="hidden">수색</text>
-        <text transform="translate(349.5981 388.0168)" class="station 경의·중앙선" id="화전" visibility="hidden">화전</text>
+        <text transform="translate(349.5981 388.0168)" class="station 경의·중앙선" id="한국항공대" visibility="hidden">한국항공대</text>
         <text transform="translate(349.5977 341.7898)" class="station 경의·중앙선" id="강매" visibility="hidden">강매</text>
         <text transform="translate(349.5977 289.364)" class="station 경의·중앙선" id="행신" visibility="hidden">행신</text>
         <text transform="translate(352.7031 242.5368)" class="station 경의·중앙선 서해선" id="능곡" visibility="hidden">능곡</text>
