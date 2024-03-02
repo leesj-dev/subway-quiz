@@ -2105,10 +2105,7 @@
         <text transform="translate(1086.5352 364.698)" class="station 1호선" id="월계" visibility="hidden">월계</text>
         <text transform="translate(1076.7598 392.7488)" class="station 1호선 경춘선" id="광운대" visibility="hidden">광운대</text>
         <text transform="translate(999.7119 738.3445)" class="station 2호선" id="구의" visibility="hidden">구의</text>
-        <text id="뚝섬유원지" transform="translate(957.7618 698.5242)" class="station 7호선" visibility="hidden">
-            <tspan x="0" y="0">뚝섬</tspan>
-            <tspan x="-8" y="10">유원지</tspan>
-        </text>
+        <text transform="translate(958.7618 709.5242)" class="station 7호선" id="자양" visibility="hidden">자양</text>
         <text transform="translate(1038.915 694.4734)" class="station 7호선" id="어린이대공원" visibility="hidden">어린이대공원</text>
         <text transform="translate(963.6113 743.0271)" class="station 7호선" id="청담" visibility="hidden">청담</text>
         <text id="압구정로데오" transform="translate(905.5195 719.2078)" class="station 수인·분당선" visibility="hidden">
