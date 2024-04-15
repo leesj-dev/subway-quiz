@@ -22,7 +22,7 @@
     line-height: 160%;
     border-radius: 5px;
     border-width: 1px;
-    font-feature-settings: 'ss05';
+    /* font-feature-settings: 'ss05'; */
 }
 
 /* Prevents scrolling */
@@ -383,11 +383,12 @@ object {
     justify-content: center;
     margin: 3vh 0px;
     table-layout: fixed;
-    border-spacing: 1.1vh;
+    border-spacing: 0.9vh;
 }
 
 #progress * {
     line-height: 100%;
+    font-size: 1.5vh;
 }
 
 
@@ -402,7 +403,7 @@ object {
 
 .progressPercentage,
 .progressCnt {
-    font-size: min(22px, calc(3.5vh - 14px));
+    font-size: min(1.5vh, calc(3.5vh - 14px));
     vertical-align: middle;
     text-align: right;
     padding-bottom: 0.25vh;
@@ -411,11 +412,11 @@ object {
 }
 
 .progressPercentage {
-    width: 40px;
+    width: 4vh;
 }
 
 .progressCnt {
-    width: 62px;
+    width: 6vh;
 }
 
 #circleContainerRow {
@@ -819,6 +820,7 @@ footer {
     #circleContainerColumn {
         display: flex;
         margin-left: 30px;
+        margin-right: 1vw;
         visibility: visible;
         justify-content: center;
         align-items: center;
