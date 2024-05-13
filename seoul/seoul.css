@@ -1,21 +1,21 @@
 /* Import Fonts */
 @font-face {
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     font-weight: 400;
     font-display: swap;
-    src: local('Pretendard Regular'), url('/fonts/Pretendard-Regular.subset.woff2') format('woff2');
+    src: local("Pretendard Regular"), url("/fonts/Pretendard-Regular.subset.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     font-weight: 700;
     font-display: swap;
-    src: local('Pretendard Bold'), url('/fonts/Pretendard-Bold.subset.woff2') format('woff2');
+    src: local("Pretendard Bold"), url("/fonts/Pretendard-Bold.subset.woff2") format("woff2");
 }
 
 /* Global Setting */
 * {
-    font-family: 'Pretendard';
+    font-family: "Pretendard";
     font-size: 18px;
     letter-spacing: -0.1px;
     word-break: keep-all;
@@ -50,7 +50,7 @@ object {
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
-    color: #61677C;
+    color: #61677c;
     position: absolute;
     line-height: 29px;
     height: 29px;
@@ -82,19 +82,19 @@ object {
 .type-input {
     border: 0;
     outline: 0;
-    background-color: #EBECF0;
-    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF;
+    background-color: #ebecf0;
+    box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff;
     appearance: none;
     -webkit-appearance: none;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
     font-weight: bold;
-    color: #61677C;
+    color: #61677c;
     padding: 0px 15px;
 }
 
 .type-input:focus {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff;
 }
 
 /* round buttons */
@@ -104,9 +104,9 @@ object {
 .popup {
     border: 0;
     outline: 0;
-    background-color: #EBECF0;
-    color: #61677C;
-    box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #BABECC;
+    background-color: #ebecf0;
+    color: #61677c;
+    box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px #babecc;
     appearance: none;
     -webkit-appearance: none;
     transition: all 0.2s ease-in-out;
@@ -116,12 +116,12 @@ object {
 
 .button-on:hover,
 .round-button:hover {
-    box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px #BABECC;
+    box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px #babecc;
 }
 
 .button-on:active,
 .round-button:active {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff;
 }
 
 .button-on {
@@ -129,8 +129,8 @@ object {
 }
 
 .button-off {
-    color: #B1B4C0;
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+    color: #b1b4c0;
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff;
     cursor: not-allowed;
 }
 
@@ -147,9 +147,9 @@ object {
     margin-right: 10px;
     border: 0;
     outline: 0;
-    background-color: #EBECF0;
-    color: #61677C;
-    box-shadow: -2px -2px 6px #FFFFFF, 2px 2px 6px #BABECC;
+    background-color: #ebecf0;
+    color: #61677c;
+    box-shadow: -2px -2px 6px #ffffff, 2px 2px 6px #babecc;
     appearance: none;
     -webkit-appearance: none;
     transition: all 0.2s ease-in-out;
@@ -160,12 +160,12 @@ object {
 
 .check:checked {
     background-color: #b9d0ed;
-    box-shadow: inset 1px 1px 2px #B4BAD1, inset -1px -1px 2px #DEE5FA;
+    box-shadow: inset 1px 1px 2px #b4bad1, inset -1px -1px 2px #dee5fa;
 }
 
 .check:checked::before {
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='14' viewBox='0 0 448 512'%3E%3Cpath style='fill: white;' d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
-    color: #EEEEEE;
+    color: #eeeeee;
     position: absolute;
     left: 50%;
     top: 58%;
@@ -178,7 +178,7 @@ object {
     overflow: hidden;
     opacity: 40%;
     cursor: not-allowed;
-    margin: 0px .15vw;
+    margin: 0px 0.15vw;
     line-height: 100%;
 }
 
@@ -187,12 +187,12 @@ object {
     overflow: hidden;
     opacity: 40%;
     cursor: pointer;
-    margin: 0px .15vw;
+    margin: 0px 0.15vw;
     line-height: 100%;
-    transition: opacity .1s ease-out;
-    -moz-transition: opacity .1s ease-out;
-    -webkit-transition: opacity .1s ease-out;
-    -o-transition: opacity .1s ease-out;
+    transition: opacity 0.1s ease-out;
+    -moz-transition: opacity 0.1s ease-out;
+    -webkit-transition: opacity 0.1s ease-out;
+    -o-transition: opacity 0.1s ease-out;
 }
 
 .clickable-on:hover {
@@ -221,7 +221,7 @@ object {
     outline: 0;
     color: #7889c7;
     font-weight: bold;
-    box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px #a2acd1;
+    box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px #a2acd1;
     appearance: none;
     -webkit-appearance: none;
 }
@@ -253,7 +253,7 @@ object {
     font-size: 14px;
     font-weight: 700;
     color: aquamarine;
-    letter-spacing: .04rem;
+    letter-spacing: 0.04rem;
 }
 
 .questions {
@@ -323,7 +323,7 @@ object {
 }
 
 #main {
-    margin-left: calc(1vw + 15px);
+    margin-left: calc(0.5vw + 15px);
 }
 
 #type-area {
@@ -391,7 +391,6 @@ object {
     font-size: 1.5vh;
 }
 
-
 #progress .circle {
     width: 3vh;
 }
@@ -428,7 +427,7 @@ footer {
     text-align: center;
     font-size: 13px;
     margin-top: 5px;
-    color: #BBBBBB;
+    color: #bbbbbb;
 }
 
 #min-input {
@@ -458,12 +457,12 @@ footer {
     justify-content: center;
 }
 
-#unsupportedScreen>div:nth-child(1) {
+#unsupportedScreen > div:nth-child(1) {
     font-size: calc(2vw + 20px);
     margin-right: calc(1vw + 10px);
 }
 
-#unsupportedScreen>div:nth-child(2) {
+#unsupportedScreen > div:nth-child(2) {
     font-size: calc(1vw + 10px);
     line-height: 140%;
     color: #4f4f4f;
@@ -495,10 +494,8 @@ footer {
     border-radius: 100%;
 
     /* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
-    box-shadow:
-        inset 4px 4px 2px -4px rgba(255, 255, 255, .4),
-        inset -2px -2px 4px -2px rgba(0, 0, 0, .2),
-        4px 2px 4px -2px rgba(0, 0, 0, .4);
+    box-shadow: inset 4px 4px 2px -4px rgba(255, 255, 255, 0.4), inset -2px -2px 4px -2px rgba(0, 0, 0, 0.2),
+        4px 2px 4px -2px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     border: 0;
 }
@@ -511,10 +508,8 @@ footer {
     margin: 5px 0;
     background: #b9d0ed;
     border-radius: 100%;
-    box-shadow:
-        inset 4px 4px 2px -4px rgba(255, 255, 255, .4),
-        inset -2px -2px 4px -2px rgba(0, 0, 0, .2),
-        4px 2px 4px -2px rgba(0, 0, 0, .4);
+    box-shadow: inset 4px 4px 2px -4px rgba(255, 255, 255, 0.4), inset -2px -2px 4px -2px rgba(0, 0, 0, 0.2),
+        4px 2px 4px -2px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     border: 0;
 }
@@ -522,8 +517,8 @@ footer {
 /* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
 /* Webkit browsers */
 #slider::-webkit-slider-runnable-track {
-    background: #EBECF0;
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+    background: #ebecf0;
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff;
     width: 100%;
     height: 30px;
     padding: 0px 10px;
@@ -532,13 +527,12 @@ footer {
 
 /* For firefox */
 #slider::-moz-range-track {
-    background: #EBECF0;
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFFFFF;
+    background: #ebecf0;
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff;
     width: 100%;
     height: 30px;
     padding: 0px 10px;
     border-radius: 15px;
-
 }
 
 /* 미디어 쿼리 */
@@ -679,7 +673,7 @@ footer {
 
     .check:checked::before {
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='12' width='10.5' viewBox='0 0 448 512'%3E%3Cpath style='fill: white;' d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
-        color: #EEEEEE;
+        color: #eeeeee;
         position: absolute;
         left: 50%;
         top: 58%;
@@ -785,7 +779,7 @@ footer {
     }
 
     #circleContainerRow .circle {
-        width: calc(1vw + 20px)
+        width: calc(1vw + 20px);
     }
 
     #slash {
@@ -794,11 +788,10 @@ footer {
 }
 
 /* Landscape & 가로가 충분히 길지 않을 때 */
-@media (min-aspect-ratio: 6.5/10) and (max-aspect-ratio: 15/10),
-(min-aspect-ratio: 15/10) and (max-width: 1460px) {
+@media (min-aspect-ratio: 6.5/10) and (max-aspect-ratio: 15/10), (min-aspect-ratio: 15/10) and (max-width: 1460px) {
     #main {
         flex-direction: column;
-        width: calc(95vw - 300px);
+        width: calc(97vw - 285px);
         margin-top: 1vw;
     }
 
@@ -813,14 +806,13 @@ footer {
 @media (min-aspect-ratio: 15/10) and (min-width: 1460px) {
     #main {
         flex-direction: column;
-        width: calc(95vw - 490px);
+        width: calc(97vw - 550px);
         margin-top: 1vw;
     }
 
     #circleContainerColumn {
         display: flex;
         margin-left: 30px;
-        margin-right: 1vw;
         visibility: visible;
         justify-content: center;
         align-items: center;

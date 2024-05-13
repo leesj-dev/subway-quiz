@@ -50,6 +50,7 @@ const lineData = {
 const lineNames = Object.keys(lineData);
 
 // local storage로부터 데이터 가져옴
+// 1) 최고기록
 highScore = localStorage.getItem("highScore");
 if (highScore === null) {
     highScore = 0;
@@ -58,6 +59,7 @@ if (highScore === null) {
     document.getElementById("highScore").innerHTML = localStorage.getItem("highScore");
 }
 
+// 2) 시간 설정
 minSetting = localStorage.getItem("minSetting");
 if (minSetting === null) {
     minSetting = 90;
@@ -230,23 +232,21 @@ document.getElementById("answer").addEventListener("submit", function (event) {
         return;
     }
 
-    // 전처리
-    (function() {
-        // cdot이 포함된 경우, 온점이나 공백 허용
-        if (cdotMap.hasOwnProperty(station)) {
-            station = cdotMap[station];
-        }
+    // 역명 전처리
+    // cdot이 포함된 경우, 온점이나 공백 허용
+    if (cdotMap.hasOwnProperty(station)) {
+        station = cdotMap[station];
+    }
 
-        // 역 이름이 두 개인 경우
-        if (station === "이수" || station === "총신대입구") {
-            station = "이수";
-        }
+    // 역 이름이 두 개인 경우
+    if (station === "이수" || station === "총신대입구") {
+        station = "이수";
+    }
 
-        // 역명이 겹치는 경우
-        if (twoStations.includes(station)) {
-            station = station + "_" + line;
-        }
-    })();
+    // 역명이 겹치는 경우
+    if (twoStations.includes(station)) {
+        station = station + "_" + line;
+    }
 
     document.getElementById("station").value = ""; // 입력한 역명은 clear (호선은 유지)
 
@@ -438,12 +438,13 @@ function leadingZeros(input) {
     // 숫자가 아니면 return
     if (isNaN(input.value)) return;
 
+    // 0이 붙은 두 자리 수 이상의 수일 때 앞에 붙은 0 모두 제거
     if (input.value.length > 2 && input.value[0] === "0") {
-        // 0이 붙은 두 자리 수 이상의 수일 때 앞에 붙은 0 모두 제거
         input.value = Number(input.value);
     }
+    
+    // 0이 아닌 한 자리 수일 때 앞에 0 붙이기 (0을 제외하는 이유는 0X에서 X를 지우는 순간 00이 되기 때문)
     if (input.value.length === 1 && input.value != "0") {
-        // 0이 아닌 한 자리 수일 때 앞에 0 붙이기 (0을 제외하는 이유는 0X에서 X를 지우는 순간 00이 되기 때문)
         input.value = "0" + input.value;
     }
 }
@@ -452,20 +453,22 @@ function leadingZeros(input) {
 document.getElementById("min-input").addEventListener("keydown", function (event) {
     if (event.key != "Enter") return;
 
+    // 숫자이고 공백이 아니면
     if (this.value != "" && !isNaN(this.value)) {
-        // 숫자이고 공백이 아니면
+        // 최댓값 초과 시 최댓값으로 설정
         if (this.value > minSettingMax) {
-            // 최댓값 초과 시 최댓값으로 설정
             this.value = minSettingMax;
-        } else if (Number(this.value) < 1) {
-            // 1 미만의 숫자일 떄 1로 설정
+        } 
+        // 1 미만의 숫자일 떄 1로 설정
+        else if (Number(this.value) < 1) {
             this.value = "01";
         }
         document.getElementById("min").innerText = this.value;
         minSetting = Number(this.value);
         localStorage.setItem("minSetting", minSetting);
-    } else {
-        // 숫자가 아니거나 공백이라면 이전 값으로 설정
+    }
+    // 숫자가 아니거나 공백이라면 이전 값으로 설정
+    else {
         document.getElementById("min").innerText = minSetting;
     }
 
@@ -526,7 +529,6 @@ function giveUp() {
     let incorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="hidden"]');
     for (const element of incorrect) {
         element.setAttribute("fill", "red");
-        // element.setAttribute("font-weight", "bold");
         element.setAttribute("visibility", "visible");
     }
 
@@ -567,7 +569,6 @@ function resetTimer() {
     const previousCorrect = document.getElementById("map").contentDocument.querySelectorAll('[visibility="visible"]');
     for (const element of previousCorrect) {
         element.setAttribute("fill", "black");
-        // element.setAttribute("font-weight", "bold");
         element.setAttribute("visibility", "hidden");
     }
     document.getElementById("min").innerText = minSetting < 10 ? "0" + minSetting : minSetting;
