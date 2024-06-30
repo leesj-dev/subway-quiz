@@ -43,7 +43,7 @@ const lineData = {
     "의정부경전철": [0, 15],
     "인천1호선": [0, 30],
     "인천2호선": [0, 27],
-    "GTX-A": [0, 3],
+    "GTX-A": [0, 4],
 };
 
 // lineData의 key를 array로 반환
@@ -101,11 +101,7 @@ let checkResolution = function () {
     const isLongLandscape = window.matchMedia("(min-aspect-ratio: 15/10) and (min-width: 1460px)").matches;
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    if (
-        (isPortrait && viewportWidth < 440) ||
-        (!isPortrait && (viewportWidth < 855 || viewportHeight < 750)) ||
-        (isLongLandscape && viewportHeight < 830)
-    ) {
+    if ((isPortrait && viewportWidth < 440) || (!isPortrait && (viewportWidth < 855 || viewportHeight < 750)) || (isLongLandscape && viewportHeight < 830)) {
         wrapper.style.display = "none";
         unsupportedScreen.style.display = "flex";
     } else {
@@ -171,10 +167,7 @@ window.addEventListener("resize", function () {
 
     // 모든 노선이 비활성화된 게 아니라면, node 확대 update
     const circles = document.getElementsByClassName("clickable-on");
-    if (
-        ![...circles].every((data) => data.style.opacity === inactiveCircle) &&
-        document.getElementById("check3").checked === true
-    ) {
+    if (![...circles].every((data) => data.style.opacity === inactiveCircle) && document.getElementById("check3").checked === true) {
         const node = subwayMap.getElementsByClassName("line " + lineName)[0];
         showNode(node);
     }
@@ -336,9 +329,7 @@ function changeTransferOpacity() {
 
         // 환승역 타 노선 색 표시 버튼이 꺼져있다면, 타 노선들을 inactive로 변경
         if (!document.getElementById("check2").checked && lineName) {
-            const filtered = [...station.children].filter(
-                (e) => e.classList.contains("fill") && !e.classList.contains(lineName)
-            ); // 해당 호선을 제외한 나머지 호선들
+            const filtered = [...station.children].filter((e) => e.classList.contains("fill") && !e.classList.contains(lineName)); // 해당 호선을 제외한 나머지 호선들
             batchSetOpacity(filtered, inactive);
         }
     });
@@ -442,7 +433,7 @@ function leadingZeros(input) {
     if (input.value.length > 2 && input.value[0] === "0") {
         input.value = Number(input.value);
     }
-    
+
     // 0이 아닌 한 자리 수일 때 앞에 0 붙이기 (0을 제외하는 이유는 0X에서 X를 지우는 순간 00이 되기 때문)
     if (input.value.length === 1 && input.value != "0") {
         input.value = "0" + input.value;
@@ -458,7 +449,7 @@ document.getElementById("min-input").addEventListener("keydown", function (event
         // 최댓값 초과 시 최댓값으로 설정
         if (this.value > minSettingMax) {
             this.value = minSettingMax;
-        } 
+        }
         // 1 미만의 숫자일 떄 1로 설정
         else if (Number(this.value) < 1) {
             this.value = "01";
@@ -578,9 +569,7 @@ function resetTimer() {
     panZoom.zoom(1); // 확대 비율 초기화
 
     // lineData 초기화
-    [...document.getElementsByClassName("progressPercentage")].forEach(
-        (element) => (element.firstChild.innerHTML = "0")
-    );
+    [...document.getElementsByClassName("progressPercentage")].forEach((element) => (element.firstChild.innerHTML = "0"));
     [...document.getElementsByClassName("progressCnt")].forEach((element) => (element.firstChild.innerHTML = "0"));
     for (const key in lineData) {
         lineData[key][0] = 0;

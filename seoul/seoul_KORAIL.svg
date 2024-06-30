@@ -162,8 +162,8 @@
             <line style="fill:none;stroke:#F7941D;stroke-width:2.4;stroke-miterlimit:10;" x1="140.83" y1="291.05" x2="140.83" y2="299.69" />
         </g>
         <g class="line GTX-A">
-            <path style="fill:none;stroke:#906090;stroke-width:4.8;stroke-miterlimit:10;" class="cls-12" d="M701.6,1369.3h144.2c14.4,0,25.8-11.6,25.8-25.8v-56.4c0-14.4,11.6-25.8,25.8-25.8h218.1c14.4,0,25.8-11.6,25.8-25.8v-65.5c0-15.2-12.4-27.5-27.5-27.5h-8c-15.2,0-27.5-12.4-27.5-27.5v-11.9"/>
-            <line style="fill:none;stroke:#906090;stroke-width:4.8;stroke-miterlimit:10;" class="cls-12" x1="701.1" y1="1376.3" x2="701.1" y2="1362.1"/>
+            <path style="fill:none;stroke:#906090;stroke-width:4.8;stroke-miterlimit:10;" d="M703.6,1369.3h158.2c14.4,0,25.8-11.6,25.8-25.8v-56.4c0-14.4,11.6-25.8,25.8-25.8h202.1c14.4,0,25.8-11.6,25.8-25.8v-65.5c0-15.2-12.4-27.5-27.5-27.5h-8c-15.2,0-27.5-12.4-27.5-27.5v-11.9" />
+            <line style="fill:none;stroke:#906090;stroke-width:4.8;stroke-miterlimit:10;" x1="702.1" y1="1376.3" x2="702.1" y2="1362.1" />
         </g>
     </g>
     <g id="transfers">
@@ -923,10 +923,16 @@
             <path class="fill GTX-A" d="M1078.1,1104.7c-1.3,0-2.4-1.1-2.4-2.4s1.1-2.4,2.4-2.4,2.4,1.1,2.4,2.4-1,2.4-2.4,2.4"/>
         </g>
         <g class="transfer" id="성남_환승">
-             <path class="transferFill" d="M1141,1209.6h.5c2.5,0,4.6,2,4.6,4.6v10.7c0,2.5-2,4.6-4.6,4.6h-.5c-2.5,0-4.6-2-4.6-4.6v-10.7c0-2.6,2.1-4.6,4.6-4.6"/>
+            <path class="transferFill" d="M1141,1209.6h.5c2.5,0,4.6,2,4.6,4.6v10.7c0,2.5-2,4.6-4.6,4.6h-.5c-2.5,0-4.6-2-4.6-4.6v-10.7c0-2.6,2.1-4.6,4.6-4.6"/>
             <path class="transferBorder" d="M1141,1209.6h.5c2.5,0,4.6,2,4.6,4.6v10.7c0,2.5-2,4.6-4.6,4.6h-.5c-2.5,0-4.6-2-4.6-4.6v-10.7c0-2.6,2.1-4.6,4.6-4.6Z"/>
             <path class="fill GTX-A" d="M1141.2,1221c1.3,0,2.4,1.1,2.4,2.4s-1.1,2.4-2.4,2.4-2.4-1.1-2.4-2.4,1.1-2.4,2.4-2.4"/>
             <path class="fill 경강선" d="M1141.2,1213.1c1.3,0,2.4,1.1,2.4,2.4s-1.1,2.4-2.4,2.4-2.4-1.1-2.4-2.4,1.1-2.4,2.4-2.4"/>
+        </g>
+        <g class="transfer" id="구성_환승">
+            <path class="transferFill" d="M881.6,1291.1v-.5c0-2.5,2-4.6,4.6-4.6h10.7c2.5,0,4.6,2,4.6,4.6v.5c0,2.5-2,4.6-4.6,4.6h-10.7c-2.5,0-4.6-2-4.6-4.6"/>
+            <path class="transferBorder" d="M881.6,1291.1v-.5c0-2.5,2-4.6,4.6-4.6h10.7c2.5,0,4.6,2,4.6,4.6v.5c0,2.5-2,4.6-4.6,4.6h-10.7c-2.5,0-4.6-2-4.6-4.6Z"/>
+            <path class="fill 수인·분당선" d="M893.1,1290.8c0-1.3,1.1-2.4,2.4-2.4s2.4,1.1,2.4,2.4-1.1,2.4-2.4,2.4c-1.3,0-2.4-1.1-2.4-2.4"/>
+            <path class="fill GTX-A" d="M885.1,1290.8c0-1.3,1.1-2.4,2.4-2.4s2.4,1.1,2.4,2.4-1.1,2.4-2.4,2.4c-1.3,0-2.4-1.1-2.4-2.4"/>
         </g>
     </g>
     <g id="circles">
@@ -1461,7 +1467,6 @@
         <path class="mark" d="M748,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M784.7,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M852.2,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
-        <path class="mark" d="M896.5,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M932.7,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M968.9,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M1005.1,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
@@ -1978,7 +1983,7 @@
         <text transform="translate(772.6 1229.3015)" class="station 신분당선" id="광교중앙" visibility="hidden">광교중앙</text>
         <text transform="translate(959.2 1306.2068)" class="station 수인·분당선" id="죽전" visibility="hidden">죽전</text>
         <text transform="translate(922.8 1306.2078)" class="station 수인·분당선" id="보정" visibility="hidden">보정</text>
-        <text transform="translate(886.5 1306.2078)" class="station 수인·분당선" id="구성" visibility="hidden">구성</text>
+        <text transform="translate(893.4 1307)" class="station 수인·분당선 GTX-A" id="구성" visibility="hidden">구성</text>
         <text transform="translate(842.1 1306.2078)" class="station 수인·분당선" id="신갈" visibility="hidden">신갈</text>
         <text transform="translate(836.877 1351.9041)" class="station 에버라인" id="강남대" visibility="hidden">강남대</text>
         <text transform="translate(906.4902 1351.9041)" class="station 에버라인" id="지석" visibility="hidden">지석</text>

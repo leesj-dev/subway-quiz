@@ -40,22 +40,8 @@
                     </table>
                     <form id="timer">
                         <input class="button-on" type="button" value="시작" id="start" onclick="startTimer();" />
-                        <input
-                            class="button-off"
-                            type="button"
-                            value="포기"
-                            id="give-up"
-                            onclick="giveUp();"
-                            disabled
-                        />
-                        <input
-                            class="button-off"
-                            type="button"
-                            value="리셋"
-                            id="reset"
-                            onclick="resetTimer();"
-                            disabled
-                        />
+                        <input class="button-off" type="button" value="포기" id="give-up" onclick="giveUp();" disabled />
+                        <input class="button-off" type="button" value="리셋" id="reset" onclick="resetTimer();" disabled />
                     </form>
                 </div>
                 <div class="questions">
@@ -96,15 +82,7 @@
                     <div id="circleContainerRow"></div>
                     <div>
                         <form id="answer">
-                            <input
-                                class="type-input"
-                                id="station"
-                                name="station"
-                                type="text"
-                                placeholder="역명을 입력하세요"
-                                autocomplete="off"
-                                disabled
-                            />
+                            <input class="type-input" id="station" name="station" type="text" placeholder="역명을 입력하세요" autocomplete="off" disabled />
                             <button class="button-on" id="submit" name="submit" type="submit" disabled>제출</button>
                         </form>
                         <div class="popup" id="correct">&#9989; 정답</div>
@@ -123,7 +101,7 @@
         </div>
     </body>
     <script type="text/javascript" src="svg-pan-zoom.js?v3.6.10"></script>
-    <script type="text/javascript" src="seoul.js?v1.0.3"></script>
+    <script type="text/javascript" src="seoul.js?v1.0.4"></script>
     <!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9510756183985431"
     crossorigin="anonymous"></script>
