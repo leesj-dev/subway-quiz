@@ -90,8 +90,7 @@
             <line style="fill:none;stroke:#677718;stroke-width:4.8;stroke-miterlimit:10;" x1="1198.31" y1="169.34" x2="1198.31" y2="183.32" />
         </g>
         <g class="line 8호선">
-            <path style="fill:none;stroke:#EE2B74;stroke-width:4.8;stroke-miterlimit:10;" d="M1191.73,819.25h-163.84c-15.03,0-27.21,12.18-27.21,27.21v0.55c0,15.03,12.18,27.21,27.21,27.21h58.24c15.03,0,27.21,12.18,27.21,27.21v157.53c0,15.03,12.18,27.21,27.21,27.21h107.42c15.03,0,27.21,12.18,27.21,27.21v23.14c0,15.03-12.18,27.21-27.21,27.21h-63.51" />
-            <line style="fill:none;stroke:#EE2B74;stroke-width:4.8;stroke-miterlimit:10;" x1="1191.73" y1="826.24" x2="1191.73" y2="812.26" />
+            <path style="fill:none;stroke:#EE2B74;stroke-width:4.8;stroke-miterlimit:10;" d="M1309.1,524v45.1c0,15.1-12.2,27.3-27.3,27.2h-44c-15.1-.2-27.3,12-27.3,27.1v168.6c0,15-12.2,27.2-27.2,27.2h-155.4c-15,0-27.2,12.2-27.2,27.2v.5c0,15,12.2,27.2,27.2,27.2h58.2c15,0,27.2,12.2,27.2,27.2v157.5c0,15,12.2,27.2,27.2,27.2h107.4c15,0,27.2,12.2,27.2,27.2v23.1c0,15-12.2,27.2-27.2,27.2h-63.5" />
         </g>
         <g class="line 9호선">
             <path style="fill:none;stroke:#B1A48D;stroke-width:4.8;stroke-miterlimit:10;" d="M1387.47,939.91H980.29c-7.22,0-14.14-2.87-19.24-7.97l-51.01-51.01c-5.1-5.1-12.02-7.97-19.24-7.97H696.05c-7.22,0-14.14-2.87-19.24-7.97L548.75,736.93c-5.1-5.1-12.03-7.97-19.24-7.97h-59.02c-15.03,0-27.21-12.18-27.21-27.21V507.18c0-15.03-12.18-27.21-27.21-27.21H310.75c-15.03,0-27.21-12.18-27.21-27.21v-40.18" />
@@ -934,6 +933,18 @@
             <path class="fill 수인·분당선" d="M893.1,1290.8c0-1.3,1.1-2.4,2.4-2.4s2.4,1.1,2.4,2.4-1.1,2.4-2.4,2.4c-1.3,0-2.4-1.1-2.4-2.4"/>
             <path class="fill GTX-A" d="M885.1,1290.8c0-1.3,1.1-2.4,2.4-2.4s2.4,1.1,2.4,2.4-1.1,2.4-2.4,2.4c-1.3,0-2.4-1.1-2.4-2.4"/>
         </g>
+        <g class="transfer" id="별내_환승">
+          <path class="transferFill" d="M1309.4,530h-.5c-2.5,0-4.6-2-4.6-4.6v-10.7c0-2.5,2-4.6,4.6-4.6h.5c2.5,0,4.6,2,4.6,4.6v10.7c0,2.5-2,4.6-4.6,4.6"/>
+          <path class="transferBorder" d="M1309.4,530h-.5c-2.5,0-4.6-2-4.6-4.6v-10.7c0-2.5,2-4.6,4.6-4.6h.5c2.5,0,4.6,2,4.6,4.6v10.7c0,2.5-2,4.6-4.6,4.6Z"/>
+          <path class="fill 경춘선" d="M1309.1,518.5c-1.3,0-2.4-1.1-2.4-2.4s1.1-2.4,2.4-2.4,2.4,1.1,2.4,2.4-1.1,2.4-2.4,2.4"/>
+          <path class="fill 8호선" d="M1309.1,526.5c-1.3,0-2.4-1.1-2.4-2.4s1.1-2.4,2.4-2.4,2.4,1.1,2.4,2.4-1.1,2.4-2.4,2.4"/>
+        </g>
+        <g class="transfer" id="구리_환승">
+          <path class="transferFill" d="M1252.1,596.1v.5c0,2.5-2,4.6-4.6,4.6h-10.7c-2.5,0-4.6-2-4.6-4.6v-.5c0-2.5,2-4.6,4.6-4.6h10.7c2.5,0,4.6,2,4.6,4.6"/>
+          <path class="transferBorder" d="M1252.1,596.1v.5c0,2.5-2,4.6-4.6,4.6h-10.7c-2.5,0-4.6-2-4.6-4.6v-.5c0-2.5,2-4.6,4.6-4.6h10.7c2.5,0,4.6,2,4.6,4.6Z"/>
+          <path class="fill 경의·중앙선" d="M1240.6,596.4c0,1.3-1.1,2.4-2.4,2.4s-2.4-1.1-2.4-2.4,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4"/>
+          <path class="fill 8호선" d="M1248.6,596.4c0,1.3-1.1,2.4-2.4,2.4s-2.4-1.1-2.4-2.4,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4"/>
+        </g>
     </g>
     <g id="circles">
         <g class="circle 1호선">
@@ -1024,8 +1035,8 @@
             <text transform="translate(1262.9282 1002.5237)" class="circleText" style="font-size: 13px; fill: white;">3</text>
         </g>
         <g class="circle 8호선">
-            <path class="fill 8호선" d="M1225.8,819.8c0,7.1-5.7,12.8-12.9,12.8c-7.1,0-12.8-5.8-12.8-12.8s5.8-12.8,12.8-12.8C1220,807,1225.8,812.7,1225.8,819.8"/>
-            <text transform="translate(1208.7468 824.5137)" class="circleText" style="font-size: 13px; fill: white;">8</text>
+            <path class="fill 8호선" d="M1347.2,495.8c0,7.1-5.7,12.8-12.9,12.8s-12.8-5.8-12.8-12.8,5.8-12.8,12.8-12.8,12.9,5.7,12.9,12.8"/>
+            <text transform="translate(1330.1 500.5)" class="circleText" style="font-size: 13px; fill: white;">8</text>
         </g>
         <g class="circle 신림선">
             <path class="fill 신림선_circle" d="M718,1036.5c0,7.1-5.7,12.8-12.8,12.8c-7.1,0-12.8-5.8-12.8-12.8c0-7.1,5.8-12.8,12.8-12.8C712.3,1023.6,718,1029.4,718,1036.5"/>
@@ -1249,7 +1260,7 @@
         <path class="mark" d="M405.6,1127.5c.9,0,1.6-.7,1.6-1.6s-.7-1.6-1.6-1.6h-1.8v3.2h1.8Z"/>
         <path class="mark" d="M405.6,1154.4c.9,0,1.6-.7,1.6-1.6s-.7-1.6-1.6-1.6h-1.8v3.2h1.8Z"/>
         <path class="mark" d="M405.6,1181.3c.9,0,1.6-.7,1.6-1.6s-.7-1.6-1.6-1.6h-1.8v3.2h1.8Z"/>
-        <path class="mark" d="M631.9,653.9s0,0,0,0h.7c0,0,0,0,0,.2v.4s0,0,0,0h-.7c0,0,0,0,0-.2v-.5c0,0,0,0,0,0M630.4,654.2q0-.1,0,0l.7-.2h0s0,0,0,0v.4s0,0,0,0h-.7c0,0,0,0,0,0v-.4h0Z"/>
+       <path class="mark" d="M631.9,653.9h.7v.6h-.7v-.7h0M630.4,654.2q0,0,0,0l.7-.2h0v.4h-.7v-.4h0v.2Z"/>
         <path class="mark" d="M1358.2,1037.4c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M1309.8,1037.4c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M1261.7,1037.4c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
@@ -1388,7 +1399,6 @@
         <path class="mark" d="M1111.8,157.4c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
         <path class="mark" d="M1166.6,177.1c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M1283.7,516.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
-        <path class="mark" d="M1310.8,516.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M1343.7,516.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M1375.5,516.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M1407.8,483.3c.9,0,1.6-.7,1.6-1.6s-.7-1.6-1.6-1.6h-1.8v3.2h1.8Z"/>
@@ -1420,7 +1430,6 @@
         <path class="mark" d="M1239,673.9c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
         <path class="mark" d="M1239,647.5c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
         <path class="mark" d="M1239,621.2c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
-        <path class="mark" d="M1239,594.8c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
         <path class="mark" d="M1239,568.4c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
         <path class="mark" d="M867.3,738.5c-.6-.6-1.6-.6-2.2,0s-.6,1.6,0,2.2l1.2,1.2,2.2-2.2-1.2-1.2Z"/>
         <path class="mark" d="M762.9,754.6c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
@@ -1480,7 +1489,7 @@
         <path class="mark" d="M937.7,1008.6c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
         <path class="mark" d="M937.7,659c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
         <path class="mark" d="M936.1,722.9c.9,0,1.6-.7,1.6-1.6s-.7-1.6-1.6-1.6h-1.8v3.2h1.8Z"/>
-        <path class="mark" d="M1193.6,1427.8h.7c0,0,0,0,0,.2v.4s0,0,0,0h-.7c0,0,0,0,0-.2v-.5h0M1194,1430.8c0,0,0-.2.2-.2s.2,0,.2.2,0,.2-.2.2-.2,0-.2-.2"/>
+        <path class="mark" d="M1193.6,1427.8h.7v.6h-.7v-.7h0M1194,1430.8s0-.2.2-.2.2,0,.2.2,0,.2-.2.2-.2,0-.2-.2"/>
         <path class="mark" d="M910.8,249.3c-.4,0-.8.4-.8.8s.3.8.8.8h.9v-1.6h-.9Z"/>
         <path class="mark" d="M910.8,275.2c-.4,0-.8.4-.8.8s.3.8.8.8h.9v-1.6h-.9Z"/>
         <path class="mark" d="M1044.1,175.5c0-.4-.3-.8-.8-.8s-.8.4-.8.8v.9h1.6v-.9h0Z"/>
@@ -1610,6 +1619,10 @@
         <path class="mark" d="M1327.6,203.8c.4,0,.8-.4.8-.8s-.3-.8-.8-.8h-.9v1.6h.9Z"/>
         <path class="mark" d="M1151.4,1291.7c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
         <path class="mark" d="M839.4,1370.1c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
+        <path class="mark" d="M1283.7,597c0-.9-.7-1.6-1.6-1.6s-1.6.7-1.6,1.6v1.8h3.2v-1.8h0Z"/>
+        <path class="mark" d="M1310,560.7c-.9,0-1.6.7-1.6,1.6s.7,1.6,1.6,1.6h1.8v-3.2h-1.8Z"/>
+        <path class="mark" d="M1209.8,747.5c.9,0,1.6-.7,1.6-1.6s-.7-1.6-1.6-1.6h-1.8v3.2h1.8Z"/>
+        <path class="mark" d="M1209.8,707.8c.9,0,1.6-.7,1.6-1.6s-.7-1.6-1.6-1.6h-1.8v3.2h1.8Z"/>
     </g>
     <g id="stations">
         <text transform="translate(508.446 144.5358)" class="station 1호선" id="연천" visibility="hidden">연천</text>
@@ -2075,18 +2088,18 @@
         <text transform="translate(998.4512 419.1765)" class="station 6호선" id="월곡" visibility="hidden">월곡</text>
         <text transform="translate(1169.0664 465.6159)" class="station 7호선" id="먹골" visibility="hidden">먹골</text>
         <text transform="translate(1273.6543 530.759)" class="station 경춘선" id="갈매" visibility="hidden">갈매</text>
-        <text transform="translate(1300.7393 530.759)" class="station 경춘선" id="별내" visibility="hidden">별내</text>
+        <text transform="translate(1300.7393 504.759)" class="station 8호선 경춘선" id="별내" visibility="hidden">별내</text>
         <text transform="translate(1329.4414 530.759)" class="station 경춘선" id="퇴계원" visibility="hidden">퇴계원</text>
         <text transform="translate(1365.4482 530.759)" class="station 경춘선" id="사릉" visibility="hidden">사릉</text>
-        <text transform="translate(1384.9844 486.53)" class="station 경춘선" id="금곡" visibility="hidden">금곡</text>
-        <text transform="translate(1368.8682 456.967)" class="station 경춘선" id="평내호평" visibility="hidden">평내호평</text>
-        <text transform="translate(1376.9287 427.4045)" class="station 경춘선" id="천마산" visibility="hidden">천마산</text>
-        <text transform="translate(1385.2227 397.8415)" class="station 경춘선" id="마석" visibility="hidden">마석</text>
-        <text transform="translate(1377.1357 368.278)" class="station 경춘선" id="대성리" visibility="hidden">대성리</text>
-        <text transform="translate(1385.4062 338.716)" class="station 경춘선" id="청평" visibility="hidden">청평</text>
-        <text transform="translate(1385.4043 309.153)" class="station 경춘선" id="상천" visibility="hidden">상천</text>
-        <text transform="translate(1385.4043 279.5901)" class="station 경춘선" id="가평" visibility="hidden">가평</text>
-        <text transform="translate(1376.9287 250.0271)" class="station 경춘선" id="굴봉산" visibility="hidden">굴봉산</text>
+        <text transform="translate(1384.9844 485.53)" class="station 경춘선" id="금곡" visibility="hidden">금곡</text>
+        <text transform="translate(1368.8682 455.967)" class="station 경춘선" id="평내호평" visibility="hidden">평내호평</text>
+        <text transform="translate(1376.9287 426.4045)" class="station 경춘선" id="천마산" visibility="hidden">천마산</text>
+        <text transform="translate(1385.2227 396.8415)" class="station 경춘선" id="마석" visibility="hidden">마석</text>
+        <text transform="translate(1377.1357 367.778)" class="station 경춘선" id="대성리" visibility="hidden">대성리</text>
+        <text transform="translate(1385.4062 338.216)" class="station 경춘선" id="청평" visibility="hidden">청평</text>
+        <text transform="translate(1385.4043 308.653)" class="station 경춘선" id="상천" visibility="hidden">상천</text>
+        <text transform="translate(1385.4043 279.0901)" class="station 경춘선" id="가평" visibility="hidden">가평</text>
+        <text transform="translate(1376.9287 249.5271)" class="station 경춘선" id="굴봉산" visibility="hidden">굴봉산</text>
         <text transform="translate(1377.1357 220.4641)" class="station 경춘선" id="백양리" visibility="hidden">백양리</text>
         <text transform="translate(1385.4053 190.9016)" class="station 경춘선" id="강촌" visibility="hidden">강촌</text>
         <text transform="translate(1377.1367 161.3386)" class="station 경춘선" id="김유정" visibility="hidden">김유정</text>
@@ -2272,7 +2285,7 @@
         <text transform="translate(236.4028 1354.9128)" class="station 인천2호선" id="운연" visibility="hidden">운연</text>
         <text transform="translate(227.7036 816.9773)" class="station 7호선 서해선" id="부천종합운동장" visibility="hidden">부천종합운동장</text>
         <text transform="translate(1244.8359 573.655)" class="station 경의·중앙선" id="양원" visibility="hidden">양원</text>
-        <text transform="translate(1244.8359 599.8064)" class="station 경의·중앙선" id="구리" visibility="hidden">구리</text>
+        <text transform="translate(1213.8359 590.8064)" class="station 8호선 경의·중앙선" id="구리" visibility="hidden">구리</text>
         <text transform="translate(1244.835 626.9558)" class="station 경의·중앙선" id="도농" visibility="hidden">도농</text>
         <text transform="translate(1244.8359 653.1062)" class="station 경의·중앙선" id="양정" visibility="hidden">양정</text>
         <text transform="translate(1244.8359 679.2566)" class="station 경의·중앙선" id="덕소" visibility="hidden">덕소</text>
@@ -2299,6 +2312,10 @@
         <text transform="translate(1005.3516 634.1472)" class="station 2호선" id="용답" visibility="hidden">용답</text>
         <text transform="translate(1005.3516 603.5251)" class="station 2호선" id="신답" visibility="hidden">신답</text>
         <text transform="translate(829.6 1384.2)" class="station GTX-A" id="동탄" visibility="hidden">동탄</text>
-        <text transform="translate(1148.6 1228.7)" class="station 경강선 GTX-A" id="성남" visibility="hidden">성남</text>
+        <text transform="translate(1148.6 228.7)" class="station 경강선 GTX-A" id="성남" visibility="hidden">성남</text>
+        <text transform="translate(1154.0 749.7)" class="station 8호선" id="암사역사공원" visibility="hidden">암사역사공원</text>
+        <text transform="translate(1154.0 710.0)" class="station 8호선" id="장자호수공원" visibility="hidden">장자호수공원</text>
+        <text transform="translate(1270.0 611.2)" class="station 8호선" id="동구릉" visibility="hidden">동구릉</text>
+        <text transform="translate(1316.0 565.7)" class="station 8호선" id="다산" visibility="hidden">다산</text>
     </g>
 </svg>
