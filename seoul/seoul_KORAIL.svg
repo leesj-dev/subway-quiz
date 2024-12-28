@@ -1779,7 +1779,7 @@
         <text transform="translate(1153.2207 834.0515)" class="station 8호선" id="암사" visibility="hidden">암사</text>
         <text transform="translate(1306.6113 234.1711)" class="station 의정부경전철" id="탑석" visibility="hidden">탑석</text>
         <text transform="translate(1034.9395 188.2014)" class="station 의정부경전철" id="발곡" visibility="hidden">발곡</text>
-        <text transform="translate(1233.9531 319.8342)" class="station 4호선" id="당고개" visibility="hidden">당고개</text>
+        <text transform="translate(1233.9531 319.8342)" class="station 4호선" id="불암산" visibility="hidden">불암산</text>
         <text transform="translate(1271.0029 319.8342)" class="station 4호선" id="별내별가람" visibility="hidden">별내별가람</text>
         <text transform="translate(1304.8604 352.9831)" class="station 4호선" id="오남" visibility="hidden">오남</text>
         <text transform="translate(1304.8877 383.5241)" class="station 4호선" id="진접" visibility="hidden">진접</text>
