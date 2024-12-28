@@ -2312,7 +2312,7 @@
         <text transform="translate(1005.3516 634.1472)" class="station 2호선" id="용답" visibility="hidden">용답</text>
         <text transform="translate(1005.3516 603.5251)" class="station 2호선" id="신답" visibility="hidden">신답</text>
         <text transform="translate(829.6 1384.2)" class="station GTX-A" id="동탄" visibility="hidden">동탄</text>
-        <text transform="translate(1148.6 228.7)" class="station 경강선 GTX-A" id="성남" visibility="hidden">성남</text>
+        <text transform="translate(1148.6 1228.7)" class="station 경강선 GTX-A" id="성남" visibility="hidden">성남</text>
         <text transform="translate(1154.0 749.7)" class="station 8호선" id="암사역사공원" visibility="hidden">암사역사공원</text>
         <text transform="translate(1154.0 710.0)" class="station 8호선" id="장자호수공원" visibility="hidden">장자호수공원</text>
         <text transform="translate(1270.0 611.2)" class="station 8호선" id="동구릉" visibility="hidden">동구릉</text>
