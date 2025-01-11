@@ -14,11 +14,11 @@ const active = "1";
 const inactiveCircle = "0.4";
 const cdotMap = {
     "전대.에버랜드": "전대·에버랜드",
-    "전대에버랜드": "전대·에버랜드",
+    전대에버랜드: "전대·에버랜드",
     "4.19민주묘지": "4·19민주묘지",
     "419민주묘지": "4·19민주묘지",
     "시청.용인대": "시청·용인대",
-    "시청용인대": "시청·용인대",
+    시청용인대: "시청·용인대",
 };
 const lineData = {
     // [맞힌 개수, 총 개수]
@@ -31,21 +31,21 @@ const lineData = {
     "7호선": [0, 53],
     "8호선": [0, 24],
     "9호선": [0, 38],
-    "경강선": [0, 12],
+    경강선: [0, 12],
     "경의·중앙선": [0, 57],
-    "경춘선": [0, 25],
-    "공항철도": [0, 14],
-    "김포골드라인": [0, 10],
-    "서해선": [0, 21],
+    경춘선: [0, 25],
+    공항철도: [0, 14],
+    김포골드라인: [0, 10],
+    서해선: [0, 21],
     "수인·분당선": [0, 63],
-    "신림선": [0, 11],
-    "신분당선": [0, 16],
-    "에버라인": [0, 15],
-    "우이신설선": [0, 13],
-    "의정부경전철": [0, 15],
-    "인천1호선": [0, 30],
-    "인천2호선": [0, 27],
-    "GTX-A": [0, 4],
+    신림선: [0, 11],
+    신분당선: [0, 16],
+    에버라인: [0, 15],
+    우이신설선: [0, 13],
+    의정부경전철: [0, 15],
+    인천1호선: [0, 30],
+    인천2호선: [0, 27],
+    "GTX-A": [0, 9],
 };
 
 // lineData의 key를 array로 반환
@@ -103,7 +103,11 @@ let checkResolution = function () {
     const isLongLandscape = window.matchMedia("(min-aspect-ratio: 15/10) and (min-width: 1460px)").matches;
     const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    if ((isPortrait && viewportWidth < 440) || (!isPortrait && (viewportWidth < 855 || viewportHeight < 750)) || (isLongLandscape && viewportHeight < 830)) {
+    if (
+        (isPortrait && viewportWidth < 440) ||
+        (!isPortrait && (viewportWidth < 855 || viewportHeight < 750)) ||
+        (isLongLandscape && viewportHeight < 830)
+    ) {
         wrapper.style.display = "none";
         unsupportedScreen.style.display = "flex";
     } else {
