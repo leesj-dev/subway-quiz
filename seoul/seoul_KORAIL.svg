@@ -1050,7 +1050,7 @@
             <text class="circleText" style="font-size: 13px; fill: white;" transform="translate(1263.8 1003.1)">3</text>
         </g>
         <g class="circle 8호선">
-            <path class="fill 8호선" d="1348.1,496.4c0,7.1-5.7,12.8-12.9,12.8s-12.8-5.8-12.8-12.8,5.8-12.8,12.8-12.8,12.9,5.7,12.9,12.8"/>
+            <path class="fill 8호선" d="M1348.1,496.4c0,7.1-5.7,12.8-12.9,12.8s-12.8-5.8-12.8-12.8,5.8-12.8,12.8-12.8,12.9,5.7,12.9,12.8"/>
             <text class="circleText" style="font-size: 13px; fill: white;" transform="translate(1331 501.1)">8</text>
         </g>
         <g class="circle 신림선">
