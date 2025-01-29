@@ -22,7 +22,7 @@
     line-height: 160%;
     border-radius: 5px;
     border-width: 1px;
-    /* font-feature-settings: 'ss05'; */
+    font-feature-settings: "ss05";
 }
 
 /* Prevents scrolling */
@@ -55,7 +55,7 @@ object {
     line-height: 29px;
     height: 29px;
     padding: 7px 14px;
-    margin: 3px 0px 3px 6px;
+    margin: 0px 0px 0px 6px;
     animation: appear;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -106,7 +106,7 @@ object {
     outline: 0;
     background-color: #ebecf0;
     color: #61677c;
-    box-shadow: -5px -5px 20px #ffffff, 5px 5px 20px #babecc;
+    box-shadow: -3px -3px 12px #ffffff, 3px 3px 12px #babecc;
     appearance: none;
     -webkit-appearance: none;
     transition: all 0.2s ease-in-out;
@@ -116,7 +116,7 @@ object {
 
 .button-on:hover,
 .round-button:hover {
-    box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px #babecc;
+    box-shadow: -2px -2px 6px #ffffff, 2px 2px 6px #babecc;
 }
 
 .button-on:active,
