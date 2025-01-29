@@ -617,7 +617,7 @@
             <path class="transferFill" d="M588.5,989v.5c0,2.5-2,4.6-4.6,4.6h-10.6c-2.5,0-4.6-2-4.6-4.6v-.5c0-2.5,2-4.6,4.6-4.6h10.6c2.5,0,4.6,2,4.6,4.6"/>
             <path class="transferBorder" d="M573.3,985.3c-2,0-3.7,1.7-3.7,3.7v.5c0,2,1.7,3.7,3.7,3.7h10.6c2,0,3.7-1.7,3.7-3.7v-.5c0-2-1.7-3.7-3.7-3.7h-10.6ZM583.9,994.9h-10.6c-3,0-5.4-2.4-5.4-5.4v-.5c0-3,2.4-5.4,5.4-5.4h10.6c3,0,5.4,2.4,5.4,5.4v.5c0,3-2.4,5.4-5.4,5.4"/>
             <path class="fill 2호선" d="M577,989.3c0,1.3-1.1,2.4-2.4,2.4s-2.4-1.1-2.4-2.4,1.1-2.4,2.4-2.4,2.4,1.1,2.4,2.4"/>
-            <path class="fill 우이신설선" d="M585,989.3c0,1.3-1.1,2.4-2.4,2.4s-2.4-1.1-2.4-2.4,1.1-2.4,2.4-2.4,2.4,1.1,2.4,2.4"/>
+            <path class="fill 신림선" d="M585,989.3c0,1.3-1.1,2.4-2.4,2.4s-2.4-1.1-2.4-2.4,1.1-2.4,2.4-2.4,2.4,1.1,2.4,2.4"/>
         </g>
         <g class="transfer" id="강남_환승">
             <path class="transferFill" d="M877.9,989v.5c0,2.5-2,4.6-4.6,4.6h-10.6c-2.5,0-4.6-2-4.6-4.6v-.5c0-2.5,2-4.6,4.6-4.6h10.6c2.5,0,4.6,2,4.6,4.6"/>
@@ -2008,8 +2008,8 @@
         <text id="남한산성입구" class="station 8호선" transform="translate(1282.1 1113.2)" visibility="hidden">남한산성입구</text>
         <text id="단대오거리" class="station 8호선" transform="translate(1282.1 1145.2)" visibility="hidden">단대오거리</text>
         <text id="신흥" class="station 8호선" transform="translate(1243.9 1179.2)" visibility="hidden">신흥</text>
-        <text id="수내" class="station 수인·분당선" transform="translate(1106.1 1307)" visibility="hidden">수내</text>
-        <text id="오리" class="station 수인·분당선" transform="translate(995.6 1307)" visibility="hidden">오리</text>
+        <text id="수내" class="station 수인·분당선" transform="translate(1107.1 1307)" visibility="hidden">수내</text>
+        <text id="오리" class="station 수인·분당선" transform="translate(995.0 1307)" visibility="hidden">오리</text>
         <text id="동천" class="station 신분당선" transform="translate(967.2 1230.1)" visibility="hidden">동천</text>
         <text id="수지구청" class="station 신분당선" transform="translate(912.9 1230.1)" visibility="hidden">수지구청</text>
         <text id="양재시민의숲" class="station 신분당선" transform="translate(907.2 1169.4)" visibility="hidden">양재시민의숲</text>
@@ -2017,9 +2017,9 @@
         <text id="성복" class="station 신분당선" transform="translate(873.6 1230.1)" visibility="hidden">성복</text>
         <text id="상현" class="station 신분당선" transform="translate(827.5 1230.1)" visibility="hidden">상현</text>
         <text id="광교중앙" class="station 신분당선" transform="translate(773.5 1230.1)" visibility="hidden">광교중앙</text>
-        <text id="죽전" class="station 수인·분당선" transform="translate(960.1 1307)" visibility="hidden">죽전</text>
-        <text id="보정" class="station 수인·분당선" transform="translate(923.7 1307)" visibility="hidden">보정</text>
-        <text id="구성" class="station 수인·분당선 GTX-A" transform="translate(894.3 1307.8)" visibility="hidden">구성</text>
+        <text id="죽전" class="station 수인·분당선" transform="translate(957.6 1307)" visibility="hidden">죽전</text>
+        <text id="보정" class="station 수인·분당선" transform="translate(922.7 1307)" visibility="hidden">보정</text>
+        <text id="구성" class="station 수인·분당선 GTX-A" transform="translate(887.3 1307.8)" visibility="hidden">구성</text>
         <text id="신갈" class="station 수인·분당선" transform="translate(843 1307)" visibility="hidden">신갈</text>
         <text id="강남대" class="station 에버라인" transform="translate(839.2 1344.7)" visibility="hidden">강남대</text>
         <text id="지석" class="station 에버라인" transform="translate(907.3 1344.7)" visibility="hidden">지석</text>
@@ -2034,14 +2034,14 @@
         <text id="고진" class="station 에버라인" transform="translate(1306.8 1372.5)" visibility="hidden">고진</text>
         <text id="보평" class="station 에버라인" transform="translate(1306.6 1404.6)" visibility="hidden">보평</text>
         <text id="둔전" class="station 에버라인" transform="translate(1306.6 1436.3)" visibility="hidden">둔전</text>
-        <text id="상갈" class="station 수인·분당선" transform="translate(775.8 1307)" visibility="hidden">상갈</text>
-        <text id="청명" class="station 수인·분당선" transform="translate(738.8 1307)" visibility="hidden">청명</text>
-        <text id="영통" class="station 수인·분당선" transform="translate(702.4 1307)" visibility="hidden">영통</text>
-        <text id="망포" class="station 수인·분당선" transform="translate(666 1307)" visibility="hidden">망포</text>
-        <text id="매탄권선" class="station 수인·분당선" transform="translate(620.2 1307)" visibility="hidden">매탄권선</text>
-        <text id="수원시청" class="station 수인·분당선" transform="translate(579.1 1307)" visibility="hidden">수원시청</text>
-        <text id="매교" class="station 수인·분당선" transform="translate(550.6 1307)" visibility="hidden">매교</text>
-        <text id="서현" class="station 수인·분당선" transform="translate(1141.7 1306.9)" visibility="hidden">서현</text>
+        <text id="상갈" class="station 수인·분당선" transform="translate(779.3 1307)" visibility="hidden">상갈</text>
+        <text id="청명" class="station 수인·분당선" transform="translate(747.8 1307)" visibility="hidden">청명</text>
+        <text id="영통" class="station 수인·분당선" transform="translate(710.8 1307)" visibility="hidden">영통</text>
+        <text id="망포" class="station 수인·분당선" transform="translate(678.5 1307)" visibility="hidden">망포</text>
+        <text id="매탄권선" class="station 수인·분당선" transform="translate(631.2 1307)" visibility="hidden">매탄권선</text>
+        <text id="수원시청" class="station 수인·분당선" transform="translate(581.6 1307)" visibility="hidden">수원시청</text>
+        <text id="매교" class="station 수인·분당선" transform="translate(547.3 1307)" visibility="hidden">매교</text>
+        <text id="서현" class="station 수인·분당선" transform="translate(1144.0 1306.9)" visibility="hidden">서현</text>
         <text id="수진" class="station 8호선" transform="translate(1206.8 1179.2)" visibility="hidden">수진</text>
         <text id="야탑" class="station 수인·분당선" transform="translate(1182.8 1192.5)" visibility="hidden">야탑</text>
         <text id="한성백제" class="station 9호선" transform="translate(1175 955.6)" visibility="hidden">한성백제</text>
